@@ -1,0 +1,103 @@
+﻿@using CourseRegistrationManagementSystem.Models;
+@using System.Collections.Generic
+
+@{
+    ViewData["Title"] = "Search for Courses";
+}
+
+@using (Html.BeginForm("Search", "Home", FormMethod.Post))
+{
+    <h2>Class Schedule Search</h2>
+
+    <div class="row">
+    
+        <div class="form-group col-md-4">
+
+            <label id="subjectLabel" for="selectedSubjects" class="control-label">Subject:</label>
+
+            @Html.ListBox("selectedSubjects", new MultiSelectList((List<Subject>) ViewData["SubjectList"], "ID", "Name"))
+
+        </div>
+
+        <div class="form-group col-md-4">
+
+            <label id="courseTitleLabel">Course Title:</label>
+
+            <input type="text" name="CourseTitle">
+
+        </div>
+
+        <div class="form-group col-md-4">
+
+            <label id="campusLabel">Campus:</label>
+
+            @Html.ListBox("selectedCampus", new MultiSelectList((List<Campus>) ViewData["CampusList"], "ID", "Name"))
+
+        </div>
+
+        <div class="form-group col-md-4">
+
+            <label id="courseLevelLabel">Course Level:</label>
+
+            @Html.ListBox("selectedCourseLevels", new MultiSelectList((List<CourseLevel>) ViewData["CourseLevelList"], "ID", "Name"))
+        
+        </div>
+
+        <div class="form-group col-md-4">
+    
+            <label id="instructorLabel">Instructor:</label>
+
+            @Html.ListBox("selectedInstructors", new MultiSelectList((List<Instructor>) ViewData["InstructorList"], "ID", "Name"))
+
+        </div>
+
+        <div class="form-group col-md-4">
+        
+            <label id="mondayLabel">Monday:</label>
+        
+            <input type="checkbox" name="monday" value="Monday">
+
+            <label id="tuesdayLabel">Tuesday:</label>
+        
+            <input type="checkbox" name="tuesday" value="Tuesday">
+
+            <label id="wednesdayLabel">Wednesday:</label>
+        
+            <input type="checkbox" name="wednesday" value="Wednesday">
+
+            <label id="thursdayLabel">Thursday:</label>
+        
+            <input type="checkbox" name="thursday" value="Thursday">
+
+            <label id="fridayLabel">Friday:</label>
+        
+            <input type="checkbox" name="friday" value="Friday">
+
+            <label id="saturdayLabel">Saturday:</label>
+        
+            <input type="checkbox" name="saturday" value="Saturday">
+
+            <label id="sundayLabel">Sunday:</label>
+        
+            <input type="checkbox" name="sunday" value="Sunday">
+        
+        </div>
+
+        <div class="form-group col-md-12">
+
+            <label id="startTimeLabel">Start Time:</label>
+        
+            <input id='startTimeTimepicker' type='text' name='startTimeTimepicker'/>
+
+            <label id="endTimeLabel">End Time:</label>
+        
+            <input id='endTimeTimepicker' type='text' name='endTimeTimepicker'/>
+
+        </div>
+       
+    </div>
+
+    <br>
+    
+    <input type="submit" value="Class Search">
+ }

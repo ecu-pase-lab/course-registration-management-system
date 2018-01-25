@@ -1,0 +1,19 @@
+﻿@using CourseRegistrationManagementSystem.Models;
+@using System.Collections.Generic
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+        {
+            <h2>Search by Term</h2>
+
+            @Html.DropDownList("selectedSemester", new SelectList((List<Semester>) ViewData["SemesterList"], "Name", "Name"))
+
+            <input type="submit" value="Submit">
+        }
+    </div>
+</div>
