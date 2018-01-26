@@ -21,9 +21,69 @@
 
         <div class="form-group col-md-4">
 
+            <label id="courseNumberLabel">Course Number:</label>
+
+            <input type="text" name="CourseNumber">
+
+        </div>
+
+        <div class="form-group col-md-4">
+
             <label id="courseTitleLabel">Course Title:</label>
 
             <input type="text" name="CourseTitle">
+
+        </div>
+
+        <div class="form-group col-md-4">
+
+            <label id="scheduleTypeLabel">Schedule Type:</label>
+
+            @Html.ListBox("selectedScheduleType", new MultiSelectList((List<ScheduleType>) ViewData["ScheduleTypeList"], "ID", "Name"))
+
+        </div>
+
+        <div class="form-group col-md-4">
+
+            <label id="instructionalMethodLabel">Instructional Method:</label>
+
+            @Html.ListBox("selectedInstructionalMethod", new MultiSelectList((List<InstructionalMethod>) ViewData["InstructionalMethodList"], "ID", "Name"))
+
+        </div>
+
+        <div class="form-group col-md-4">
+
+            <label id="CreditHourRangeLabel">Credit Hour Range:</label>
+
+            <label id="CreditHourRangeStartLabel">From:</label>
+        
+            <select id="creditHourRangeStart">
+                <option value="1hour">1</option>
+                <option value="2hour">2</option>
+                <option value="3hour">3</option>
+                <option value="4hour">4</option>
+                <option value="5hour">5</option>
+                <option value="6hour">6</option>
+                <option value="7hour">7</option>
+                <option value="8hour">8</option>
+                <option value="9hour">9</option>
+                <option value="10hour">10</option>
+            </select>
+
+            <label id="CreditHourRangeEndLabel">To:</label>
+        
+            <select id="creditHourRangeEnd">
+                <option value="1hour">1</option>
+                <option value="2hour">2</option>
+                <option value="3hour">3</option>
+                <option value="4hour">4</option>
+                <option value="5hour">5</option>
+                <option value="6hour">6</option>
+                <option value="7hour">7</option>
+                <option value="8hour">8</option>
+                <option value="9hour">9</option>
+                <option value="10hour">10</option>
+            </select>
 
         </div>
 
@@ -44,11 +104,35 @@
         </div>
 
         <div class="form-group col-md-4">
+
+            <label id="termDurationLabel">Term Duration:</label>
+
+            @Html.ListBox("selectedTermDurations", new MultiSelectList((List<TermDuration>) ViewData["TermDurationList"], "ID", "Name"))
+        
+        </div>
+
+        <div class="form-group col-md-4">
     
             <label id="instructorLabel">Instructor:</label>
 
             @Html.ListBox("selectedInstructors", new MultiSelectList((List<Instructor>) ViewData["InstructorList"], "ID", "Name"))
 
+        </div>
+
+        <div class="form-group col-md-4">
+
+            <label id="sessionLabel">Session:</label>
+
+            @Html.ListBox("selectedSessions", new MultiSelectList((List<Session>) ViewData["SessionList"], "ID", "Name"))
+        
+        </div>
+
+        <div class="form-group col-md-4">
+
+            <label id="courseAttributeLabel">Course Attribute:</label>
+
+            @Html.ListBox("selectedCourseAttributes", new MultiSelectList((List<CourseAttribute>) ViewData["CourseAttributeList"], "ID", "Name"))
+        
         </div>
 
         <div class="form-group col-md-4">

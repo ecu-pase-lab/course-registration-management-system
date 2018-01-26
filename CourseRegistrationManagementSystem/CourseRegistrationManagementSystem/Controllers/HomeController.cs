@@ -27,14 +27,29 @@ namespace CourseRegistrationManagementSystem.Controllers
             List<Subject> subjects = PopulateSubjects();
             ViewData["SubjectList"] = subjects;
 
+            List<ScheduleType> scheduleTypes = PopulateScheduleTypes();
+            ViewData["ScheduleTypeList"] = scheduleTypes;
+
+            List<InstructionalMethod> instructionalMethods = PopulateInstructionalMethods();
+            ViewData["InstructionalMethodList"] = instructionalMethods;
+
             List<Campus> campus = PopulateCampus();
             ViewData["CampusList"] = campus;
 
             List<CourseLevel> courseLevels = PopulateCourseLevels();
             ViewData["CourseLevelList"] = courseLevels;
 
+            List<TermDuration> termDurations = PopulateTermDurations();
+            ViewData["TermDurationList"] = termDurations;
+
             List<Instructor> instructors = PopulateInstructors();
             ViewData["InstructorList"] = instructors;
+
+            List<Session> sessions = PopulateSessions();
+            ViewData["SessionList"] = sessions;
+
+            List<CourseAttribute> courseAttributes = PopulateCourseAttributes();
+            ViewData["CourseAttributeList"] = courseAttributes;
 
             return View();
         }
@@ -54,12 +69,13 @@ namespace CourseRegistrationManagementSystem.Controllers
 
         private List<Subject> PopulateSubjects()
         {
-            Subject subject1 = new Subject(1, "Computer Science");
-            Subject subject2 = new Subject(2, "English");
-            Subject subject3 = new Subject(3, "Mathematics");
-            Subject subject4 = new Subject(4, "Physics");
-            Subject subject5 = new Subject(5, "Software Engineering");
-            Subject subject6 = new Subject(6, "Spanish");
+            Subject subject1 = new Subject(1, "All");
+            Subject subject2 = new Subject(2, "Computer Science");
+            Subject subject3 = new Subject(3, "English");
+            Subject subject4 = new Subject(4, "Mathematics");
+            Subject subject5 = new Subject(5, "Physics");
+            Subject subject6 = new Subject(6, "Software Engineering");
+            Subject subject7 = new Subject(7, "Spanish");
 
             List<Subject> subjectList = new List<Subject>
             {
@@ -68,10 +84,46 @@ namespace CourseRegistrationManagementSystem.Controllers
                 subject3,
                 subject4,
                 subject5,
-                subject6
+                subject6,
+                subject7
             };
             return subjectList;
         }
+
+        private List<ScheduleType> PopulateScheduleTypes()
+        {
+            ScheduleType scheduleType1 = new ScheduleType(1, "All");
+            ScheduleType scheduleType2 = new ScheduleType(2, "Clinical");
+            ScheduleType scheduleType3 = new ScheduleType(3, "Colloquia");
+            ScheduleType scheduleType4 = new ScheduleType(4, "Honors (DO NOT USE)");
+
+            List<ScheduleType> scheduleTypeList = new List<ScheduleType>
+            {
+                scheduleType1,
+                scheduleType2,
+                scheduleType3,
+                scheduleType4
+            };
+            return scheduleTypeList;
+        }
+
+        private List<InstructionalMethod> PopulateInstructionalMethods()
+        {
+            InstructionalMethod instructionalMethod1 = new InstructionalMethod(1, "All");
+            InstructionalMethod instructionalMethod2 = new InstructionalMethod(2, "Face to Face");
+            InstructionalMethod instructionalMethod3 = new InstructionalMethod(3, "Face to Face Remote Site");
+            InstructionalMethod instructionalMethod4 = new InstructionalMethod(4, "Hybrid Primarily Face to Face");
+
+            List<InstructionalMethod> instructionalMethodList = new List<InstructionalMethod>
+            {
+                instructionalMethod1,
+                instructionalMethod2,
+                instructionalMethod3,
+                instructionalMethod4
+            };
+            return instructionalMethodList;
+        }
+
 
         private List<Campus> PopulateCampus() {
             Campus campus1 = new Campus(1, "All");
@@ -106,6 +158,19 @@ namespace CourseRegistrationManagementSystem.Controllers
             return courseLevelList;
         }
 
+        private List<TermDuration> PopulateTermDurations()
+        {
+            TermDuration termDuration1 = new TermDuration(1, "All");
+            TermDuration termDuration2 = new TermDuration(2, "Full Term");
+
+            List<TermDuration> termDurationList = new List<TermDuration>
+            {
+                termDuration1,
+                termDuration2
+            };
+            return termDurationList;
+        }
+
         private List<Instructor> PopulateInstructors()
         {
             Instructor instructor1 = new Instructor(1, "Ding, Junhua");
@@ -121,6 +186,42 @@ namespace CourseRegistrationManagementSystem.Controllers
                 instructor4
             };
             return instructorList;
+        }
+
+        private List<Session> PopulateSessions()
+        {
+            Session session1 = new Session(1, "All");
+            Session session2 = new Session(2, "Field-Based Course Eval");
+            Session session3 = new Session(3, "Lab-Based Course Eval");
+            Session session4 = new Session(4, "Not to be Surveyed Course Eval");
+
+            List<Session> sessionList = new List<Session>
+            {
+                session1,
+                session2,
+                session3,
+                session4
+            };
+            return sessionList;
+        }
+
+        private List<CourseAttribute> PopulateCourseAttributes()
+        {
+            CourseAttribute courseAttribute1 = new CourseAttribute(1, "All");
+            CourseAttribute courseAttribute2 = new CourseAttribute(2, "AR-Special Music Fees");
+            CourseAttribute courseAttribute3 = new CourseAttribute(3, "Bassoon");
+            CourseAttribute courseAttribute4 = new CourseAttribute(4, "Cello");
+            CourseAttribute courseAttribute5 = new CourseAttribute(5, "Clarinet");
+
+            List<CourseAttribute> courseAttributeList = new List<CourseAttribute>
+            {
+                courseAttribute1,
+                courseAttribute2,
+                courseAttribute3,
+                courseAttribute4,
+                courseAttribute5
+            };
+            return courseAttributeList;
         }
 
         public IActionResult About()
