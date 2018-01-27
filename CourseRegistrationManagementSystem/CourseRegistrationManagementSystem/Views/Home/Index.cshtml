@@ -2,18 +2,35 @@
 @using System.Collections.Generic
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "ECU Schedule";
 }
 
-<div class="row">
-    <div class="col-md-3">
-        @using (Html.BeginForm("Search", "Home", FormMethod.Post))
-        {
-            <h2>Search by Term</h2>
+@using (Html.BeginForm("Search", "Home", FormMethod.Post))
+{
+    <h2>Search by Term</h2>
 
-            @Html.DropDownList("selectedSemester", new SelectList((List<Semester>) ViewData["SemesterList"], "Name", "Name"))
+    <div class="container">
 
-            <input type="submit" value="Submit">
-        }
+        <div class="row">
+        
+            <div class="col-md-12">
+           
+                @Html.DropDownList("selectedSemester", new SelectList((List<Semester>) ViewData["SemesterList"], "Name", "Name"))
+
+            </div>
+        
+        </div>
+
+        <div class="row">
+        
+            <div class="col-md-12">
+
+                <input type="submit" class="button" value="Submit">
+
+            </div>
+
+        </div>
+
     </div>
-</div>
+
+}

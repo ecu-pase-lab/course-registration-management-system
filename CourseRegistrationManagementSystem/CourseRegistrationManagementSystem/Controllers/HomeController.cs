@@ -226,14 +226,14 @@ namespace CourseRegistrationManagementSystem.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Project Information";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Project Contacts";
 
             return View();
         }
