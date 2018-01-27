@@ -37,3 +37,8 @@
 #menuBar {
     background-color: purple;
 }
+
+.searchLabel {
+    display: block;
+}
+

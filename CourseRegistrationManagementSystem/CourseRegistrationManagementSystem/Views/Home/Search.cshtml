@@ -9,179 +9,205 @@
 {
     <h2>Class Schedule Search</h2>
 
-    <div class="row">
+    <div class="container">
     
-        <div class="form-group col-md-4">
-
-            <label id="subjectLabel" for="selectedSubjects" class="control-label">Subject:</label>
-
-            @Html.ListBox("selectedSubjects", new MultiSelectList((List<Subject>) ViewData["SubjectList"], "ID", "Name"))
-
-        </div>
-
-        <div class="form-group col-md-4">
-
-            <label id="courseNumberLabel">Course Number:</label>
-
-            <input type="text" name="CourseNumber">
-
-        </div>
-
-        <div class="form-group col-md-4">
-
-            <label id="courseTitleLabel">Course Title:</label>
-
-            <input type="text" name="CourseTitle">
-
-        </div>
-
-        <div class="form-group col-md-4">
-
-            <label id="scheduleTypeLabel">Schedule Type:</label>
-
-            @Html.ListBox("selectedScheduleType", new MultiSelectList((List<ScheduleType>) ViewData["ScheduleTypeList"], "ID", "Name"))
-
-        </div>
-
-        <div class="form-group col-md-4">
-
-            <label id="instructionalMethodLabel">Instructional Method:</label>
-
-            @Html.ListBox("selectedInstructionalMethod", new MultiSelectList((List<InstructionalMethod>) ViewData["InstructionalMethodList"], "ID", "Name"))
-
-        </div>
-
-        <div class="form-group col-md-4">
-
-            <label id="CreditHourRangeLabel">Credit Hour Range:</label>
-
-            <label id="CreditHourRangeStartLabel">From:</label>
-        
-            <select id="creditHourRangeStart">
-                <option value="1hour">1</option>
-                <option value="2hour">2</option>
-                <option value="3hour">3</option>
-                <option value="4hour">4</option>
-                <option value="5hour">5</option>
-                <option value="6hour">6</option>
-                <option value="7hour">7</option>
-                <option value="8hour">8</option>
-                <option value="9hour">9</option>
-                <option value="10hour">10</option>
-            </select>
-
-            <label id="CreditHourRangeEndLabel">To:</label>
-        
-            <select id="creditHourRangeEnd">
-                <option value="1hour">1</option>
-                <option value="2hour">2</option>
-                <option value="3hour">3</option>
-                <option value="4hour">4</option>
-                <option value="5hour">5</option>
-                <option value="6hour">6</option>
-                <option value="7hour">7</option>
-                <option value="8hour">8</option>
-                <option value="9hour">9</option>
-                <option value="10hour">10</option>
-            </select>
-
-        </div>
-
-        <div class="form-group col-md-4">
-
-            <label id="campusLabel">Campus:</label>
-
-            @Html.ListBox("selectedCampus", new MultiSelectList((List<Campus>) ViewData["CampusList"], "ID", "Name"))
-
-        </div>
-
-        <div class="form-group col-md-4">
-
-            <label id="courseLevelLabel">Course Level:</label>
-
-            @Html.ListBox("selectedCourseLevels", new MultiSelectList((List<CourseLevel>) ViewData["CourseLevelList"], "ID", "Name"))
-        
-        </div>
-
-        <div class="form-group col-md-4">
-
-            <label id="termDurationLabel">Term Duration:</label>
-
-            @Html.ListBox("selectedTermDurations", new MultiSelectList((List<TermDuration>) ViewData["TermDurationList"], "ID", "Name"))
-        
-        </div>
-
-        <div class="form-group col-md-4">
+        <div class="row">
     
-            <label id="instructorLabel">Instructor:</label>
+            <div class="form-group col-md-4">
 
-            @Html.ListBox("selectedInstructors", new MultiSelectList((List<Instructor>) ViewData["InstructorList"], "ID", "Name"))
+                <label id="subjectLabel" for="selectedSubjects" class="searchLabel">Subject:</label>
 
-        </div>
+                @Html.ListBox("selectedSubjects", new MultiSelectList((List<Subject>) ViewData["SubjectList"],"ID","Name"))
 
-        <div class="form-group col-md-4">
+            </div>
 
-            <label id="sessionLabel">Session:</label>
+            <div class="form-group col-md-4">
 
-            @Html.ListBox("selectedSessions", new MultiSelectList((List<Session>) ViewData["SessionList"], "ID", "Name"))
+                <label id="courseLevelLabel" class="searchLabel">Course Level:</label>
+
+                @Html.ListBox("selectedCourseLevels", new MultiSelectList((List<CourseLevel>) ViewData["CourseLevelList"], "ID", "Name"))
+        
+            </div>
+
+            <div class="form-group col-md-4">
+
+                <label id="campusLabel" class="searchLabel">Campus:</label>
+
+                @Html.ListBox("selectedCampus", new MultiSelectList((List<Campus>) ViewData["CampusList"], "ID", "Name"))
+
+            </div>
         
         </div>
 
-        <div class="form-group col-md-4">
+        <div class="row">
 
-            <label id="courseAttributeLabel">Course Attribute:</label>
+            <div class="form-group col-md-4">
 
-            @Html.ListBox("selectedCourseAttributes", new MultiSelectList((List<CourseAttribute>) ViewData["CourseAttributeList"], "ID", "Name"))
-        
+                <label id="instructionalMethodLabel" class="searchLabel">Instructional Method:</label>
+
+                @Html.ListBox("selectedInstructionalMethod", new MultiSelectList((List<InstructionalMethod>) ViewData["InstructionalMethodList"], "ID", "Name"))
+
+            </div>
+
+            <div class="form-group col-md-4">
+
+                <label id="scheduleTypeLabel" class="searchLabel">Schedule Type:</label>
+
+                @Html.ListBox("selectedScheduleType", new MultiSelectList((List<ScheduleType>) ViewData["ScheduleTypeList"], "ID", "Name"))
+
+            </div>
+
+            <div class="form-group col-md-4">
+    
+                <label id="instructorLabel" class="searchLabel">Instructor:</label>
+
+                @Html.ListBox("selectedInstructors", new MultiSelectList((List<Instructor>) ViewData["InstructorList"], "ID", "Name"))
+
+            </div>
+
         </div>
 
-        <div class="form-group col-md-4">
-        
-            <label id="mondayLabel">Monday:</label>
-        
-            <input type="checkbox" name="monday" value="Monday">
+        <div class="row">
 
-            <label id="tuesdayLabel">Tuesday:</label>
-        
-            <input type="checkbox" name="tuesday" value="Tuesday">
+            <div class="form-group col-md-4">
 
-            <label id="wednesdayLabel">Wednesday:</label>
-        
-            <input type="checkbox" name="wednesday" value="Wednesday">
+                <label id="sessionLabel" class="searchLabel">Session:</label>
 
-            <label id="thursdayLabel">Thursday:</label>
+                @Html.ListBox("selectedSessions", new MultiSelectList((List<Session>) ViewData["SessionList"], "ID", "Name"))
         
-            <input type="checkbox" name="thursday" value="Thursday">
+            </div>
 
-            <label id="fridayLabel">Friday:</label>
-        
-            <input type="checkbox" name="friday" value="Friday">
+            <div class="form-group col-md-4">
 
-            <label id="saturdayLabel">Saturday:</label>
-        
-            <input type="checkbox" name="saturday" value="Saturday">
+                <label id="courseAttributeLabel" class="searchLabel">Course Attribute:</label>
 
-            <label id="sundayLabel">Sunday:</label>
+                @Html.ListBox("selectedCourseAttributes", new MultiSelectList((List<CourseAttribute>) ViewData["CourseAttributeList"], "ID", "Name"))
         
-            <input type="checkbox" name="sunday" value="Sunday">
+            </div>
+
+            <div class="form-group col-md-4">
+
+                <label id="termDurationLabel" class="searchLabel">Term Duration:</label>
+
+                @Html.ListBox("selectedTermDurations", new MultiSelectList((List<TermDuration>) ViewData["TermDurationList"], "ID", "Name"))
         
+            </div>
+
         </div>
 
-        <div class="form-group col-md-12">
-
-            <label id="startTimeLabel">Start Time:</label>
+        <div class="row">
         
-            <input id='startTimeTimepicker' type='text' name='startTimeTimepicker'/>
+            <div class="form-group col-md-4">
 
-            <label id="endTimeLabel">End Time:</label>
+                <label id="courseNumberLabel" class="searchLabel">Course Number:</label>
+
+                <input type="text" name="CourseNumber">
+
+            </div>
+
+            <div class="form-group col-md-4">
+
+                <label id="courseTitleLabel" class="searchLabel">Course Title:</label>
+
+                <input type="text" name="CourseTitle">
+
+            </div>
+
+            <div class="form-group col-md-4">
+
+                <label id="CreditHourRangeLabel" class="searchLabel">Credit Hour Range:</label>
+
+                <label id="CreditHourRangeStartLabel">From:</label>
         
-            <input id='endTimeTimepicker' type='text' name='endTimeTimepicker'/>
+                <select id="creditHourRangeStart">
+                    <option value="1hour">1</option>
+                    <option value="2hour">2</option>
+                    <option value="3hour">3</option>
+                    <option value="4hour">4</option>
+                    <option value="5hour">5</option>
+                    <option value="6hour">6</option>
+                    <option value="7hour">7</option>
+                    <option value="8hour">8</option>
+                    <option value="9hour">9</option>
+                    <option value="10hour">10</option>
+                </select>
 
+                <label id="CreditHourRangeEndLabel">To:</label>
+        
+                <select id="creditHourRangeEnd">
+                    <option value="1hour">1</option>
+                    <option value="2hour">2</option>
+                    <option value="3hour">3</option>
+                    <option value="4hour">4</option>
+                    <option value="5hour">5</option>
+                    <option value="6hour">6</option>
+                    <option value="7hour">7</option>
+                    <option value="8hour">8</option>
+                    <option value="9hour">9</option>
+                    <option value="10hour">10</option>
+                </select>
+
+            </div>
+        
         </div>
        
+        <div class="row">
+
+            <div class="form-group col-md-4">
+
+                <label id="startTimeLabel" class="searchLabel">Start Time:</label>
+        
+                <input id='startTimeTimepicker' type='text' name='startTimeTimepicker'/>
+
+            </div>
+
+            <div class="form-group col-md-4">
+
+                <label id="endTimeLabel" class="searchLabel">End Time:</label>
+        
+                <input id='endTimeTimepicker' type='text' name='endTimeTimepicker'/>
+
+            </div>
+
+            <div class="form-group col-md-4">
+        
+                <label id="mondayLabel">Monday:</label>
+            
+                <input type="checkbox" name="monday" value="Monday">
+
+                <label id="tuesdayLabel">Tuesday:</label>
+            
+                <input type="checkbox" name="tuesday" value="Tuesday">
+
+                <label id="wednesdayLabel">Wednesday:</label>
+            
+                <input type="checkbox" name="wednesday" value="Wednesday">
+
+                <label id="thursdayLabel">Thursday:</label>
+            
+                <input type="checkbox" name="thursday" value="Thursday">
+
+                <label id="fridayLabel">Friday:</label>
+            
+                <input type="checkbox" name="friday" value="Friday">
+
+                <label id="saturdayLabel">Saturday:</label>
+            
+                <input type="checkbox" name="saturday" value="Saturday">
+
+                <label id="sundayLabel">Sunday:</label>
+            
+                <input type="checkbox" name="sunday" value="Sunday">
+        
+            </div>
+
+        </div>
+
     </div>
 
     <br>
     
     <input type="submit" value="Class Search">
+
+ 
  }
