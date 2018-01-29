@@ -12,6 +12,11 @@
     padding-right: 15px
 }
 
+#ecuLogo {
+    width: 45%;
+    height: 45%;
+}
+
 /* Carousel */
 .carousel-caption p {
     font-size: 20px;
@@ -34,10 +39,15 @@
     .carousel-caption {
         display: none
     }
+
+    #ecuLogo {
+        width: 20%;
+        height: 20%;
+    }
 }
 
 #menuBar {
-    background-color: purple;
+    background-color: #592a8a;
 }
 
 .searchLabel {
@@ -45,7 +55,7 @@
 }
 
 .button {
-    background-color: purple;
+    background-color: #592a8a;
     color: white;
     text-align: center;
     border: none;
