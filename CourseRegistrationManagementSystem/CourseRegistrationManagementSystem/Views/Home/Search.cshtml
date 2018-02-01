@@ -51,10 +51,10 @@
 
             <div class="form-group col-md-4">
 
-                <label id="scheduleTypeLabel" class="searchLabel">Schedule Type:</label>
+                <label id="sessionLabel" class="searchLabel">Session:</label>
 
-                @Html.ListBox("selectedScheduleType", new MultiSelectList((List<ScheduleType>) ViewData["ScheduleTypeList"], "ID", "Name"))
-
+                @Html.ListBox("selectedSessions", new MultiSelectList((List<Session>) ViewData["SessionList"], "ID", "Name"))
+        
             </div>
 
             <div class="form-group col-md-4">
@@ -71,10 +71,10 @@
 
             <div class="form-group col-md-4">
 
-                <label id="sessionLabel" class="searchLabel">Session:</label>
+                <label id="scheduleTypeLabel" class="searchLabel">Schedule Type:</label>
 
-                @Html.ListBox("selectedSessions", new MultiSelectList((List<Session>) ViewData["SessionList"], "ID", "Name"))
-        
+                @Html.ListBox("selectedScheduleType", new MultiSelectList((List<ScheduleType>) ViewData["ScheduleTypeList"], "ID", "Name"))
+
             </div>
 
             <div class="form-group col-md-4">

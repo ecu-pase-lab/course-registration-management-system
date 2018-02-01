@@ -6,4 +6,8 @@ $(document).ready(function($){
 
     $('#endTimeTimepicker').timepicki(); 
 
+    $("#advancedCourseSearchButton").click(function(){
+        $("#advancedCourseSearchGroup").toggle();
+    });
+
 });
