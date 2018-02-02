@@ -57,6 +57,34 @@ namespace CourseRegistrationManagementSystem.Controllers
         [HttpPost]
         public IActionResult CourseResults()
         {
+            Course course1 = new Course
+            {
+                CourseName = "Software Construction",
+                CourseRegistarCode = "32329",
+                CourseSubjectCode = "SENG 6245",
+                SectionNumber = "001",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Mark Hills (P)",
+                ClassroomName = "Brewster Building 0B204",
+                CampusName = "Main Campus",
+                CourseLevels = new List<string>{
+                    "Graduate",
+                    "Professional (Doctorate/CAS)"
+                }
+            };
+            List<Course> courses = new List<Course>
+            {
+                course1
+            };
+
+            ViewBag.CourseList = courses;
+
             return View();
         }
 

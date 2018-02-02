@@ -12,12 +12,22 @@ namespace CourseRegistrationManagementSystem.Models
 
         public int ID { get; set; }
         public string CourseName { get; set; }
-        public string CourseCode { get; set; }
+        public string CourseSubjectCode { get; set; }
+        public string CourseRegistarCode { get; set; }
         public string SectionNumber { get; set; }
+        public DateTime RegistrationStartDate { get; set; }
+        public DateTime RegistrationEndDate { get; set; }
+        public DateTime ClassStartDate { get; set; }
+        public DateTime ClassEndDate { get; set; }
+        public List<string> CourseLevels { get; set; } 
+        public string ClassInstructionalMethod { get; set; }
+        public double CreditHours { get; set; }
+        public string CourseTerm { get; set; }
         public Dictionary<DayOfWeek, TimeSpan> ClassTimes { get; set; }
-        public string BuildingName { get; set; }
+        public string CampusName { get; set; }
+        public string ClassroomName { get; set; }
         public string InstructorName { get; set; }
         public string TextbookName { get; set; }
-        public string TextbookPrice { get; set; }
+        public double TextbookPrice { get; set; }
     }
 }

@@ -7,41 +7,44 @@
 
 <div class="container">
 
-<h2>Courses Found</h2>
+    <h2>Courses Found</h2>
 
-<h3 class="h3Course">Software Construction - 32329 - SENG 6245 - 001</h3>
-<br>
-<b>Term:</b> Spring 2018
-<br>
-<b>Registration Date Range:</b> Nov 03, 2017 to Jan 12, 2018
-<br>
-<b>Course Meeting Date Range:</b> Jan 08, 2018 - May 03, 2018
-<br>
-<b>Course Levels:</b> Graduate, Professional (Doctorate/CAS)
-<br>
-<b>Instructional Method:</b> Face to Face
-<br>
-<b>Credit Hours:</b> 3.000 Credits 
-<br>
-<a href="">View Catalog Entry</a>
+    @foreach (var course in ViewBag.CourseList)
+    {
+        <h3 class="h3Course">@course.CourseName - @course.CourseRegistarCode - @course.CourseSubjectCode - @course.SectionNumber</h3>
+        <br>
+        <b>Term:</b><span>@course.CourseTerm</span>
+        <br>
+        <b>Registration Date Range:</b><span>@course.RegistrationStartDate to @course.RegistrationEndDate</span>
+        <br>
+        <b>Course Meeting Date Range:</b><span>@course.ClassStartDate - @course.ClassEndDate</span>
+        <br>
+        <b>Course Levels:</b>
+        <br>
+        <b>Instructional Method:</b><span>@course.ClassInstructionalMethod</span>
+        <br>
+        <b>Credit Hours:</b><span>@course.CreditHours</span>
+        <br>
+        <a href="">View Catalog Entry</a> 
 
-<div class="table-responsive">
-<table class="table">
-    <tr>
-        <th>Time</th>
-        <th>Meeting Days</th>
-        <th>Campus</th>
-        <th>Classroom Location</th>
-        <th>Instructor</th>
-    </tr>
-    <tr>
-        <td>2:00 pm - 3:15 pm</td>
-        <td>MW</td>
-        <td>Main Campus</td>
-        <td>Brewster Building 0B204</td>
-        <td>Mark Hills (P)</td>
-    </tr>
-</table>
-</div>
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>Time</th>
+                    <th>Meeting Days</th>
+                    <th>Campus</th>
+                    <th>Classroom Location</th>
+                    <th>Instructor</th>
+                </tr>
+                <tr>
+                    <td>2:00 pm - 3:15 pm</td>
+                    <td>MW</td>
+                    <td>@course.CampusName</td>
+                    <td>@course.ClassroomName</td>
+                    <td>@course.InstructorName</td>
+                </tr>
+            </table>
+        </div>
+    }
 
 </div>

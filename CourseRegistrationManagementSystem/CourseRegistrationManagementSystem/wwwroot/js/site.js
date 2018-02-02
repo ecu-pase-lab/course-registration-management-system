@@ -2,6 +2,8 @@
 
 $(document).ready(function($){
 
+    $("#advancedCourseSearchGroup").hide();
+
     $('#startTimeTimepicker').timepicki(); 
 
     $('#endTimeTimepicker').timepicki(); 
