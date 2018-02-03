@@ -41,14 +41,6 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - East Carolina University</p>
-        </footer>
-    </div>
-
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -72,5 +64,13 @@
     <script type='text/javascript' src='~/js/timepicki.js'></script>
         
     @RenderSection("Scripts", required: false)
+        
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2018 - East Carolina University</p>
+        </footer>
+    </div>
 </body>
 </html>

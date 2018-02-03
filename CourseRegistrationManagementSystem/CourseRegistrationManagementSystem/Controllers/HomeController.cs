@@ -91,6 +91,12 @@ namespace CourseRegistrationManagementSystem.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult CourseInformation()
+        {
+            return View();
+        }
+
         private List<Semester> PopulateSemesters()
         {
             Semester semester1 = new Semester(1, "Spring 2018 (View Only)");

@@ -11,7 +11,7 @@
 
     @foreach (var course in ViewBag.CourseList)
     {
-        <h3 class="h3Course">@course.CourseName - @course.CourseRegistarCode - @course.CourseSubjectCode - @course.SectionNumber</h3>
+        <a href=""><h3 class="h3Course">@course.CourseName - @course.CourseRegistarCode - @course.CourseSubjectCode - @course.SectionNumber</h3></a>
         <br>
         <b>Term:&nbsp;</b><span>@course.CourseTerm</span>
         <br>
@@ -55,6 +55,47 @@
                     <td>@course.InstructorName</td>
                 </tr>
             </table>
+        </div>
+
+        <input type="button" value="View Availability" id="classInformationButton">
+
+        <div id="classInformationGroup">
+
+        <script>
+            $(document).ready(function($){
+                $("#classInformationGroup").hide();
+            
+                $("#classInformationButton").click(function(){
+                    $("#classInformationGroup").toggle();
+                });
+            });
+        </script>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <th>Availability</th>
+                        <th>Capacity</th>
+                        <th>Actual</th>
+                        <th>Remaining</th>
+                    </tr>
+                    <tr>
+                        <td>Seats</td>
+                        <td>35</td>
+                        <td>10</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Waitlist Seats</td>
+                        <td>35</td>
+                        <td>2</td>
+                        <td>33</td>
+                    </tr>
+                </table>
+            </div>
+
+            <b>Prerequisites:&nbsp;</b>
+
         </div>
     }
 
