@@ -23,7 +23,8 @@ namespace CourseRegistrationManagementSystem.Models
         public string ClassInstructionalMethod { get; set; }
         public double CreditHours { get; set; }
         public string CourseTerm { get; set; }
-        public Dictionary<DayOfWeek, TimeSpan> ClassTimes { get; set; }
+        public string ClassTimes { get; set; }
+        public string ClassDays { get; set; }
         public string CampusName { get; set; }
         public string ClassroomName { get; set; }
         public string InstructorName { get; set; }

@@ -13,11 +13,11 @@
     {
         <h3 class="h3Course">@course.CourseName - @course.CourseRegistarCode - @course.CourseSubjectCode - @course.SectionNumber</h3>
         <br>
-        <b>Term:</b><span>@course.CourseTerm</span>
+        <b>Term:&nbsp;</b><span>@course.CourseTerm</span>
         <br>
-        <b>Registration Date Range:</b><span>@course.RegistrationStartDate to @course.RegistrationEndDate</span>
+        <b>Registration Date Range:&nbsp;</b><span>@course.RegistrationStartDate.ToString("MMM dd, yyyy") to @course.RegistrationEndDate.ToString("MMM dd, yyyy")</span>
         <br>
-        <b>Course Meeting Date Range:</b><span>@course.ClassStartDate - @course.ClassEndDate</span>
+        <b>Course Meeting Date Range:&nbsp;</b><span>@course.ClassStartDate.ToString("MMM dd, yyyy") to @course.ClassEndDate.ToString("MMM dd, yyyy")</span>
         <br>
         <b>Course Levels:</b>
         <span>
@@ -32,9 +32,9 @@
             }
         </span>
         <br>
-        <b>Instructional Method:</b><span>@course.ClassInstructionalMethod</span>
+        <b>Instructional Method:&nbsp;</b><span>@course.ClassInstructionalMethod</span>
         <br>
-        <b>Credit Hours:</b><span>@course.CreditHours</span>
+        <b>Credit Hours:&nbsp;</b><span>@course.CreditHours</span>
         <br>
         <a href="">View Catalog Entry</a> 
 
@@ -48,8 +48,8 @@
                     <th>Instructor</th>
                 </tr>
                 <tr>
-                    <td>2:00 pm - 3:15 pm</td>
-                    <td>MW</td>
+                    <td>@course.ClassTimes</td>
+                    <td>@course.ClassDays</td>
                     <td>@course.CampusName</td>
                     <td>@course.ClassroomName</td>
                     <td>@course.InstructorName</td>

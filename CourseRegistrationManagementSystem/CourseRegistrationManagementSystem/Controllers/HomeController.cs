@@ -73,6 +73,8 @@ namespace CourseRegistrationManagementSystem.Controllers
                 InstructorName = "Mark Hills (P)",
                 ClassroomName = "Brewster Building 0B204",
                 CampusName = "Main Campus",
+                ClassDays = "MW",
+                ClassTimes = "2:00 pm - 3:15 pm",
                 CourseLevels = new List<string>{
                     "Graduate",
                     "Professional (Doctorate/CAS)"
