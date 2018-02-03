@@ -20,6 +20,17 @@
         <b>Course Meeting Date Range:</b><span>@course.ClassStartDate - @course.ClassEndDate</span>
         <br>
         <b>Course Levels:</b>
+        <span>
+            @for(int i = 0; i < @course.CourseLevels.Count; i++)
+            {
+                <span>@course.CourseLevels[i]</span>
+        
+                if (i + 1 < @course.CourseLevels.Count)
+                {
+                    <span>,</span>
+                }
+            }
+        </span>
         <br>
         <b>Instructional Method:</b><span>@course.ClassInstructionalMethod</span>
         <br>

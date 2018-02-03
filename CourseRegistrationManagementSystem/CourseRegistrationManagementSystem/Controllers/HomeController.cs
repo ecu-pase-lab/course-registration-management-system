@@ -78,6 +78,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                     "Professional (Doctorate/CAS)"
                 }
             };
+
             List<Course> courses = new List<Course>
             {
                 course1
