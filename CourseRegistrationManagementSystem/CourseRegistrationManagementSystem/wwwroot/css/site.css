@@ -68,3 +68,12 @@
     background-color: lavender;
     padding: 10px;
 }
+
+.advancedButton {
+    background-color: #D6A81E;
+    color: white;
+    text-align: center;
+    border: none;
+    text-decoration: none;
+    border-radius: 12px;
+}

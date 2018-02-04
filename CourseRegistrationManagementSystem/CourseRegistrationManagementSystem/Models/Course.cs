@@ -28,6 +28,8 @@ namespace CourseRegistrationManagementSystem.Models
         public string CampusName { get; set; }
         public string ClassroomName { get; set; }
         public string InstructorName { get; set; }
+        public Seat CourseSeat { get; set; }
+        public string Prerequisites { get; set; }
         public string TextbookName { get; set; }
         public double TextbookPrice { get; set; }
     }

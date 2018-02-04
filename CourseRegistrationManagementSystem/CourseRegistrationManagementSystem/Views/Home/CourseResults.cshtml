@@ -11,7 +11,7 @@
 
     @foreach (var course in ViewBag.CourseList)
     {
-        <a href=""><h3 class="h3Course">@course.CourseName - @course.CourseRegistarCode - @course.CourseSubjectCode - @course.SectionNumber</h3></a>
+        <h3 class="h3Course">@course.CourseName - @course.CourseRegistarCode - @course.CourseSubjectCode - @course.SectionNumber</h3>
         <br>
         <b>Term:&nbsp;</b><span>@course.CourseTerm</span>
         <br>
@@ -57,16 +57,16 @@
             </table>
         </div>
 
-        <input type="button" value="View Availability" id="classInformationButton">
+        <input type="button" value="View Availability" class="advancedButton" id="classInformationButton_@course.ID">
 
-        <div id="classInformationGroup">
+        <div id="classInformationGroup_@course.ID">
 
         <script>
             $(document).ready(function($){
-                $("#classInformationGroup").hide();
+                $("#classInformationGroup_@course.ID").hide();
             
-                $("#classInformationButton").click(function(){
-                    $("#classInformationGroup").toggle();
+                $("#classInformationButton_@course.ID").click(function(){
+                    $("#classInformationGroup_@course.ID").toggle();
                 });
             });
         </script>
@@ -81,20 +81,20 @@
                     </tr>
                     <tr>
                         <td>Seats</td>
-                        <td>35</td>
-                        <td>10</td>
-                        <td>25</td>
+                        <td>@course.CourseSeat.Capacity</td>
+                        <td>@course.CourseSeat.Actual</td>
+                        <td>@course.CourseSeat.Remaining</td>
                     </tr>
                     <tr>
                         <td>Waitlist Seats</td>
-                        <td>35</td>
-                        <td>2</td>
-                        <td>33</td>
+                        <td>@course.CourseSeat.WaitlistCapacity</td>
+                        <td>@course.CourseSeat.WaitlistActual</td>
+                        <td>@course.CourseSeat.WaitlistRemaining</td>
                     </tr>
                 </table>
             </div>
 
-            <b>Prerequisites:&nbsp;</b>
+            <b>Prerequisites:&nbsp;</b><span>@course.Prerequisites</span>
 
         </div>
     }

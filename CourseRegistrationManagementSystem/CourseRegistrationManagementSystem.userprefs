@@ -1,13 +1,9 @@
 ﻿<Properties StartupConfiguration="{97F2E89D-C079-4BBE-B0D5-404EDD0E334D}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem/Views/Home/CourseResults.cshtml">
     <Files>
-      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="97" Column="27" />
-      <File FileName="CourseRegistrationManagementSystem/Models/Course.cs" Line="27" Column="32" />
-      <File FileName="CourseRegistrationManagementSystem/Views/Home/CourseResults.cshtml" Line="75" Column="38" />
-      <File FileName="CourseRegistrationManagementSystem/Views/Home/Search.cshtml" Line="72" Column="45" />
-      <File FileName="CourseRegistrationManagementSystem/wwwroot/js/site.js" Line="5" Column="44" />
-      <File FileName="CourseRegistrationManagementSystem/Views/Home/Contact.cshtml" Line="1" Column="1" />
-      <File FileName="CourseRegistrationManagementSystem/Views/Shared/_Layout.cshtml" Line="74" Column="11" />
+      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="98" Column="31" />
+      <File FileName="CourseRegistrationManagementSystem/Views/Home/CourseResults.cshtml" Line="14" Column="134" />
+      <File FileName="CourseRegistrationManagementSystem/Views/Home/Search.cshtml" Line="11" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />
