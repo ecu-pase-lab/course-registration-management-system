@@ -13,6 +13,8 @@
     {
         <h3 class="h3Course">@course.CourseName - @course.CourseRegistarCode - @course.CourseSubjectCode - @course.SectionNumber</h3>
         <br>
+        <b>Add to Schedule:</b><input type="checkbox" id="classScheduleCheckbox_@course.ID">
+        <br>
         <b>Term:&nbsp;</b><span>@course.CourseTerm</span>
         <br>
         <b>Registration Date Range:&nbsp;</b><span>@course.RegistrationStartDate.ToString("MMM dd, yyyy") to @course.RegistrationEndDate.ToString("MMM dd, yyyy")</span>

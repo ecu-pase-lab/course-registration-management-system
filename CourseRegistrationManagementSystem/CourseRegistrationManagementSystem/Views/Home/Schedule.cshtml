@@ -1,0 +1,108 @@
+﻿@using CourseRegistrationManagementSystem.Models;
+@using System.Collections.Generic
+
+@{
+    ViewData["Title"] = "Daily Course Schedule";
+}
+
+<div class="container">
+
+    <h2>Monday</h2>
+
+    @foreach (var course in ViewBag.MondayCourses)
+    {
+        <p>
+        <span>@course.CourseSubjectCode - @course.CourseName</span>
+        <br>
+        <span>@course.ClassTimes</span>
+        <br>
+        <span>@course.ClassroomName</span>
+        <br>
+        </p>
+    }
+
+    <h2>Tuesday</h2>
+    
+    @foreach (var course in ViewBag.TuesdayCourses)
+    {
+        <p>
+        <span>@course.CourseSubjectCode - @course.CourseName</span>
+        <br>
+        <span>@course.ClassTimes</span>
+        <br>
+        <span>@course.ClassroomName</span>
+        <br>
+        </p>
+    }
+
+    <h2>Wednesday</h2>
+    
+    @foreach (var course in ViewBag.WednesdayCourses)
+    {
+        <p>
+        <span>@course.CourseSubjectCode - @course.CourseName</span>
+        <br>
+        <span>@course.ClassTimes</span>
+        <br>
+        <span>@course.ClassroomName</span>
+        <br>
+        </p>
+    }
+
+    <h2>Thursday</h2>
+    
+    @foreach (var course in ViewBag.ThursdayCourses)
+    {
+        <p>
+        <span>@course.CourseSubjectCode - @course.CourseName</span>
+        <br>
+        <span>@course.ClassTimes</span>
+        <br>
+        <span>@course.ClassroomName</span>
+        <br>
+        </p>
+    }
+
+    <h2>Friday</h2>
+    
+    @foreach (var course in ViewBag.FridayCourses)
+    {
+        <p>
+        <span>@course.CourseSubjectCode - @course.CourseName</span>
+        <br>
+        <span>@course.ClassTimes</span>
+        <br>
+        <span>@course.ClassroomName</span>
+        <br>
+        </p>
+    }
+
+    <h2>Saturday</h2>
+    
+    @foreach (var course in ViewBag.SaturdayCourses)
+    {
+        <p>
+        <span>@course.CourseSubjectCode - @course.CourseName</span>
+        <br>
+        <span>@course.ClassTimes</span>
+        <br>
+        <span>@course.ClassroomName</span>
+        <br>
+        </p>
+    }
+
+    <h2>Sunday</h2>
+    
+    @foreach (var course in ViewBag.SundayCourses)
+    {
+        <p>
+        <span>@course.CourseSubjectCode - @course.CourseName</span>
+        <br>
+        <span>@course.ClassTimes</span>
+        <br>
+        <span>@course.ClassroomName</span>
+        <br>
+        </p>
+    }
+
+</div>

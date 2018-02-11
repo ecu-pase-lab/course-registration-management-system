@@ -57,85 +57,7 @@ namespace CourseRegistrationManagementSystem.Controllers
         [HttpPost]
         public IActionResult CourseResults()
         {
-            Seat seat1 = new Seat();
-            seat1.Capacity = 30;
-            seat1.Actual = 8;
-            seat1.Remaining = seat1.Capacity - seat1.Actual;
-            seat1.WaitlistCapacity = 10;
-            seat1.WaitlistActual = 0;
-            seat1.WaitlistRemaining = seat1.WaitlistCapacity - seat1.WaitlistActual;
-
-            Course course1 = new Course
-            {
-                ID = 1,
-                CourseName = "Software Construction",
-                CourseRegistarCode = "32329",
-                CourseSubjectCode = "SENG 6245",
-                SectionNumber = "001",
-                CourseTerm = "Spring 2018",
-                RegistrationStartDate = new DateTime(2017, 11, 3),
-                RegistrationEndDate = new DateTime(2018, 1, 12),
-                ClassStartDate = new DateTime(2018, 1, 8),
-                ClassEndDate = new DateTime(2018, 5, 3),
-                ClassInstructionalMethod = "Face to Face",
-                CreditHours = 3,
-                InstructorName = "Mark Hills (P)",
-                ClassroomName = "Brewster Building 0B204",
-                CampusName = "Main Campus",
-                ClassDays = "MW",
-                ClassTimes = "2:00 pm - 3:15 pm",
-                CourseSeat = seat1,
-                Prerequisites = "Graduate level SENG 6230 Minimum Grade of C or Graduate level CSCI 6230 Minimum Grade of C",
-                CourseLevels = new List<string>{
-                    "Graduate",
-                    "Professional (Doctorate/CAS)"
-                }
-
-            };
-
-            Seat seat2 = new Seat();
-            seat2.Capacity = 30;
-            seat2.Actual = 11;
-            seat2.Remaining = seat2.Capacity - seat2.Actual;
-            seat2.WaitlistCapacity = 10;
-            seat2.WaitlistActual = 0;
-            seat2.WaitlistRemaining = seat2.WaitlistCapacity - seat2.WaitlistActual;
-
-            Course course2 = new Course
-            {
-                ID = 2,
-                CourseName = "Software Requirements Engineering",
-                CourseRegistarCode = "32332",
-                CourseSubjectCode = "SENG 6255",
-                SectionNumber = "601",
-                CourseTerm = "Spring 2018",
-                RegistrationStartDate = new DateTime(2017, 11, 3),
-                RegistrationEndDate = new DateTime(2018, 1, 12),
-                ClassStartDate = new DateTime(2018, 1, 8),
-                ClassEndDate = new DateTime(2018, 5, 3),
-                ClassInstructionalMethod = "Internet or World Wide Web",
-                CreditHours = 3,
-                InstructorName = "Sergiy Vilkomir (P)",
-                ClassroomName = "N/A",
-                CampusName = "De/Internet Campus",
-                ClassDays = "MW",
-                ClassTimes = "12:30 pm - 1:45 pm",
-                CourseSeat = seat2,
-                Prerequisites = "",
-                CourseLevels = new List<string>{
-                    "Graduate",
-                    "Professional (Doctorate/CAS)"
-                }
-
-            };
-
-            List<Course> courses = new List<Course>
-            {
-                course1,
-                course2
-            };
-
-            ViewBag.CourseList = courses;
+            ViewBag.CourseList = PopulateCourses();
 
             return View();
         }
@@ -310,6 +232,89 @@ namespace CourseRegistrationManagementSystem.Controllers
             return courseAttributeList;
         }
 
+        private List<Course> PopulateCourses()
+        {
+            Seat seat1 = new Seat();
+            seat1.Capacity = 30;
+            seat1.Actual = 8;
+            seat1.Remaining = seat1.Capacity - seat1.Actual;
+            seat1.WaitlistCapacity = 10;
+            seat1.WaitlistActual = 0;
+            seat1.WaitlistRemaining = seat1.WaitlistCapacity - seat1.WaitlistActual;
+
+            Course course1 = new Course
+            {
+                ID = 1,
+                CourseName = "Software Construction",
+                CourseRegistarCode = "32329",
+                CourseSubjectCode = "SENG 6245",
+                SectionNumber = "001",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Mark Hills (P)",
+                ClassroomName = "Brewster Building 0B204",
+                CampusName = "Main Campus",
+                ClassDays = "Monday,Wednesday",
+                ClassTimes = "2:00 pm - 3:15 pm",
+                CourseSeat = seat1,
+                Prerequisites = "Graduate level SENG 6230 Minimum Grade of C or Graduate level CSCI 6230 Minimum Grade of C",
+                CourseLevels = new List<string>{
+                    "Graduate",
+                    "Professional (Doctorate/CAS)"
+                }
+
+            };
+
+            Seat seat2 = new Seat();
+            seat2.Capacity = 30;
+            seat2.Actual = 11;
+            seat2.Remaining = seat2.Capacity - seat2.Actual;
+            seat2.WaitlistCapacity = 10;
+            seat2.WaitlistActual = 0;
+            seat2.WaitlistRemaining = seat2.WaitlistCapacity - seat2.WaitlistActual;
+
+            Course course2 = new Course
+            {
+                ID = 2,
+                CourseName = "Software Requirements Engineering",
+                CourseRegistarCode = "32332",
+                CourseSubjectCode = "SENG 6255",
+                SectionNumber = "601",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Internet or World Wide Web",
+                CreditHours = 3,
+                InstructorName = "Sergiy Vilkomir (P)",
+                ClassroomName = "N/A",
+                CampusName = "De/Internet Campus",
+                ClassDays = "Monday,Wednesday",
+                ClassTimes = "12:30 pm - 1:45 pm",
+                CourseSeat = seat2,
+                Prerequisites = "",
+                CourseLevels = new List<string>{
+                    "Graduate",
+                    "Professional (Doctorate/CAS)"
+                }
+
+            };
+
+            List<Course> courses = new List<Course>
+            {
+                course1,
+                course2
+            };
+
+            return courses;
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Project Information";
@@ -320,6 +325,68 @@ namespace CourseRegistrationManagementSystem.Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Project Contacts";
+
+            return View();
+        }
+
+        public IActionResult Schedule()
+        {
+            List<Course> allCourses = PopulateCourses();
+
+            List<Course> mondayCourses = new List<Course>();
+            List<Course> tuesdayCourses = new List<Course>();
+            List<Course> wednesdayCourses = new List<Course>();
+            List<Course> thursdayCourses = new List<Course>();
+            List<Course> fridayCourses = new List<Course>();
+            List<Course> saturdayCourses = new List<Course>();
+            List<Course> sundayCourses = new List<Course>();
+
+            foreach (Course course in allCourses) 
+            {
+                string classDays = course.ClassDays;
+                List<string> classDaysList = classDays.Split(',').ToList<string>();
+
+                foreach (string day in classDaysList) 
+                {
+                    if ("Monday".Equals(day))
+                    {
+                        mondayCourses.Add(course);
+                    }
+                    if ("Tuesday".Equals(day))
+                    {
+                        tuesdayCourses.Add(course);
+                    }
+                    if ("Wednesday".Equals(day))
+                    {
+                        wednesdayCourses.Add(course);
+                    }
+                    if ("Thursday".Equals(day))
+                    {
+                        thursdayCourses.Add(course);
+                    }
+                    if ("Friday".Equals(day))
+                    {
+                        fridayCourses.Add(course);
+                    }
+                    if ("Saturday".Equals(day))
+                    {
+                        saturdayCourses.Add(course);
+                    }
+                    if ("Sunday".Equals(day))
+                    {
+                        sundayCourses.Add(course);
+                    }
+                }
+
+            }
+
+            ViewBag.MondayCourses = mondayCourses;
+            ViewBag.TuesdayCourses = tuesdayCourses;
+            ViewBag.WednesdayCourses = wednesdayCourses;
+            ViewBag.ThursdayCourses = thursdayCourses;
+            ViewBag.FridayCourses = fridayCourses;
+            ViewBag.SaturdayCourses = saturdayCourses;
+            ViewBag.SundayCourses = sundayCourses;
 
             return View();
         }
