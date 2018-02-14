@@ -263,6 +263,8 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassTimes = "2:00 pm - 3:15 pm",
                 CourseSeat = seat1,
                 Prerequisites = "Graduate level SENG 6230 Minimum Grade of C or Graduate level CSCI 6230 Minimum Grade of C",
+                TextbookName = "Software Design",
+                TextbookPrice = 80.00,
                 CourseLevels = new List<string>{
                     "Graduate",
                     "Professional (Doctorate/CAS)"
@@ -299,6 +301,8 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassTimes = "12:30 pm - 1:45 pm",
                 CourseSeat = seat2,
                 Prerequisites = "",
+                TextbookName = "Software Requirements",
+                TextbookPrice = 120.00,
                 CourseLevels = new List<string>{
                     "Graduate",
                     "Professional (Doctorate/CAS)"

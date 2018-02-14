@@ -77,3 +77,16 @@
     text-decoration: none;
     border-radius: 12px;
 }
+
+#scheduleDiv {
+    text-align: center;
+}
+
+#printScheduleButton {
+    background-color: #D6A81E;
+    color: white;
+    text-align: center;
+    border: none;
+    text-decoration: none;
+    border-radius: 12px;    margin-top: 20px;
+}

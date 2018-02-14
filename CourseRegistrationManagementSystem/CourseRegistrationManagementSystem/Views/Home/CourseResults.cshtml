@@ -12,8 +12,7 @@
     @foreach (var course in ViewBag.CourseList)
     {
         <h3 class="h3Course">@course.CourseName - @course.CourseRegistarCode - @course.CourseSubjectCode - @course.SectionNumber</h3>
-        <br>
-        <b>Add to Schedule:</b><input type="checkbox" id="classScheduleCheckbox_@course.ID">
+        <h4>Add to Schedule<input type="checkbox" id="classScheduleCheckbox_@course.ID" style="margin-left: 5px;"></h4>
         <br>
         <b>Term:&nbsp;</b><span>@course.CourseTerm</span>
         <br>
@@ -70,6 +69,7 @@
                 $("#classInformationButton_@course.ID").click(function(){
                     $("#classInformationGroup_@course.ID").toggle();
                 });
+
             });
         </script>
 
@@ -97,6 +97,8 @@
             </div>
 
             <b>Prerequisites:&nbsp;</b><span>@course.Prerequisites</span>
+            <br>
+            <b>Textbook:&nbsp;</b><span>@course.TextbookName - $@course.TextbookPrice</span>
 
         </div>
     }
