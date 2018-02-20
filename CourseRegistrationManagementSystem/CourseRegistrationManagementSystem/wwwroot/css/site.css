@@ -41,6 +41,19 @@
     }
 
     #ecuLogo {
+        width: 15%;
+        height: 15%
+    }
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 600px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none
+    }
+
+    #ecuLogo {
         width: 20%;
         height: 20%;
     }
