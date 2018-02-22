@@ -15,7 +15,7 @@
         
             <div class="col-md-12">
            
-                @Html.DropDownList("selectedSemester", new SelectList((List<Semester>) ViewData["SemesterList"], "Name", "Name"))
+                @Html.DropDownList("selectedSemester", new SelectList(ViewBag.Semesters, "Key", "Value"))
 
             </div>
         

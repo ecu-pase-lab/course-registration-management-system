@@ -9,7 +9,7 @@
 
     <h2>Courses Found</h2>
 
-    @foreach (var course in ViewBag.CourseList)
+    @foreach (var course in ViewBag.Courses)
     {
         <h3 class="h3Course">@course.CourseName - @course.CourseRegistarCode - @course.CourseSubjectCode - @course.SectionNumber</h3>
         <h4>Add to Schedule<input type="checkbox" id="classScheduleCheckbox_@course.ID" style="margin-left: 5px;"></h4>
