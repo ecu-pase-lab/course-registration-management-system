@@ -15,6 +15,7 @@ namespace CourseRegistrationManagementSystem.Models
         public string CourseSubjectCode { get; set; }
         public string CourseRegistarCode { get; set; }
         public string SectionNumber { get; set; }
+        public string Subject { get; set; }
         public DateTime RegistrationStartDate { get; set; }
         public DateTime RegistrationEndDate { get; set; }
         public DateTime ClassStartDate { get; set; }
