@@ -23,14 +23,15 @@ namespace CourseRegistrationManagementSystem.Models
         public string ClassInstructionalMethod { get; set; }
         public double CreditHours { get; set; }
         public string CourseTerm { get; set; }
-        public string ClassTimes { get; set; }
-        public string ClassDays { get; set; }
+        public List<string> ClassTimes { get; set; }
+        public List<string> ClassDays { get; set; }
         public string CampusName { get; set; }
-        public string ClassroomName { get; set; }
+        public List<string> ClassroomName { get; set; }
         public string InstructorName { get; set; }
         public Seat CourseSeat { get; set; }
         public string Prerequisites { get; set; }
         public string TextbookName { get; set; }
-        public double TextbookPrice { get; set; }
+        public double TextbookNewPrice { get; set; }
+        public double TextbookUsedPrice { get; set; }
     }
 }

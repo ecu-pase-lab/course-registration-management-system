@@ -87,40 +87,40 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             foreach (Course course in allCourses) 
             {
-                string classDays = course.ClassDays;
-                List<string> classDaysList = classDays.Split(',').ToList<string>();
+                //string classDays = course.ClassDays;
+                //List<string> classDaysList = classDays.Split(',').ToList<string>();
 
-                foreach (string day in classDaysList) 
-                {
-                    if ("Monday".Equals(day))
-                    {
-                        mondayCourses.Add(course);
-                    }
-                    if ("Tuesday".Equals(day))
-                    {
-                        tuesdayCourses.Add(course);
-                    }
-                    if ("Wednesday".Equals(day))
-                    {
-                        wednesdayCourses.Add(course);
-                    }
-                    if ("Thursday".Equals(day))
-                    {
-                        thursdayCourses.Add(course);
-                    }
-                    if ("Friday".Equals(day))
-                    {
-                        fridayCourses.Add(course);
-                    }
-                    if ("Saturday".Equals(day))
-                    {
-                        saturdayCourses.Add(course);
-                    }
-                    if ("Sunday".Equals(day))
-                    {
-                        sundayCourses.Add(course);
-                    }
-                }
+                //foreach (string day in classDaysList) 
+                //{
+                //    if ("Monday".Equals(day))
+                //    {
+                //        mondayCourses.Add(course);
+                //    }
+                //    if ("Tuesday".Equals(day))
+                //    {
+                //        tuesdayCourses.Add(course);
+                //    }
+                //    if ("Wednesday".Equals(day))
+                //    {
+                //        wednesdayCourses.Add(course);
+                //    }
+                //    if ("Thursday".Equals(day))
+                //    {
+                //        thursdayCourses.Add(course);
+                //    }
+                //    if ("Friday".Equals(day))
+                //    {
+                //        fridayCourses.Add(course);
+                //    }
+                //    if ("Saturday".Equals(day))
+                //    {
+                //        saturdayCourses.Add(course);
+                //    }
+                //    if ("Sunday".Equals(day))
+                //    {
+                //        sundayCourses.Add(course);
+                //    }
+                //}
 
             }
 

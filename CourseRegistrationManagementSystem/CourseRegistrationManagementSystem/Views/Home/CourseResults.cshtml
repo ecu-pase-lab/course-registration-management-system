@@ -49,10 +49,40 @@
                     <th>Instructor</th>
                 </tr>
                 <tr>
-                    <td>@course.ClassTimes</td>
-                    <td>@course.ClassDays</td>
+                    <td>
+                        @for(int i = 0; i < @course.ClassTimes.Count; i++)
+                        {
+                            <span>@course.ClassTimes[i]</span>
+        
+                            if (i + 1 < @course.ClassTimes.Count)
+                            {
+                                <span><br></span>
+                            }
+                        }
+                    </td>
+                    <td>
+                        @for(int i = 0; i < @course.ClassDays.Count; i++)
+                        {
+                            <span>@course.ClassDays[i]</span>
+        
+                            if (i + 1 < @course.ClassDays.Count)
+                            {
+                                <span><br></span>
+                            }
+                        }
+                    </td>
                     <td>@course.CampusName</td>
-                    <td>@course.ClassroomName</td>
+                    <td>
+                        @for(int i = 0; i < @course.ClassroomName.Count; i++)
+                        {
+                            <span>@course.ClassroomName[i]</span>
+        
+                            if (i + 1 < @course.ClassroomName.Count)
+                            {
+                                <span><br></span>
+                            }
+                        }
+                    </td>
                     <td>@course.InstructorName</td>
                 </tr>
             </table>
@@ -98,7 +128,9 @@
 
             <b>Prerequisites:&nbsp;</b><span>@course.Prerequisites</span>
             <br>
-            <b>Textbook:&nbsp;</b><span>@course.TextbookName - $@course.TextbookPrice</span>
+            <b>Textbook:&nbsp;</b><span>@course.TextbookName,</span>
+            <span>New:  $@course.TextbookNewPrice</span>
+            <span>Used: $@course.TextbookUsedPrice</span>
 
         </div>
     }
