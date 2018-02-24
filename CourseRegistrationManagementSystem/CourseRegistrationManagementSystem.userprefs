@@ -4,7 +4,7 @@
       <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="75" Column="9" />
       <File FileName="CourseRegistrationManagementSystem/Views/Home/Search.cshtml" Line="20" Column="95" />
       <File FileName="CourseRegistrationManagementSystem/Views/Home/Index.cshtml" Line="18" Column="97" />
-      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="526" Column="15" />
+      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="582" Column="41" />
       <File FileName="CourseRegistrationManagementSystem/Views/Home/CourseResults.cshtml" Line="12" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>

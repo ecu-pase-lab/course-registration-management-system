@@ -110,18 +110,17 @@ namespace CourseRegistrationManagementSystem.Controllers
             //Communication 
             instructors.Add(8, "Kelsey Elisabeth Rhodes");
             instructors.Add(9, "Daniel Addison Wiseman");
-            instructors.Add(10, "Pamela Davis Hopkins"); 
 
             //Mathematics
-            instructors.Add(11, "Johannes Hendrik Hattingh");
-            instructors.Add(12, "Heather Dawn Ries");
-            instructors.Add(13, "Gail L Ratcliff"); 
-            instructors.Add(14, "Wayne L Tabor");
-            instructors.Add(15, "Ronald L Williams"); 
+            instructors.Add(10, "Johannes Hendrik Hattingh");
+            instructors.Add(11, "Heather Dawn Ries");
+            instructors.Add(12, "Gail L Ratcliff"); 
+            instructors.Add(13, "Wayne L Tabor");
+            instructors.Add(14, "Ronald L Williams"); 
 
             //Physics
-            instructors.Add(16, "Regina DeWitt, Wilson Hawkins");
-            instructors.Add(17, "Gregory Lapicki");
+            instructors.Add(15, "Regina DeWitt, Wilson Hawkins");
+            instructors.Add(16, "Gregory Lapicki");
 
             return instructors;
         }
@@ -525,6 +524,80 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            Seat seat11 = new Seat();
+            seat11.Capacity = 25;
+            seat11.Actual = 25;
+            seat11.Remaining = seat11.Capacity - seat11.Actual;
+            seat11.WaitlistCapacity = 10;
+            seat11.WaitlistActual = 5;
+            seat11.WaitlistRemaining = seat11.WaitlistCapacity - seat11.WaitlistActual;
+
+            Course course11 = new Course
+            {
+                ID = 11,
+                CourseName = "Public Speaking",
+                CourseRegistarCode = "34988",
+                CourseSubjectCode = "COMM 2410",
+                SectionNumber = "001",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Kelsey Elisabeth Rhodes",
+                ClassroomName = "Joyner East 00214",
+                CampusName = "Main Campus",
+                ClassDays = "Tuesday,Thursday",
+                ClassTimes = "8:00 am - 9:15 am",
+                CourseSeat = seat11,
+                Prerequisites = "",
+                TextbookName = "Essentials of Public Speaking",
+                TextbookPrice = 70.00,
+                CourseLevels = new List<string>{
+                    "Undergraduate"
+                }
+
+            };
+
+            Seat seat12 = new Seat();
+            seat12.Capacity = 25;
+            seat12.Actual = 22;
+            seat12.Remaining = seat12.Capacity - seat12.Actual;
+            seat12.WaitlistCapacity = 10;
+            seat12.WaitlistActual = 0;
+            seat12.WaitlistRemaining = seat12.WaitlistCapacity - seat12.WaitlistActual;
+
+            Course course12 = new Course
+            {
+                ID = 12,
+                CourseName = "Public Speaking",
+                CourseRegistarCode = "34989",
+                CourseSubjectCode = "COMM 2410",
+                SectionNumber = "002",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Daniel Addison Wiseman",
+                ClassroomName = "Joyner East 00214",
+                CampusName = "Main Campus",
+                ClassDays = "Tuesday",
+                ClassTimes = "6:00 pm - 9:00 pm",
+                CourseSeat = seat12,
+                Prerequisites = "",
+                TextbookName = "Essentials of Public Speaking",
+                TextbookPrice = 70.00,
+                CourseLevels = new List<string>{
+                    "Undergraduate"
+                }
+
+            };
+
             List<Course> courses = new List<Course>
             {
                 course1,
@@ -536,7 +609,9 @@ namespace CourseRegistrationManagementSystem.Controllers
                 course7,
                 course8,
                 course9,
-                course10
+                course10,
+                course11,
+                course12
             };
 
             return courses;
