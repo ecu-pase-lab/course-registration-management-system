@@ -11,139 +11,138 @@ namespace CourseRegistrationManagementSystem.Controllers
             
         }
 
-        public Dictionary<int, string> PopulateSemesters()
+        public List<string> PopulateSemesters()
         {
-            Dictionary<int, string> semesters = new Dictionary<int, string>();
-
-            semesters.Add(1, "Spring 2018 (View Only)");
-            semesters.Add(2, "Spring-Medical 2018 (View Only)");
+            List<string> semesters = new List<string>();
+            semesters.Add("Spring 2018 (View Only)");
+            semesters.Add("Spring-Medical 2018 (View Only)");
 
             return semesters;
         }
 
-        public Dictionary<int, string> PopulateSubjects()
+        public List<string> PopulateSubjects()
         {
-            Dictionary<int, string> subjects = new Dictionary<int, string>();
+            List<string> subjects = new List<string>();
 
-            subjects.Add(1, "All");
-            subjects.Add(2, "Communication");
-            subjects.Add(3, "Computer Science");
-            subjects.Add(4, "Mathematics");
-            subjects.Add(5, "Physics");
-            subjects.Add(6, "Software Engineering");
+            subjects.Add("All");
+            subjects.Add("Communication");
+            subjects.Add("Computer Science");
+            subjects.Add("Mathematics");
+            subjects.Add("Physics");
+            subjects.Add("Software Engineering");
 
             return subjects;
         }
 
-        public Dictionary<int, string> PopulateScheduleTypes()
+        public List<string> PopulateScheduleTypes()
         {
-            Dictionary<int, string> scheduleTypes = new Dictionary<int, string>();
+            List<string> scheduleTypes = new List<string>();
 
-            scheduleTypes.Add(1, "All");
-            scheduleTypes.Add(2, "Clinical");
-            scheduleTypes.Add(3, "Colloquia");
-            scheduleTypes.Add(4, "Honors (DO NOT USE)");
+            scheduleTypes.Add("All");
+            scheduleTypes.Add("Clinical");
+            scheduleTypes.Add("Colloquia");
+            scheduleTypes.Add("Honors (DO NOT USE)");
 
             return scheduleTypes;
         }
 
-        public Dictionary<int, string> PopulateInstructionalMethods()
+        public List<string> PopulateInstructionalMethods()
         {
-            Dictionary<int, string> instructionalMethods = new Dictionary<int, string>();
+            List<string> instructionalMethods = new List<string>();
 
-            instructionalMethods.Add(1, "All");
-            instructionalMethods.Add(2, "Face to Face");
-            instructionalMethods.Add(3, "Face to Face Remote Site");
-            instructionalMethods.Add(4, "Hybrid Primarily Face to Face");
+            instructionalMethods.Add("All");
+            instructionalMethods.Add("Face to Face");
+            instructionalMethods.Add("Face to Face Remote Site");
+            instructionalMethods.Add("Hybrid Primarily Face to Face");
 
             return instructionalMethods;
         }
 
 
-        public Dictionary<int, string> PopulateCampuses()
+        public List<string> PopulateCampuses()
         {
-            Dictionary<int, string> campuses = new Dictionary<int, string>();
+            List<string> campuses = new List<string>();
 
-            campuses.Add(1, "All");
-            campuses.Add(2, "DE/Internet");
-            campuses.Add(3, "Main Campus");
+            campuses.Add("All");
+            campuses.Add("DE/Internet Campus");
+            campuses.Add("Main Campus");
 
             return campuses;
         }
 
-        public Dictionary<int, string> PopulateCourseLevels()
+        public List<string> PopulateCourseLevels()
         {
-            Dictionary<int, string> courseLevels = new Dictionary<int, string>();
+            List<string> courseLevels = new List<string>();
 
-            courseLevels.Add(1, "All");
-            courseLevels.Add(2, "Dental");
-            courseLevels.Add(3, "Graduate");
-            courseLevels.Add(4, "Professional (Doctorate/CAS)");
-            courseLevels.Add(5, "Undergraduate");
+            courseLevels.Add("All");
+            courseLevels.Add("Dental");
+            courseLevels.Add("Graduate");
+            courseLevels.Add("Professional (Doctorate/CAS)");
+            courseLevels.Add("Undergraduate");
 
             return courseLevels;
         }
 
-        public Dictionary<int, string> PopulateTermDurations()
+        public List<string> PopulateTermDurations()
         {
-            Dictionary<int, string> termDurations = new Dictionary<int, string>();
+            List<string> termDurations = new List<string>();
 
-            termDurations.Add(1, "All");
-            termDurations.Add(2, "Full Term");
+            termDurations.Add("All");
+            termDurations.Add("Full Term");
 
             return termDurations;
         }
 
-        public Dictionary<int, string> PopulateInstructors()
+        public List<string> PopulateInstructors()
         {
-            Dictionary<int, string> instructors = new Dictionary<int, string>();
+            List<string> instructors = new List<string>();
 
             //Software Engineering and Computer Science
-            instructors.Add(1, "Ding, Junhua");
-            instructors.Add(2, "Hills, Mark");
-            instructors.Add(3, "Nassehzadeh-Tabrizi, Moha");
-            instructors.Add(4, "Vilkomir, Sergiy");
-            instructors.Add(5, "Robert Dancy Hoggard");
-            instructors.Add(6, "Krishnan Gopalakrishnan");
-            instructors.Add(7, "Qin Ding");
+            instructors.Add("Ding, Junhua");
+            instructors.Add("Hills, Mark");
+            instructors.Add("Nassehzadeh-Tabrizi, Moha");
+            instructors.Add("Vilkomir, Sergiy");
+            instructors.Add("Robert Dancy Hoggard");
+            instructors.Add("Krishnan Gopalakrishnan");
+            instructors.Add("Qin Ding");
 
             //Communication 
-            instructors.Add(8, "Kelsey Elisabeth Rhodes");
-            instructors.Add(9, "Daniel Addison Wiseman");
+            instructors.Add("Kelsey Elisabeth Rhodes");
+            instructors.Add("Daniel Addison Wiseman");
 
             //Mathematics
-            instructors.Add(10, "Johannes Hendrik Hattingh");
-            instructors.Add(11, "Heather Dawn Ries");
-            instructors.Add(12, "Gail L Ratcliff"); 
-            instructors.Add(13, "Deborah K Ferrell");
+            instructors.Add("Johannes Hendrik Hattingh");
+            instructors.Add("Heather Dawn Ries");
+            instructors.Add("Gail L Ratcliff"); 
+            instructors.Add("Deborah K Ferrell");
 
             //Physics
-            instructors.Add(14, "Regina DeWitt, Wilson Hawkins");
+            instructors.Add("Regina DeWitt, Wilson Hawkins");
 
             return instructors;
         }
 
-        public Dictionary<int, string> PopulateSessions()
+        public List<string> PopulateSessions()
         {
-            Dictionary<int, string> sessions = new Dictionary<int, string>();
+            List<string> sessions = new List<string>();
 
-            sessions.Add(1, "All");
-            sessions.Add(2, "Field-Based Course Eval");
-            sessions.Add(3, "Lab-Based Course Eval");
-            sessions.Add(4, "Not to be Surveyed Course Eval");
+            sessions.Add("All");
+            sessions.Add("Field-Based Course Eval");
+            sessions.Add("Lab-Based Course Eval");
+            sessions.Add("Not to be Surveyed Course Eval");
 
             return sessions;
         }
 
-        public Dictionary<int, string> PopulateCourseAttributes()
+        public List<string> PopulateCourseAttributes()
         {
-            Dictionary<int, string> courseAttributes = new Dictionary<int, string>();
+            List<string> courseAttributes = new List<string>();
 
-            courseAttributes.Add(1, "All");
-            courseAttributes.Add(2, "AR-Special Music Fees");
-            courseAttributes.Add(3, "Bassoon");
-            courseAttributes.Add(4, "Cello");
-            courseAttributes.Add(5, "Clarinet");
+            courseAttributes.Add("All");
+            courseAttributes.Add("AR-Special Music Fees");
+            courseAttributes.Add("Bassoon");
+            courseAttributes.Add("Cello");
+            courseAttributes.Add("Clarinet");
 
             return courseAttributes;
         }
@@ -223,7 +222,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassroomName = new List<string>{
                     "N/A"
                 },
-                CampusName = "De/Internet Campus",
+                CampusName = "DE/Internet Campus",
                 ClassDays = new List<string>{
                     "Monday,Wednesday"
                 },
@@ -359,7 +358,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassroomName = new List<string>{
                     "N/A"
                 },
-                CampusName = "De/Internet Campus",
+                CampusName = "DE/Internet Campus",
                 ClassDays = new List<string>{
                     "Tuesday,Thursday"
                 },
@@ -899,7 +898,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassroomName = new List<string>{
                     "N/A"
                 },
-                CampusName = "De/Internet Campus",
+                CampusName = "DE/Internet Campus",
                 ClassDays = new List<string>{
                     "N/A"
                 },

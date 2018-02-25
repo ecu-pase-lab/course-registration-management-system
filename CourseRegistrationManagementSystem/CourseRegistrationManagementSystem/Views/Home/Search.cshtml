@@ -17,7 +17,7 @@
 
                 <label id="subjectLabel" for="selectedSubjects" class="searchLabel">Subject:</label>
 
-                @Html.ListBox("selectedSubject", new MultiSelectList(ViewBag.Subjects, "Key", "Value"))
+                @Html.ListBox("selectedSubjects", new MultiSelectList(ViewBag.Subjects))
 
             </div>
 
@@ -25,7 +25,7 @@
 
                 <label id="courseLevelLabel" class="searchLabel">Course Level:</label>
 
-                @Html.ListBox("selectedCourseLevel", new MultiSelectList(ViewBag.CourseLevels, "Key", "Value"))
+                @Html.ListBox("selectedCourseLevel", new MultiSelectList(ViewBag.CourseLevels))
         
             </div>
 
@@ -33,7 +33,7 @@
 
                 <label id="campusLabel" class="searchLabel">Campus:</label>
 
-                @Html.ListBox("selectedCampus", new MultiSelectList(ViewBag.Campuses, "Key", "Value"))
+                @Html.ListBox("selectedCampuses", new MultiSelectList(ViewBag.Campuses))
 
             </div>
         
@@ -45,7 +45,7 @@
 
                 <label id="instructionalMethodLabel" class="searchLabel">Instructional Method:</label>
 
-                @Html.ListBox("selectedInstructionalMethod", new MultiSelectList(ViewBag.InstructionalMethods, "Key", "Value"))
+                @Html.ListBox("selectedInstructionalMethod", new MultiSelectList(ViewBag.InstructionalMethods))
 
             </div>
 
@@ -53,7 +53,7 @@
 
                 <label id="sessionLabel" class="searchLabel">Session:</label>
 
-                @Html.ListBox("selectedSession", new MultiSelectList(ViewBag.Sessions, "Key", "Value"))
+                @Html.ListBox("selectedSession", new MultiSelectList(ViewBag.Sessions))
         
             </div>
 
@@ -61,7 +61,7 @@
     
                 <label id="instructorLabel" class="searchLabel">Instructor:</label>
 
-                @Html.ListBox("selectedInstructor", new MultiSelectList(ViewBag.Instructors, "Key", "Value"))
+                @Html.ListBox("selectedInstructor", new MultiSelectList(ViewBag.Instructors))
 
             </div>
 
@@ -77,7 +77,7 @@
 
                 <label id="scheduleTypeLabel" class="searchLabel">Schedule Type:</label>
 
-                @Html.ListBox("selectedScheduleType", new MultiSelectList(ViewBag.ScheduleTypes, "Key", "Value"))
+                @Html.ListBox("selectedScheduleType", new MultiSelectList(ViewBag.ScheduleTypes))
 
             </div>
 
@@ -85,7 +85,7 @@
 
                 <label id="courseAttributeLabel" class="searchLabel">Course Attribute:</label>
 
-                @Html.ListBox("selectedCourseAttribute", new MultiSelectList(ViewBag.CourseAttributes, "Key", "Value"))
+                @Html.ListBox("selectedCourseAttribute", new MultiSelectList(ViewBag.CourseAttributes))
         
             </div>
 
@@ -93,7 +93,7 @@
 
                 <label id="termDurationLabel" class="searchLabel">Term Duration:</label>
 
-                @Html.ListBox("selectedTermDuration", new MultiSelectList(ViewBag.TermDurations, "Key", "Value"))
+                @Html.ListBox("selectedTermDuration", new MultiSelectList(ViewBag.TermDurations))
         
             </div>
 

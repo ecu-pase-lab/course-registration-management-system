@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CourseRegistrationManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Web;
 
 namespace CourseRegistrationManagementSystem.Controllers
 {
@@ -28,8 +29,6 @@ namespace CourseRegistrationManagementSystem.Controllers
         [HttpPost]
         public IActionResult Search(string selectedSemester)
         {
-            Console.Out.WriteLine("Selected: " + selectedSemester);
-
             ViewBag.Subjects = mockCRMSData.PopulateSubjects();
 
             ViewBag.ScheduleTypes = mockCRMSData.PopulateScheduleTypes();
@@ -52,9 +51,30 @@ namespace CourseRegistrationManagementSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult CourseResults()
+        public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses)
         {
-            ViewBag.Courses = mockCRMSData.PopulateCourses();
+            Console.WriteLine("Selected Campus: " + selectedCampuses.First());
+
+            List<Course> allCourses = mockCRMSData.PopulateCourses();
+
+            List<Course> coursesToReturn = new List<Course>();
+
+
+            if (selectedSubjects.Count() == 0 || (selectedSubjects.Count() == 1 && selectedSubjects.First().Equals("All")) )
+            {
+                coursesToReturn = allCourses;
+            } 
+            else 
+            {
+                coursesToReturn = findCoursesBySubjects(allCourses, selectedSubjects);
+            }
+
+            if (!(selectedCampuses.Count() == 0 || (selectedCampuses.Count() == 1 && selectedCampuses.First().Equals("All")) ))
+            {
+                coursesToReturn = findCoursesByCampuses(coursesToReturn, selectedCampuses);
+            } 
+
+            ViewBag.Courses = coursesToReturn;
 
             return View();
         }
@@ -85,6 +105,7 @@ namespace CourseRegistrationManagementSystem.Controllers
             List<Course> saturdayCourses = new List<Course>();
             List<Course> sundayCourses = new List<Course>();
 
+            //TODO Need to fix schedule because classDays is now a list
             foreach (Course course in allCourses) 
             {
                 //string classDays = course.ClassDays;
@@ -138,6 +159,42 @@ namespace CourseRegistrationManagementSystem.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private List<Course> findCoursesBySubjects(List<Course> courses, List<string> selectedSubjects) 
+        {
+            List<Course> coursesToReturn = new List<Course>();
+
+            foreach (Course course in courses)
+            {
+                foreach (string subject in selectedSubjects)
+                {
+                    if (subject.Equals(course.Subject))
+                    {
+                        coursesToReturn.Add(course);
+                    }
+                }
+            }
+
+            return coursesToReturn;
+        }
+
+        private List<Course> findCoursesByCampuses(List<Course> courses, List<string> selectedCampuses)
+        {
+            List<Course> coursesToReturn = new List<Course>();
+
+            foreach (Course course in courses)
+            {
+                foreach (string campus in selectedCampuses)
+                {
+                    if (campus.Equals(course.CampusName))
+                    {
+                        coursesToReturn.Add(course);
+                    }
+                }
+            }
+
+            return coursesToReturn;
         }
     }
 }
