@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{B049A433-6929-4386-957D-3DBCB5284A78}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem.Tests/UnitTest1.cs">
+    <Files>
+      <File FileName="CourseRegistrationManagementSystem.Tests/UnitTest1.cs" Line="15" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem.Tests PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

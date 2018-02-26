@@ -51,10 +51,8 @@ namespace CourseRegistrationManagementSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses)
+        public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses, List<string> selectedInstructors, List<string> selectedInstructionalMethods)
         {
-            Console.WriteLine("Selected Campus: " + selectedCampuses.First());
-
             List<Course> allCourses = mockCRMSData.PopulateCourses();
 
             List<Course> coursesToReturn = new List<Course>();
@@ -72,6 +70,11 @@ namespace CourseRegistrationManagementSystem.Controllers
             if (!(selectedCampuses.Count() == 0 || (selectedCampuses.Count() == 1 && selectedCampuses.First().Equals("All")) ))
             {
                 coursesToReturn = findCoursesByCampuses(coursesToReturn, selectedCampuses);
+            } 
+
+            if (!(selectedInstructionalMethods.Count() == 0 || (selectedInstructionalMethods.Count() == 1 && selectedInstructionalMethods.First().Equals("All")) ))
+            {
+                coursesToReturn = findCoursesByInstructionalMethods(coursesToReturn, selectedInstructionalMethods);
             } 
 
             ViewBag.Courses = coursesToReturn;
@@ -188,6 +191,24 @@ namespace CourseRegistrationManagementSystem.Controllers
                 foreach (string campus in selectedCampuses)
                 {
                     if (campus.Equals(course.CampusName))
+                    {
+                        coursesToReturn.Add(course);
+                    }
+                }
+            }
+
+            return coursesToReturn;
+        }
+
+        private List<Course> findCoursesByInstructionalMethods(List<Course> courses, List<string> selectedInstructionalMethods)
+        {
+            List<Course> coursesToReturn = new List<Course>();
+
+            foreach (Course course in courses)
+            {
+                foreach (string instructionalMethod in selectedInstructionalMethods)
+                {
+                    if (instructionalMethod.Equals(course.ClassInstructionalMethod))
                     {
                         coursesToReturn.Add(course);
                     }
