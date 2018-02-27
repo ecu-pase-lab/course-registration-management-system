@@ -51,7 +51,8 @@ namespace CourseRegistrationManagementSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses, List<string> selectedInstructors, List<string> selectedInstructionalMethods)
+        public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses, List<string> selectedInstructors, List<string> selectedInstructionalMethods, string CourseTitle,
+                                          string CourseNumber)
         {
             List<Course> allCourses = mockCRMSData.PopulateCourses();
 
@@ -72,9 +73,24 @@ namespace CourseRegistrationManagementSystem.Controllers
                 coursesToReturn = findCoursesByCampuses(coursesToReturn, selectedCampuses);
             } 
 
-            if (!(selectedInstructionalMethods.Count() == 0 || (selectedInstructionalMethods.Count() == 1 && selectedInstructionalMethods.First().Equals("All")) ))
+            if (!(selectedInstructionalMethods.Count() == 0 || (selectedInstructionalMethods.Count() == 1 && selectedInstructionalMethods.First().Equals("All"))))
             {
                 coursesToReturn = findCoursesByInstructionalMethods(coursesToReturn, selectedInstructionalMethods);
+            }
+
+            if (!(selectedInstructors.Count() == 0) )
+            {
+                coursesToReturn = findCoursesByInstructors(coursesToReturn, selectedInstructors);
+            }
+
+            if (!(CourseTitle == null || CourseTitle.Equals("")) )
+            {
+                coursesToReturn = findCoursesByCourseTitle(coursesToReturn, CourseTitle);
+            } 
+
+            if (!(CourseNumber == null || CourseNumber.Equals("")) )
+            {
+                coursesToReturn = findCoursesByCourseNumber(coursesToReturn, CourseNumber);
             } 
 
             ViewBag.Courses = coursesToReturn;
@@ -213,6 +229,56 @@ namespace CourseRegistrationManagementSystem.Controllers
                         coursesToReturn.Add(course);
                     }
                 }
+            }
+
+            return coursesToReturn;
+        }
+
+        private List<Course> findCoursesByInstructors(List<Course> courses, List<string> selectedInstructors)
+        {
+            List<Course> coursesToReturn = new List<Course>();
+
+            foreach (Course course in courses)
+            {
+                foreach (string instructor in selectedInstructors)
+                {
+                    if (instructor.Equals(course.InstructorName))
+                    {
+                        coursesToReturn.Add(course);
+                    }
+                }
+            }
+
+            return coursesToReturn;
+        }
+
+        private List<Course> findCoursesByCourseTitle(List<Course> courses, string CourseTitle)
+        {
+            List<Course> coursesToReturn = new List<Course>();
+
+            foreach (Course course in courses)
+            {
+                if (course.CourseName.Contains(CourseTitle))
+                {
+                    coursesToReturn.Add(course);
+                }
+
+            }
+
+            return coursesToReturn;
+        }
+
+        private List<Course> findCoursesByCourseNumber(List<Course> courses, string CourseNumber)
+        {
+            List<Course> coursesToReturn = new List<Course>();
+
+            foreach (Course course in courses)
+            {
+                if (course.CourseSubjectCode.Contains(CourseNumber))
+                {
+                    coursesToReturn.Add(course);
+                }
+
             }
 
             return coursesToReturn;

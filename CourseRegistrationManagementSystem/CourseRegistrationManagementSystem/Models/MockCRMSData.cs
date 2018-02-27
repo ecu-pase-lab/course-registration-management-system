@@ -98,10 +98,10 @@ namespace CourseRegistrationManagementSystem.Controllers
             List<string> instructors = new List<string>();
 
             //Software Engineering and Computer Science
-            instructors.Add("Ding, Junhua");
-            instructors.Add("Hills, Mark");
-            instructors.Add("Nassehzadeh-Tabrizi, Moha");
-            instructors.Add("Vilkomir, Sergiy");
+            instructors.Add("Junhua Ding");
+            instructors.Add("Mark Hills");
+            instructors.Add("Moha Nassehzadeh-Tabrizi");
+            instructors.Add("Sergiy Vilkomir");
             instructors.Add("Robert Dancy Hoggard");
             instructors.Add("Krishnan Gopalakrishnan");
             instructors.Add("Qin Ding");
