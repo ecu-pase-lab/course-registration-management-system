@@ -51,7 +51,7 @@ namespace CourseRegistrationManagementSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses, List<string> selectedInstructors, List<string> selectedInstructionalMethods, string CourseTitle,
+        public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses, List<string> selectedInstructors, List<string> selectedCourseLevels, List<string> selectedInstructionalMethods, string CourseTitle,
                                           string CourseNumber)
         {
             List<Course> allCourses = mockCRMSData.PopulateCourses();
@@ -76,6 +76,11 @@ namespace CourseRegistrationManagementSystem.Controllers
             if (!(selectedInstructionalMethods.Count() == 0 || (selectedInstructionalMethods.Count() == 1 && selectedInstructionalMethods.First().Equals("All"))))
             {
                 coursesToReturn = findCoursesByInstructionalMethods(coursesToReturn, selectedInstructionalMethods);
+            }
+
+            if (!(selectedCourseLevels.Count() == 0 || (selectedCourseLevels.Count() == 1 && selectedCourseLevels.First().Equals("All"))))
+            {
+                coursesToReturn = findCoursesByCourseLevels(coursesToReturn, selectedCourseLevels);
             }
 
             if (!(selectedInstructors.Count() == 0) )
@@ -279,6 +284,27 @@ namespace CourseRegistrationManagementSystem.Controllers
                     coursesToReturn.Add(course);
                 }
 
+            }
+
+            return coursesToReturn;
+        }
+
+        private List<Course> findCoursesByCourseLevels(List<Course> courses, List<string> selectedCourseLevels)
+        {
+            List<Course> coursesToReturn = new List<Course>();
+
+            foreach (Course course in courses)
+            {
+                foreach (string courseLevel in selectedCourseLevels)
+                {
+                    foreach (string courseLevelInCourse in course.CourseLevels)
+                    {
+                        if (courseLevel.Equals(courseLevelInCourse))
+                        {
+                            coursesToReturn.Add(course);
+                        }
+                    }
+                }
             }
 
             return coursesToReturn;
