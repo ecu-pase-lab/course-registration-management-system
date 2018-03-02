@@ -52,7 +52,7 @@ namespace CourseRegistrationManagementSystem.Controllers
 
         [HttpPost]
         public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses, List<string> selectedInstructors, List<string> selectedCourseLevels, List<string> selectedInstructionalMethods, string CourseTitle,
-                                          string CourseNumber)
+                                           string CourseNumber, string creditHourRangeStart, string creditHourRangeEnd)
         {
             List<Course> allCourses = mockCRMSData.PopulateCourses();
 
@@ -97,6 +97,8 @@ namespace CourseRegistrationManagementSystem.Controllers
             {
                 coursesToReturn = findCoursesByCourseNumber(coursesToReturn, CourseNumber);
             } 
+
+            coursesToReturn = findCoursesByCreditHourRange(coursesToReturn, creditHourRangeStart, creditHourRangeEnd);
 
             ViewBag.Courses = coursesToReturn;
 
@@ -305,6 +307,22 @@ namespace CourseRegistrationManagementSystem.Controllers
                         }
                     }
                 }
+            }
+
+            return coursesToReturn;
+        }
+
+        private List<Course> findCoursesByCreditHourRange(List<Course> courses, string creditHourRangeStart, string creditHourRangeEnd)
+        {
+            List<Course> coursesToReturn = new List<Course>();
+
+            foreach (Course course in courses)
+            {
+                if (Convert.ToDouble(creditHourRangeStart) <= course.CreditHours && course.CreditHours <= Convert.ToDouble(creditHourRangeEnd))
+                {
+                    coursesToReturn.Add(course);
+                }
+
             }
 
             return coursesToReturn;

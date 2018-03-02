@@ -1,18 +1,13 @@
 ﻿<Properties StartupConfiguration="{97F2E89D-C079-4BBE-B0D5-404EDD0E334D}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem.Tests/HomeControllerTests.cs">
     <Files>
-      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="83" Column="100" />
-      <File FileName="CourseRegistrationManagementSystem/Views/Home/Search.cshtml" Line="28" Column="52" />
-      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="287" Column="15" />
-      <File FileName="CourseRegistrationManagementSystem/Models/Course.cs" Line="39" Column="1" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/HomeControllerTests.cs" Line="72" Column="56" />
-      <File FileName="CourseRegistrationManagementSystem/Models/Seat.cs" Line="4" Column="18" />
+      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="54" Column="30" />
+      <File FileName="CourseRegistrationManagementSystem/Views/Home/Search.cshtml" Line="153" Column="17" />
+      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="196" Column="15" />
+      <File FileName="CourseRegistrationManagementSystem/Models/Course.cs" Line="36" Column="54" />
+      <File FileName="CourseRegistrationManagementSystem.Tests/HomeControllerTests.cs" Line="509" Column="50" />
+      <File FileName="CourseRegistrationManagementSystem/Models/Seat.cs" Line="12" Column="28" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
