@@ -3,8 +3,8 @@ mono: none
 dotnet: 2.0.0
 solution: CourseRegistrationManagementSystem.sln
 install:
-  - nuget restore CourseRegistrationManagementSystem.sln
-  - nuget install xunit.runners -Version 2.2.0 -OutputDirectory testrunner
+  - dotnet restore CourseRegistrationManagementSystem.sln
+  - dotnet install xunit.runners -Version 2.2.0 -OutputDirectory testrunner
 script:
   - dotnet build
   - dotnet test CourseRegistrationManagementSystem.Tests
