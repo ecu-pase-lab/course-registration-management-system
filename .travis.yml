@@ -2,11 +2,8 @@ language: csharp
 mono: none
 dotnet: 2.0.0
 solution: CourseRegistrationManagementSystem.sln
-install:
-  - dotnet install xunit.runners -Version 2.2.0 -OutputDirectory testrunner
 script:
   - cd CourseRegistrationManagementSystem
   - dotnet restore
   - dotnet build -c Release
-  - dotnet test CourseRegistrationManagementSystem.Tests
   
