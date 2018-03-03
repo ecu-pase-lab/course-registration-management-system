@@ -3,9 +3,9 @@
     <Files>
       <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="54" Column="30" />
       <File FileName="CourseRegistrationManagementSystem/Views/Home/Search.cshtml" Line="153" Column="17" />
-      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="196" Column="15" />
+      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="602" Column="15" />
       <File FileName="CourseRegistrationManagementSystem/Models/Course.cs" Line="36" Column="54" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/HomeControllerTests.cs" Line="509" Column="50" />
+      <File FileName="CourseRegistrationManagementSystem.Tests/HomeControllerTests.cs" Line="880" Column="61" />
       <File FileName="CourseRegistrationManagementSystem/Models/Seat.cs" Line="12" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
