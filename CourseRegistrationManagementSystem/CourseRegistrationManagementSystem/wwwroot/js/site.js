@@ -1,12 +1,10 @@
-﻿// Write your JavaScript code.
-
-$(document).ready(function($){
+﻿$(document).ready(function($){
 
     $("#advancedCourseSearchGroup").hide();
 
-    $('#startTimeTimepicker').timepicki(); 
+    $('#startTimeTimepicker').wickedpicker();
 
-    $('#endTimeTimepicker').timepicki(); 
+    $('#endTimeTimepicker').wickedpicker();
 
     $("#advancedCourseSearchButton").click(function(){
         $("#advancedCourseSearchGroup").toggle();

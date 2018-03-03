@@ -16,4 +16,7 @@
   	<None Include="crms.yaml" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\wickedpicker\" />
+  </ItemGroup>
 </Project>
