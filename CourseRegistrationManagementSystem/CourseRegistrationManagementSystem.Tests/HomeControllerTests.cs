@@ -56,7 +56,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "6230", "1", "10");
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "6230", "1", "10", null, null, null, null, null, null, null);
 
             Seat seat3 = new Seat();
             seat3.Capacity = 30;
@@ -117,7 +117,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "Physics", "", "1", "10");
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "Physics", "", "1", "10", null, null, null, null, null, null, null);
 
             Seat seat18 = new Seat();
             seat18.Capacity = 27;
@@ -232,7 +232,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> subjects = new List<string>();
             subjects.Add("Mathematics");
 
-            controller.CourseResults(subjects, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10");
+            controller.CourseResults(subjects, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null);
 
             Seat seat13 = new Seat();
             seat13.Capacity = 36;
@@ -481,7 +481,7 @@ namespace CourseRegistrationManagementSystem.Tests
             subjects.Add("Mathematics");
             subjects.Add("Communication");
 
-            controller.CourseResults(subjects, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10");
+            controller.CourseResults(subjects, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null);
 
             Seat seat11 = new Seat();
             seat11.Capacity = 25;
@@ -821,7 +821,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> instructors = new List<string>();
             instructors.Add("Mark Hills");
 
-            controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, "", "", "1", "10");
+            controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null);
 
             Seat seat1 = new Seat();
             seat1.Capacity = 30;
@@ -887,7 +887,7 @@ namespace CourseRegistrationManagementSystem.Tests
             instructors.Add("Mark Hills");
             instructors.Add("Qin Ding");
 
-            controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, "", "", "1", "10");
+            controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null);
 
             Seat seat1 = new Seat();
             seat1.Capacity = 30;
@@ -985,6 +985,70 @@ namespace CourseRegistrationManagementSystem.Tests
 
             checkCoursePropertiesAreEqual(course1, controller.ViewBag.Courses[0]);
             checkCoursePropertiesAreEqual(course10, controller.ViewBag.Courses[1]);
+        }
+
+        // Searching courses worth Credit hours of 1 to 2 should return only courses with 1 to 2 Credit hours 
+        [Fact]
+        public void searchCoursesByCreditHoursTest()
+        {
+            controller = new Controllers.HomeController();
+
+            List<string> emptyList = new List<string>();
+
+            List<string> instructors = new List<string>();
+            instructors.Add("Robert Quinn");
+
+            controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, "", "", "1", "2", null, null, null, null, null, null, null);
+
+            Seat seat20 = new Seat();
+            seat20.Capacity = 15;
+            seat20.Actual = 4;
+            seat20.Remaining = seat20.Capacity - seat20.Actual;
+            seat20.WaitlistCapacity = 10;
+            seat20.WaitlistActual = 0;
+            seat20.WaitlistRemaining = seat20.WaitlistCapacity - seat20.WaitlistActual;
+
+            Course course20 = new Course
+            {
+                ID = 20,
+                CourseName = "Computers in Art Education",
+                CourseRegistarCode = "31961",
+                CourseSubjectCode = "ART 2870",
+                SectionNumber = "001",
+                Subject = "Art",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 1,
+                InstructorName = "Robert Quinn",
+                ClassroomName = new List<string>{
+                    "Jenkins Fine Arts Center 01108"
+                },
+                CampusName = "Main Campus",
+                ClassDays = new List<string>{
+                    "Tuesday"
+                },
+                ClassTimes = new List<string>{
+                    "9:00 am - 10:50 am"
+                },
+                CourseSeat = seat20,
+                Prerequisites = "Undergraduate level ART 1015 Minimum Grade of D- and Undergraduate level ART 1030 Minimum Grade of D-",
+                TextbookName = "Digital Art, ISBN: 9780500204238, Author: Paul",
+                TextbookNewPrice = 21.95,
+                TextbookUsedPrice = 16.50,
+                CourseLevels = new List<string>{
+                    "Undergraduate"
+                }
+
+            };
+
+            // Compare values for both courses
+            Assert.Equal(1, controller.ViewBag.Courses.Count);
+
+            checkCoursePropertiesAreEqual(course20, controller.ViewBag.Courses[0]);
         }
     }
 }

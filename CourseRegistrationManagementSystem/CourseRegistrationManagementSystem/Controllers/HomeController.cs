@@ -52,21 +52,16 @@ namespace CourseRegistrationManagementSystem.Controllers
 
         [HttpPost]
         public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses, List<string> selectedInstructors, List<string> selectedCourseLevels, List<string> selectedInstructionalMethods, string CourseTitle,
-                                           string CourseNumber, string creditHourRangeStart, string creditHourRangeEnd)
+                                           string CourseNumber, string creditHourRangeStart, string creditHourRangeEnd, string Monday, string Tuesday, string Wednesday, string Thursday, string Friday, string Saturday, string Sunday)
         {
             List<Course> allCourses = mockCRMSData.PopulateCourses();
 
-            List<Course> coursesToReturn = new List<Course>();
+            List<Course> coursesToReturn = allCourses;
 
-
-            if (selectedSubjects.Count() == 0 || (selectedSubjects.Count() == 1 && selectedSubjects.First().Equals("All")) )
-            {
-                coursesToReturn = allCourses;
-            } 
-            else 
+            if (!(selectedSubjects.Count() == 0 || (selectedSubjects.Count() == 1 && selectedSubjects.First().Equals("All")) ))
             {
                 coursesToReturn = findCoursesBySubjects(allCourses, selectedSubjects);
-            }
+            } 
 
             if (!(selectedCampuses.Count() == 0 || (selectedCampuses.Count() == 1 && selectedCampuses.First().Equals("All")) ))
             {
@@ -97,6 +92,11 @@ namespace CourseRegistrationManagementSystem.Controllers
             {
                 coursesToReturn = findCoursesByCourseNumber(coursesToReturn, CourseNumber);
             } 
+
+            if (Monday != null || Tuesday != null || Wednesday != null || Thursday != null || Friday != null || Saturday != null || Sunday != null)
+            {
+                coursesToReturn = findCoursesByClassDays(coursesToReturn, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday);
+            }
 
             coursesToReturn = findCoursesByCreditHourRange(coursesToReturn, creditHourRangeStart, creditHourRangeEnd);
 
@@ -321,6 +321,65 @@ namespace CourseRegistrationManagementSystem.Controllers
                 if (Convert.ToDouble(creditHourRangeStart) <= course.CreditHours && course.CreditHours <= Convert.ToDouble(creditHourRangeEnd))
                 {
                     coursesToReturn.Add(course);
+                }
+
+            }
+
+            return coursesToReturn;
+        }
+
+        private List<Course> findCoursesByClassDays(List<Course> courses, string monday, string tuesday, string wednesday, string thursday, 
+                                                    string friday, string saturday, string sunday)
+        {
+            List<Course> coursesToReturn = new List<Course>();
+
+            foreach (Course course in courses)
+            {
+                List<string> classDays = course.ClassDays;
+
+                List<string> allClassDays = new List<string>();
+
+                //Each string in ClassDays list usually contains two or three days (multiple days that have the same class meeting time)
+                foreach (string meetingDays in classDays)
+                {
+                    string[] days = meetingDays.Split(",");
+
+                    foreach (string day in days) 
+                    {
+                        allClassDays.Add(day);
+                    }
+                }
+
+                foreach (string day in allClassDays)
+                {
+                    if (day.Equals(monday))
+                    {
+                        coursesToReturn.Add(course);
+                    }
+                    else if (day.Equals(tuesday) && !coursesToReturn.Contains(course))
+                    {
+                        coursesToReturn.Add(course);
+                    }
+                    else if (day.Equals(wednesday) && !coursesToReturn.Contains(course))
+                    {
+                        coursesToReturn.Add(course);
+                    }
+                    else if (day.Equals(thursday) && !coursesToReturn.Contains(course))
+                    {
+                        coursesToReturn.Add(course);
+                    }
+                    else if (day.Equals(friday) && !coursesToReturn.Contains(course))
+                    {
+                        coursesToReturn.Add(course);
+                    }
+                    else if (day.Equals(saturday) && !coursesToReturn.Contains(course))
+                    {
+                        coursesToReturn.Add(course);
+                    }
+                    else if (day.Equals(sunday) && !coursesToReturn.Contains(course))
+                    {
+                        coursesToReturn.Add(course);
+                    }
                 }
 
             }

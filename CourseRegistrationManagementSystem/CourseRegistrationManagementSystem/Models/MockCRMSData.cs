@@ -25,6 +25,7 @@ namespace CourseRegistrationManagementSystem.Controllers
             List<string> subjects = new List<string>();
 
             subjects.Add("All");
+            subjects.Add("Art");
             subjects.Add("Communication");
             subjects.Add("Computer Science");
             subjects.Add("Mathematics");
@@ -54,6 +55,7 @@ namespace CourseRegistrationManagementSystem.Controllers
             instructionalMethods.Add("Face to Face");
             instructionalMethods.Add("Face to Face Remote Site");
             instructionalMethods.Add("Hybrid Primarily Face to Face");
+            instructionalMethods.Add("Internet or World Wide Web"); 
 
             return instructionalMethods;
         }
@@ -118,6 +120,12 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             //Physics
             instructors.Add("Regina DeWitt, Wilson Hawkins");
+
+            //Art
+            instructors.Add("Robert Quinn");
+
+            //Sort list alphabetically
+            instructors.Sort();
 
             return instructors;
         }
@@ -1012,6 +1020,51 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            Seat seat20 = new Seat();
+            seat20.Capacity = 15;
+            seat20.Actual = 4;
+            seat20.Remaining = seat20.Capacity - seat20.Actual;
+            seat20.WaitlistCapacity = 10;
+            seat20.WaitlistActual = 0;
+            seat20.WaitlistRemaining = seat20.WaitlistCapacity - seat20.WaitlistActual;
+
+            Course course20 = new Course
+            {
+                ID = 20,
+                CourseName = "Computers in Art Education",
+                CourseRegistarCode = "31961",
+                CourseSubjectCode = "ART 2870",
+                SectionNumber = "001",
+                Subject = "Art",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 1,
+                InstructorName = "Robert Quinn",
+                ClassroomName = new List<string>{
+                    "Jenkins Fine Arts Center 01108"
+                },
+                CampusName = "Main Campus",
+                ClassDays = new List<string>{
+                    "Tuesday"
+                },
+                ClassTimes = new List<string>{
+                    "9:00 am - 10:50 am"
+                },
+                CourseSeat = seat20,
+                Prerequisites = "Undergraduate level ART 1015 Minimum Grade of D- and Undergraduate level ART 1030 Minimum Grade of D-",
+                TextbookName = "Digital Art, ISBN: 9780500204238, Author: Paul",
+                TextbookNewPrice = 21.95,
+                TextbookUsedPrice = 16.50,
+                CourseLevels = new List<string>{
+                    "Undergraduate"
+                }
+
+            };
+
             List<Course> courses = new List<Course>
             {
                 course1,
@@ -1032,7 +1085,8 @@ namespace CourseRegistrationManagementSystem.Controllers
                 course16,
                 course17,
                 course18,
-                course19
+                course19,
+                course20
             };
 
             return courses;
