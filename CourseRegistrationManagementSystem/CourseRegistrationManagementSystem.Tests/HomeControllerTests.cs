@@ -995,10 +995,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            List<string> instructors = new List<string>();
-            instructors.Add("Robert Quinn");
-
-            controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, "", "", "1", "2", null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "2", null, null, null, null, null, null, null);
 
             Seat seat20 = new Seat();
             seat20.Capacity = 15;
@@ -1049,6 +1046,443 @@ namespace CourseRegistrationManagementSystem.Tests
             Assert.Equal(1, controller.ViewBag.Courses.Count);
 
             checkCoursePropertiesAreEqual(course20, controller.ViewBag.Courses[0]);
+        }
+
+        // Searching courses by checking the Monday checbox should return only courses that meet on Monday 
+        [Fact]
+        public void searchCoursesByMondayTest()
+        {
+            controller = new Controllers.HomeController();
+
+            List<string> emptyList = new List<string>();
+
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", "Monday", null, null, null, null, null, null);
+
+            Seat seat1 = new Seat();
+            seat1.Capacity = 30;
+            seat1.Actual = 8;
+            seat1.Remaining = seat1.Capacity - seat1.Actual;
+            seat1.WaitlistCapacity = 10;
+            seat1.WaitlistActual = 0;
+            seat1.WaitlistRemaining = seat1.WaitlistCapacity - seat1.WaitlistActual;
+
+            Course course1 = new Course
+            {
+                ID = 1,
+                CourseName = "Software Construction",
+                CourseRegistarCode = "32329",
+                CourseSubjectCode = "SENG 6245",
+                SectionNumber = "001",
+                Subject = "Software Engineering",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Mark Hills",
+                ClassroomName = new List<string>{
+                    "Brewster Building 0B204"
+                },
+                CampusName = "Main Campus",
+                ClassDays = new List<string>{
+                    "Monday,Wednesday"
+                },
+                ClassTimes = new List<string>{
+                    "2:00 pm - 3:15 pm"
+                },
+                CourseSeat = seat1,
+                Prerequisites = "Graduate level SENG 6230 Minimum Grade of C or Graduate level CSCI 6230 Minimum Grade of C",
+                TextbookName = "Program Development in Java, ISBN: 9780201657685, Author: Liskov",
+                TextbookNewPrice = 100.00,
+                TextbookUsedPrice = 75.00,
+                CourseLevels = new List<string>{
+                    "Graduate",
+                    "Professional (Doctorate/CAS)"
+                }
+
+            };
+
+            Seat seat2 = new Seat();
+            seat2.Capacity = 30;
+            seat2.Actual = 11;
+            seat2.Remaining = seat2.Capacity - seat2.Actual;
+            seat2.WaitlistCapacity = 10;
+            seat2.WaitlistActual = 0;
+            seat2.WaitlistRemaining = seat2.WaitlistCapacity - seat2.WaitlistActual;
+
+            Course course2 = new Course
+            {
+                ID = 2,
+                CourseName = "Software Requirements Engineering",
+                CourseRegistarCode = "32332",
+                CourseSubjectCode = "SENG 6255",
+                SectionNumber = "601",
+                Subject = "Software Engineering",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Internet or World Wide Web",
+                CreditHours = 3,
+                InstructorName = "Sergiy Vilkomir",
+                ClassroomName = new List<string>{
+                    "N/A"
+                },
+                CampusName = "DE/Internet Campus",
+                ClassDays = new List<string>{
+                    "Monday,Wednesday"
+                },
+                ClassTimes = new List<string>{
+                    "12:30 pm - 1:45 pm"
+                },
+                CourseSeat = seat2,
+                Prerequisites = "",
+                TextbookName = "Requirements Engineering, ISBN: 9780470012703, Author: Van Lamsweerd",
+                TextbookNewPrice = 87.00,
+                TextbookUsedPrice = 65.25,
+                CourseLevels = new List<string>{
+                    "Graduate",
+                    "Professional (Doctorate/CAS)"
+                }
+
+            };
+
+            Seat seat6 = new Seat();
+            seat6.Capacity = 160;
+            seat6.Actual = 160;
+            seat6.Remaining = seat6.Capacity - seat6.Actual;
+            seat6.WaitlistCapacity = 10;
+            seat6.WaitlistActual = 2;
+            seat6.WaitlistRemaining = seat6.WaitlistCapacity - seat6.WaitlistActual;
+
+            Course course6 = new Course
+            {
+                ID = 6,
+                CourseName = "Algorithmic Problem Solving",
+                CourseRegistarCode = "85586",
+                CourseSubjectCode = "CSCI 1010",
+                SectionNumber = "001",
+                Subject = "Computer Science",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Robert Dancy Hoggard",
+                ClassroomName = new List<string>{
+                    "Howell Science Complex C103B"
+                },
+                CampusName = "Main Campus",
+                ClassDays = new List<string>{
+                    "Monday,Wednesday,Friday"
+                },
+                ClassTimes = new List<string>{
+                    "1:00 pm - 1:50 pm"
+                },
+                CourseSeat = seat6,
+                Prerequisites = "Undergraduate level MATH 1065 Minimum Grade of D- or Undergraduate level CSCI 1000 Minimum Grade of C",
+                TextbookName = "Java: An Intro to Problem Solving & Programming, ISBN: 9780134462035, Author: Savitch",
+                TextbookNewPrice = 158.00,
+                TextbookUsedPrice = 118.50,
+                CourseLevels = new List<string>{
+                    "Undergraduate"
+                }
+
+            };
+
+            Seat seat7 = new Seat();
+            seat7.Capacity = 24;
+            seat7.Actual = 22;
+            seat7.Remaining = seat7.Capacity - seat7.Actual;
+            seat7.WaitlistCapacity = 10;
+            seat7.WaitlistActual = 0;
+            seat7.WaitlistRemaining = seat7.WaitlistCapacity - seat7.WaitlistActual;
+
+            Course course7 = new Course
+            {
+                ID = 7,
+                CourseName = "Algorithmic Problem Solving Lab",
+                CourseRegistarCode = "85587",
+                CourseSubjectCode = "CSCI 1011",
+                SectionNumber = "001",
+                Subject = "Computer Science",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Robert Dancy Hoggard",
+                ClassroomName = new List<string>{
+                    "Bate Building 01025"
+                },
+                CampusName = "Main Campus",
+                ClassDays = new List<string>{
+                    "Monday"
+                },
+                ClassTimes = new List<string>{
+                    "1:00 pm - 2:40 pm"
+                },
+                CourseSeat = seat6,
+                Prerequisites = "",
+                TextbookName = "No Course Materials Required",
+                TextbookNewPrice = 0.00,
+                TextbookUsedPrice = 0.00,
+                CourseLevels = new List<string>{
+                    "Undergraduate"
+                }
+
+            };
+
+            Seat seat14 = new Seat();
+            seat14.Capacity = 36;
+            seat14.Actual = 31;
+            seat14.Remaining = seat14.Capacity - seat14.Actual;
+            seat14.WaitlistCapacity = 50;
+            seat14.WaitlistActual = 0;
+            seat14.WaitlistRemaining = seat14.WaitlistCapacity - seat14.WaitlistActual;
+
+            Course course14 = new Course
+            {
+                ID = 14,
+                CourseName = "Calculus I",
+                CourseRegistarCode = "30563",
+                CourseSubjectCode = "MATH 2171",
+                SectionNumber = "003",
+                Subject = "Mathematics",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Heather Dawn Ries",
+                ClassroomName = new List<string>{
+                    "Austin Building 00203"
+                },
+                CampusName = "Main Campus",
+                ClassDays = new List<string>{
+                    "Monday,Wednesday"
+                },
+                ClassTimes = new List<string>{
+                    "9:00 am - 10:40 am"
+                },
+                CourseSeat = seat14,
+                Prerequisites = "Undergraduate level MATH 1083 Minimum Grade of C- or Undergraduate level MATH 1085 Minimum Grade of C- or Undergraduate level MATH 2122 Minimum Grade of C- or SAT Mathematics 630 or ALEKS Math Placement 076 or Math Section Score 650 or ACT Math 28",
+                TextbookName = "Calculus (LL Text with Access), ISBN: 9781305616684, Author: Stewart",
+                TextbookNewPrice = 172.00,
+                TextbookUsedPrice = 0.00,
+                CourseLevels = new List<string>{
+                    "Graduate,Undergraduate"
+                }
+
+            };
+
+            Seat seat15 = new Seat();
+            seat15.Capacity = 36;
+            seat15.Actual = 36;
+            seat15.Remaining = seat15.Capacity - seat15.Actual;
+            seat15.WaitlistCapacity = 50;
+            seat15.WaitlistActual = 0;
+            seat15.WaitlistRemaining = seat15.WaitlistCapacity - seat15.WaitlistActual;
+
+            Course course15 = new Course
+            {
+                ID = 15,
+                CourseName = "Calculus II",
+                CourseRegistarCode = "30564",
+                CourseSubjectCode = "MATH 2172",
+                SectionNumber = "001",
+                Subject = "Mathematics",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Gail L Ratcliff",
+                ClassroomName = new List<string>{
+                    "Austin Building 00203"
+                },
+                CampusName = "Main Campus",
+                ClassDays = new List<string>{
+                    "Monday,Wednesday"
+                },
+                ClassTimes = new List<string>{
+                    "2:00 pm - 3:40 pm"
+                },
+                CourseSeat = seat15,
+                Prerequisites = "Undergraduate level MATH 2171 Minimum Grade of C-",
+                TextbookName = "Calculus (LL Text with Access), ISBN: 9781305616684, Author: Stewart",
+                TextbookNewPrice = 172.00,
+                TextbookUsedPrice = 0.00,
+                CourseLevels = new List<string>{
+                    "Undergraduate"
+                }
+
+            };
+
+            Seat seat16 = new Seat();
+            seat16.Capacity = 48;
+            seat16.Actual = 48;
+            seat16.Remaining = seat16.Capacity - seat16.Actual;
+            seat16.WaitlistCapacity = 50;
+            seat16.WaitlistActual = 0;
+            seat16.WaitlistRemaining = seat16.WaitlistCapacity - seat16.WaitlistActual;
+
+            Course course16 = new Course
+            {
+                ID = 16,
+                CourseName = "Statistics for Business",
+                CourseRegistarCode = "30619",
+                CourseSubjectCode = "MATH 2283",
+                SectionNumber = "001",
+                Subject = "Mathematics",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Deborah K Ferrell",
+                ClassroomName = new List<string>{
+                    "Austin Building 00220"
+                },
+                CampusName = "Main Campus",
+                ClassDays = new List<string>{
+                    "Monday,Wednesday,Friday"
+                },
+                ClassTimes = new List<string>{
+                    "9:00 am - 9:50 am"
+                },
+                CourseSeat = seat16,
+                Prerequisites = "Undergraduate level MATH 1065 Minimum Grade of D- or Undergraduate level MATH 1050 Minimum Grade of D- or Undergraduate level MATH 1066 Minimum Grade of D- or Undergraduate level MATH 1077 Minimum Grade of D- or Undergraduate level MATH 1083 Minimum Grade of D- or Undergraduate level MATH 2121 Minimum Grade of D- or Undergraduate level MATH 2122 Minimum Grade of D- or Undergraduate level MATH 2171 Minimum Grade of D- or Undergraduate level MATH 2172 Minimum Grade of D- or Undergraduate level MATH 2173 Minimum Grade of D- or ACT Math 23 or SAT Mathematics 550 or ALEKS Math Placement 053 or ECU-Accuplacer Math Placement 095 or Math Section Score 570",
+                TextbookName = "Business Statistics PKG (ECU) with MyStatsLab Business, ISBN: 9781269890281, Author: Donnelly",
+                TextbookNewPrice = 255.00,
+                TextbookUsedPrice = 0.00,
+                CourseLevels = new List<string>{
+                    "Graduate,Undergraduate"
+                }
+
+            };
+
+            Seat seat18 = new Seat();
+            seat18.Capacity = 27;
+            seat18.Actual = 27;
+            seat18.Remaining = seat18.Capacity - seat18.Actual;
+            seat18.WaitlistCapacity = 10;
+            seat18.WaitlistActual = 0;
+            seat18.WaitlistRemaining = seat18.WaitlistCapacity - seat18.WaitlistActual;
+
+            Course course18 = new Course
+            {
+                ID = 18,
+                CourseName = "University Physics I",
+                CourseRegistarCode = "35314",
+                CourseSubjectCode = "PHYS 2350",
+                SectionNumber = "001",
+                Subject = "Physics",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Regina DeWitt, Wilson Hawkins",
+                ClassroomName = new List<string>{
+                    "Bate Building 01028",
+                    "Howell Science Complex 0E205"
+                },
+                CampusName = "Main Campus",
+                ClassDays = new List<string>{
+                    "Monday,Wednesday,Friday",
+                    "Tuesday"
+                },
+                ClassTimes = new List<string>{
+                    "1:00 pm - 1:50 pm",
+                    "3:00 pm - 3:50 pm"
+                },
+                CourseSeat = seat18,
+                Prerequisites = "Undergraduate level MATH 2121 Minimum Grade of D- or Undergraduate level MATH 2151 Minimum Grade of D- or Undergraduate level MATH 2171 Minimum Grade of D- or Undergraduate level MATH 2122 Minimum Grade of D- or Undergraduate level MATH 2152 Minimum Grade of D- or Undergraduate level MATH 2153 Minimum Grade of D- or Undergraduate level MATH 2154 Minimum Grade of D- or Undergraduate level MATH 2172 Minimum Grade of D- or Undergraduate level MATH 2173 Minimum Grade of D- or Undergraduate level MATH 4221 Minimum Grade of D-",
+                TextbookName = "University Physics with Modern Physics, Volume 1 with E-Book, ISBN: 9780134209586, Author: Young",
+                TextbookNewPrice = 223.60,
+                TextbookUsedPrice = 0.00,
+                CourseLevels = new List<string>{
+                    "Undergraduate"
+                }
+
+            };
+
+            Seat seat19 = new Seat();
+            seat19.Capacity = 27;
+            seat19.Actual = 27;
+            seat19.Remaining = seat19.Capacity - seat19.Actual;
+            seat19.WaitlistCapacity = 10;
+            seat19.WaitlistActual = 0;
+            seat19.WaitlistRemaining = seat19.WaitlistCapacity - seat19.WaitlistActual;
+
+            Course course19 = new Course
+            {
+                ID = 19,
+                CourseName = "University Physics I",
+                CourseRegistarCode = "35315",
+                CourseSubjectCode = "PHYS 2350",
+                SectionNumber = "002",
+                Subject = "Physics",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Regina DeWitt, Wilson Hawkins",
+                ClassroomName = new List<string>{
+                    "Bate Building 01028",
+                    "Howell Science Complex 0E205"
+                },
+                CampusName = "Main Campus",
+                ClassDays = new List<string>{
+                    "Monday,Wednesday,Friday",
+                    "Tuesday"
+                },
+                ClassTimes = new List<string>{
+                    "1:00 pm - 1:50 pm",
+                    "4:00 pm - 4:50 pm"
+                },
+                CourseSeat = seat19,
+                Prerequisites = "Undergraduate level MATH 2121 Minimum Grade of D- or Undergraduate level MATH 2151 Minimum Grade of D- or Undergraduate level MATH 2171 Minimum Grade of D- or Undergraduate level MATH 2122 Minimum Grade of D- or Undergraduate level MATH 2152 Minimum Grade of D- or Undergraduate level MATH 2153 Minimum Grade of D- or Undergraduate level MATH 2154 Minimum Grade of D- or Undergraduate level MATH 2172 Minimum Grade of D- or Undergraduate level MATH 2173 Minimum Grade of D- or Undergraduate level MATH 4221 Minimum Grade of D-",
+                TextbookName = "University Physics with Modern Physics, Volume 1 with E-Book, ISBN: 9780134209586, Author: Young",
+                TextbookNewPrice = 223.60,
+                TextbookUsedPrice = 0.00,
+                CourseLevels = new List<string>{
+                    "Undergraduate"
+                }
+
+            };
+
+            // Compare values for both courses
+            Assert.Equal(9, controller.ViewBag.Courses.Count);
+
+            checkCoursePropertiesAreEqual(course1, controller.ViewBag.Courses[0]);
+            checkCoursePropertiesAreEqual(course2, controller.ViewBag.Courses[1]);
+            checkCoursePropertiesAreEqual(course6, controller.ViewBag.Courses[2]);
+            checkCoursePropertiesAreEqual(course7, controller.ViewBag.Courses[3]);
+            checkCoursePropertiesAreEqual(course14, controller.ViewBag.Courses[4]);
+            checkCoursePropertiesAreEqual(course15, controller.ViewBag.Courses[5]);
+            checkCoursePropertiesAreEqual(course16, controller.ViewBag.Courses[6]);
+            checkCoursePropertiesAreEqual(course18, controller.ViewBag.Courses[7]);
+            checkCoursePropertiesAreEqual(course19, controller.ViewBag.Courses[8]);
         }
     }
 }
