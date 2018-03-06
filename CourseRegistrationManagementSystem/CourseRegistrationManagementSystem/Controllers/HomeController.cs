@@ -131,43 +131,54 @@ namespace CourseRegistrationManagementSystem.Controllers
             List<Course> saturdayCourses = new List<Course>();
             List<Course> sundayCourses = new List<Course>();
 
-            //TODO Need to fix schedule because classDays is now a list
             foreach (Course course in allCourses) 
             {
-                //string classDays = course.ClassDays;
-                //List<string> classDaysList = classDays.Split(',').ToList<string>();
+                List<string> classDays = course.ClassDays;
 
-                //foreach (string day in classDaysList) 
-                //{
-                //    if ("Monday".Equals(day))
-                //    {
-                //        mondayCourses.Add(course);
-                //    }
-                //    if ("Tuesday".Equals(day))
-                //    {
-                //        tuesdayCourses.Add(course);
-                //    }
-                //    if ("Wednesday".Equals(day))
-                //    {
-                //        wednesdayCourses.Add(course);
-                //    }
-                //    if ("Thursday".Equals(day))
-                //    {
-                //        thursdayCourses.Add(course);
-                //    }
-                //    if ("Friday".Equals(day))
-                //    {
-                //        fridayCourses.Add(course);
-                //    }
-                //    if ("Saturday".Equals(day))
-                //    {
-                //        saturdayCourses.Add(course);
-                //    }
-                //    if ("Sunday".Equals(day))
-                //    {
-                //        sundayCourses.Add(course);
-                //    }
-                //}
+                List<string> allClassDays = new List<string>();
+
+                //Each string in ClassDays list usually contains two or three days (multiple days that have the same class meeting time)
+                foreach (string meetingDays in classDays)
+                {
+                    string[] days = meetingDays.Split(",");
+
+                    foreach (string day in days)
+                    {
+                        allClassDays.Add(day);
+                    }
+                }
+
+                foreach (string day in allClassDays)
+                {
+                    if (day.Equals("Monday"))
+                    {
+                        mondayCourses.Add(course);
+                    }
+                    else if (day.Equals("Tuesday"))
+                    {
+                        tuesdayCourses.Add(course);
+                    }
+                    else if (day.Equals("Wednesday"))
+                    {
+                        wednesdayCourses.Add(course);
+                    }
+                    else if (day.Equals("Thursday"))
+                    {
+                        thursdayCourses.Add(course);
+                    }
+                    else if (day.Equals("Friday"))
+                    {
+                        fridayCourses.Add(course);
+                    }
+                    else if (day.Equals("Saturday"))
+                    {
+                        saturdayCourses.Add(course);
+                    }
+                    else if (day.Equals("Sunday"))
+                    {
+                        sundayCourses.Add(course);
+                    }
+                }
 
             }
 

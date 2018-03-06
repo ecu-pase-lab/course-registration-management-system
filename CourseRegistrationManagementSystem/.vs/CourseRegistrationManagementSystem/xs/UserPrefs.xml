@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{97F2E89D-C079-4BBE-B0D5-404EDD0E334D}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem/Views/Home/CourseResults.cshtml">
+    <Files>
+      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="138" Column="42" />
+      <File FileName="CourseRegistrationManagementSystem.Tests/HomeControllerTests.cs" Line="63" Column="31" />
+      <File FileName="CourseRegistrationManagementSystem/wwwroot/js/site.js" Line="9" Column="39" />
+      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="1021" Column="15" />
+      <File FileName="CourseRegistrationManagementSystem/Views/Home/Schedule.cshtml" Line="19" Column="33" />
+      <File FileName="CourseRegistrationManagementSystem/Views/Home/CourseResults.cshtml" Line="97" Column="63" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
