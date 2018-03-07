@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using CourseRegistrationManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Web;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace CourseRegistrationManagementSystem.Controllers
 {
@@ -102,6 +105,16 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             ViewBag.Courses = coursesToReturn;
 
+            //byte[] bytes = null;
+            //BinaryFormatter bf = new BinaryFormatter();
+            //using (MemoryStream ms = new MemoryStream())
+            //{
+            //    bf.Serialize(ms, coursesToReturn);
+            //    bytes = ms.ToArray();
+            //}
+
+            //ControllerContext.HttpContext.Session.Set("scheduledCourses", bytes);
+
             return View();
         }
 
@@ -122,6 +135,12 @@ namespace CourseRegistrationManagementSystem.Controllers
         public IActionResult Schedule()
         {
             List<Course> allCourses = mockCRMSData.PopulateCourses();
+
+            //byte[] savedCourses = new byte[];
+
+            //ControllerContext.HttpContext.Session.TryGetValue("scheduledCourses", out savedCourses);
+
+            //HttpContext.Session.
 
             List<Course> mondayCourses = new List<Course>();
             List<Course> tuesdayCourses = new List<Course>();
@@ -189,6 +208,12 @@ namespace CourseRegistrationManagementSystem.Controllers
             ViewBag.FridayCourses = fridayCourses;
             ViewBag.SaturdayCourses = saturdayCourses;
             ViewBag.SundayCourses = sundayCourses;
+
+            return View();
+        }
+
+        public IActionResult Directions()
+        {
 
             return View();
         }
