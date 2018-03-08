@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CourseRegistrationManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Web;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
 using Microsoft.AspNetCore.Http;
 
 namespace CourseRegistrationManagementSystem.Controllers
@@ -105,15 +102,7 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             ViewBag.Courses = coursesToReturn;
 
-            //byte[] bytes = null;
-            //BinaryFormatter bf = new BinaryFormatter();
-            //using (MemoryStream ms = new MemoryStream())
-            //{
-            //    bf.Serialize(ms, coursesToReturn);
-            //    bytes = ms.ToArray();
-            //}
-
-            //ControllerContext.HttpContext.Session.Set("scheduledCourses", bytes);
+            HttpContext.Session.Set<List<Course>>("scheduledCourses", coursesToReturn);
 
             return View();
         }
@@ -134,13 +123,7 @@ namespace CourseRegistrationManagementSystem.Controllers
 
         public IActionResult Schedule()
         {
-            List<Course> allCourses = mockCRMSData.PopulateCourses();
-
-            //byte[] savedCourses = new byte[];
-
-            //ControllerContext.HttpContext.Session.TryGetValue("scheduledCourses", out savedCourses);
-
-            //HttpContext.Session.
+            List<Course> scheduledCourses = HttpContext.Session.Get<List<Course>>("scheduledCourses");
 
             List<Course> mondayCourses = new List<Course>();
             List<Course> tuesdayCourses = new List<Course>();
@@ -150,55 +133,58 @@ namespace CourseRegistrationManagementSystem.Controllers
             List<Course> saturdayCourses = new List<Course>();
             List<Course> sundayCourses = new List<Course>();
 
-            foreach (Course course in allCourses) 
+            if (scheduledCourses != null)
             {
-                List<string> classDays = course.ClassDays;
-
-                List<string> allClassDays = new List<string>();
-
-                //Each string in ClassDays list usually contains two or three days (multiple days that have the same class meeting time)
-                foreach (string meetingDays in classDays)
+                foreach (Course course in scheduledCourses)
                 {
-                    string[] days = meetingDays.Split(",");
+                    List<string> classDays = course.ClassDays;
 
-                    foreach (string day in days)
+                    List<string> allClassDays = new List<string>();
+
+                    //Each string in ClassDays list usually contains two or three days (multiple days that have the same class meeting time)
+                    foreach (string meetingDays in classDays)
                     {
-                        allClassDays.Add(day);
+                        string[] days = meetingDays.Split(",");
+
+                        foreach (string day in days)
+                        {
+                            allClassDays.Add(day);
+                        }
                     }
+
+                    foreach (string day in allClassDays)
+                    {
+                        if (day.Equals("Monday"))
+                        {
+                            mondayCourses.Add(course);
+                        }
+                        else if (day.Equals("Tuesday"))
+                        {
+                            tuesdayCourses.Add(course);
+                        }
+                        else if (day.Equals("Wednesday"))
+                        {
+                            wednesdayCourses.Add(course);
+                        }
+                        else if (day.Equals("Thursday"))
+                        {
+                            thursdayCourses.Add(course);
+                        }
+                        else if (day.Equals("Friday"))
+                        {
+                            fridayCourses.Add(course);
+                        }
+                        else if (day.Equals("Saturday"))
+                        {
+                            saturdayCourses.Add(course);
+                        }
+                        else if (day.Equals("Sunday"))
+                        {
+                            sundayCourses.Add(course);
+                        }
+                    }
+
                 }
-
-                foreach (string day in allClassDays)
-                {
-                    if (day.Equals("Monday"))
-                    {
-                        mondayCourses.Add(course);
-                    }
-                    else if (day.Equals("Tuesday"))
-                    {
-                        tuesdayCourses.Add(course);
-                    }
-                    else if (day.Equals("Wednesday"))
-                    {
-                        wednesdayCourses.Add(course);
-                    }
-                    else if (day.Equals("Thursday"))
-                    {
-                        thursdayCourses.Add(course);
-                    }
-                    else if (day.Equals("Friday"))
-                    {
-                        fridayCourses.Add(course);
-                    }
-                    else if (day.Equals("Saturday"))
-                    {
-                        saturdayCourses.Add(course);
-                    }
-                    else if (day.Equals("Sunday"))
-                    {
-                        sundayCourses.Add(course);
-                    }
-                }
-
             }
 
             ViewBag.MondayCourses = mondayCourses;
