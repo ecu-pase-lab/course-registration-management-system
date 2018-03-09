@@ -73,11 +73,11 @@
                     </td>
                     <td>@course.CampusName</td>
                     <td>
-                        @for(int i = 0; i < @course.ClassroomName.Count; i++)
+                        @for(int i = 0; i < @course.ClassroomNames.Count; i++)
                         {
-                            <span>@course.ClassroomName[i]</span>
+                            <span>@course.ClassroomNames[i]</span>
         
-                            if (i + 1 < @course.ClassroomName.Count)
+                            if (i + 1 < @course.ClassroomNames.Count)
                             {
                                 <span><br></span>
                             }

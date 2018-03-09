@@ -125,65 +125,65 @@ namespace CourseRegistrationManagementSystem.Controllers
         {
             List<Course> scheduledCourses = HttpContext.Session.Get<List<Course>>("scheduledCourses");
 
-            List<Course> mondayCourses = new List<Course>();
-            List<Course> tuesdayCourses = new List<Course>();
-            List<Course> wednesdayCourses = new List<Course>();
-            List<Course> thursdayCourses = new List<Course>();
-            List<Course> fridayCourses = new List<Course>();
-            List<Course> saturdayCourses = new List<Course>();
-            List<Course> sundayCourses = new List<Course>();
+            List<ScheduledCourse> mondayCourses = new List<ScheduledCourse>();
+            List<ScheduledCourse> tuesdayCourses = new List<ScheduledCourse>();
+            List<ScheduledCourse> wednesdayCourses = new List<ScheduledCourse>();
+            List<ScheduledCourse> thursdayCourses = new List<ScheduledCourse>();
+            List<ScheduledCourse> fridayCourses = new List<ScheduledCourse>();
+            List<ScheduledCourse> saturdayCourses = new List<ScheduledCourse>();
+            List<ScheduledCourse> sundayCourses = new List<ScheduledCourse>();
 
             if (scheduledCourses != null)
             {
                 foreach (Course course in scheduledCourses)
                 {
                     List<string> classDays = course.ClassDays;
+                    List<string> classTimes = course.ClassTimes;
+                    List<string> classroomNames = course.ClassroomNames;
 
-                    List<string> allClassDays = new List<string>();
-
-                    //Each string in ClassDays list usually contains two or three days (multiple days that have the same class meeting time)
-                    foreach (string meetingDays in classDays)
+                    for (int i = 0; i < classDays.Count; i++) 
                     {
-                        string[] days = meetingDays.Split(",");
+                        string datesWithCommas = classDays.ElementAt(i);
+                        string[] days = datesWithCommas.Split(",");
 
                         foreach (string day in days)
                         {
-                            allClassDays.Add(day);
+                            ScheduledCourse courseToAdd = new ScheduledCourse();
+                            courseToAdd.ID = course.ID;
+                            courseToAdd.ClassName = course.CourseSubjectCode + " " + course.CourseName;
+                            courseToAdd.ClassTime = classTimes.ElementAt(i);
+                            courseToAdd.ClassroomName = classroomNames.ElementAt(i);
+
+                            if (day.Equals("Monday"))
+                            {
+                                mondayCourses.Add(courseToAdd);
+                            }
+                            else if (day.Equals("Tuesday"))
+                            {
+                                tuesdayCourses.Add(courseToAdd);
+                            }
+                            else if (day.Equals("Wednesday"))
+                            {
+                                wednesdayCourses.Add(courseToAdd);
+                            }
+                            else if (day.Equals("Thursday"))
+                            {
+                                thursdayCourses.Add(courseToAdd);
+                            }
+                            else if (day.Equals("Friday"))
+                            {
+                                fridayCourses.Add(courseToAdd);
+                            }
+                            else if (day.Equals("Saturday"))
+                            {
+                                saturdayCourses.Add(courseToAdd);
+                            }
+                            else if (day.Equals("Sunday"))
+                            {
+                                sundayCourses.Add(courseToAdd);
+                            }
                         }
                     }
-
-                    foreach (string day in allClassDays)
-                    {
-                        if (day.Equals("Monday"))
-                        {
-                            mondayCourses.Add(course);
-                        }
-                        else if (day.Equals("Tuesday"))
-                        {
-                            tuesdayCourses.Add(course);
-                        }
-                        else if (day.Equals("Wednesday"))
-                        {
-                            wednesdayCourses.Add(course);
-                        }
-                        else if (day.Equals("Thursday"))
-                        {
-                            thursdayCourses.Add(course);
-                        }
-                        else if (day.Equals("Friday"))
-                        {
-                            fridayCourses.Add(course);
-                        }
-                        else if (day.Equals("Saturday"))
-                        {
-                            saturdayCourses.Add(course);
-                        }
-                        else if (day.Equals("Sunday"))
-                        {
-                            sundayCourses.Add(course);
-                        }
-                    }
-
                 }
             }
 

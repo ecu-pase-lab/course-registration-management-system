@@ -1,18 +1,13 @@
 ﻿<Properties StartupConfiguration="{97F2E89D-C079-4BBE-B0D5-404EDD0E334D}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem/Controllers/HomeController.cs">
     <Files>
-      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="141" Column="21" />
+      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="157" Column="54" />
       <File FileName="CourseRegistrationManagementSystem.Tests/HomeControllerTests.cs" Line="1065" Column="41" />
-      <File FileName="CourseRegistrationManagementSystem/wwwroot/js/site.js" Line="9" Column="39" />
-      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="1021" Column="15" />
-      <File FileName="CourseRegistrationManagementSystem/Views/Home/Schedule.cshtml" Line="16" Column="12" />
-      <File FileName="CourseRegistrationManagementSystem/Views/Home/CourseResults.cshtml" Line="97" Column="63" />
-      <File FileName="CourseRegistrationManagementSystem/Startup.cs" Line="48" Column="56" />
-      <File FileName="CourseRegistrationManagementSystem/Views/Home/Directions.cshtml" Line="34" Column="7" />
-      <File FileName="CourseRegistrationManagementSystem/Views/Shared/_Layout.cshtml" Line="41" Column="96" />
-      <File FileName="CourseRegistrationManagementSystem/Views/Home/Search.cshtml" Line="1" Column="1" />
-      <File FileName="CourseRegistrationManagementSystem/Models/SessionExtensions.cs" Line="20" Column="2" />
-      <File FileName="CourseRegistrationManagementSystem/Models/Course.cs" Line="1" Column="1" />
+      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="204" Column="15" />
+      <File FileName="CourseRegistrationManagementSystem/Views/Home/Schedule.cshtml" Line="107" Column="13" />
+      <File FileName="CourseRegistrationManagementSystem/Models/ScheduledCourse.cs" Line="17" Column="1" />
+      <File FileName="CourseRegistrationManagementSystem/Models/Course.cs" Line="30" Column="43" />
+      <File FileName="CourseRegistrationManagementSystem/Views/Home/CourseResults.cshtml" Line="80" Column="63" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />

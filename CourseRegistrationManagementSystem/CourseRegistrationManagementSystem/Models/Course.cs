@@ -20,14 +20,14 @@ namespace CourseRegistrationManagementSystem.Models
         public DateTime RegistrationEndDate { get; set; }
         public DateTime ClassStartDate { get; set; }
         public DateTime ClassEndDate { get; set; }
-        public List<string> CourseLevels { get; set; } 
+        public List<string> CourseLevels { get; set; }
         public string ClassInstructionalMethod { get; set; }
         public double CreditHours { get; set; }
         public string CourseTerm { get; set; }
         public List<string> ClassTimes { get; set; }
         public List<string> ClassDays { get; set; }
         public string CampusName { get; set; }
-        public List<string> ClassroomName { get; set; }
+        public List<string> ClassroomNames { get; set; }
         public string InstructorName { get; set; }
         public Seat CourseSeat { get; set; }
         public string Prerequisites { get; set; }

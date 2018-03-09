@@ -181,7 +181,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Mark Hills",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Brewster Building 0B204"
                 },
                 CampusName = "Main Campus",
@@ -227,7 +227,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Internet or World Wide Web",
                 CreditHours = 3,
                 InstructorName = "Sergiy Vilkomir",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "N/A"
                 },
                 CampusName = "DE/Internet Campus",
@@ -273,7 +273,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Moha Nassehzadeh-Tabrizi",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Brewster Building 0B203"
                 },
                 CampusName = "Main Campus",
@@ -318,7 +318,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Junhua Ding",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Joyner East 00214"
                 },
                 CampusName = "Main Campus",
@@ -363,7 +363,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Internet or World Wide Web",
                 CreditHours = 3,
                 InstructorName = "Junhua Ding",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "N/A"
                 },
                 CampusName = "DE/Internet Campus",
@@ -408,7 +408,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Robert Dancy Hoggard",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Howell Science Complex C103B"
                 },
                 CampusName = "Main Campus",
@@ -453,7 +453,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Robert Dancy Hoggard",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Bate Building 01025"
                 },
                 CampusName = "Main Campus",
@@ -498,7 +498,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Robert Dancy Hoggard",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Bate Building 01025"
                 },
                 CampusName = "Main Campus",
@@ -543,7 +543,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Krishnan Gopalakrishnan",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Brewster Building 0B304"
                 },
                 CampusName = "Main Campus",
@@ -588,7 +588,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Qin Ding",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Howell Science Complex 0N107"
                 },
                 CampusName = "Main Campus",
@@ -633,7 +633,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Kelsey Elisabeth Rhodes",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Joyner East 00214"
                 },
                 CampusName = "Main Campus",
@@ -678,7 +678,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Daniel Addison Wiseman",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Joyner East 00214"
                 },
                 CampusName = "Main Campus",
@@ -723,7 +723,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Johannes Hendrik Hattingh",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Rawl Building And Annex 00206"
                 },
                 CampusName = "Main Campus",
@@ -768,7 +768,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Heather Dawn Ries",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Austin Building 00203"
                 },
                 CampusName = "Main Campus",
@@ -813,7 +813,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Gail L Ratcliff",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Austin Building 00203"
                 },
                 CampusName = "Main Campus",
@@ -858,7 +858,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Deborah K Ferrell",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Austin Building 00220"
                 },
                 CampusName = "Main Campus",
@@ -903,7 +903,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Internet or World Wide Web",
                 CreditHours = 3,
                 InstructorName = "Deborah K Ferrell",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "N/A"
                 },
                 CampusName = "DE/Internet Campus",
@@ -948,7 +948,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Regina DeWitt, Wilson Hawkins",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Bate Building 01028",
                     "Howell Science Complex 0E205"
                 },
@@ -996,7 +996,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 3,
                 InstructorName = "Regina DeWitt, Wilson Hawkins",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Bate Building 01028",
                     "Howell Science Complex 0E205"
                 },
@@ -1044,7 +1044,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassInstructionalMethod = "Face to Face",
                 CreditHours = 1,
                 InstructorName = "Robert Quinn",
-                ClassroomName = new List<string>{
+                ClassroomNames = new List<string>{
                     "Jenkins Fine Arts Center 01108"
                 },
                 CampusName = "Main Campus",
