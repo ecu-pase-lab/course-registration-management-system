@@ -38,7 +38,6 @@ namespace CourseRegistrationManagementSystem.Tests
             Assert.Equal(expectedCourse.CourseLevels, actualCourse.CourseLevels);
 
             // Compare Seat values
-            Assert.Equal(expectedCourse.CourseSeat.ID, actualCourse.CourseSeat.ID);
             Assert.Equal(expectedCourse.CourseSeat.Capacity, actualCourse.CourseSeat.Capacity);
             Assert.Equal(expectedCourse.CourseSeat.Actual, actualCourse.CourseSeat.Actual);
             Assert.Equal(expectedCourse.CourseSeat.Remaining, actualCourse.CourseSeat.Remaining);

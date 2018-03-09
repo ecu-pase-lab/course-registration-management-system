@@ -56,7 +56,7 @@ namespace CourseRegistrationManagementSystem.Controllers
         {
             List<Course> allCourses = mockCRMSData.PopulateCourses();
 
-            List<Course> coursesToReturn = allCourses;
+            List<Course> coursesToReturn = new List<Course>();
 
             if (!(selectedSubjects.Count() == 0 || (selectedSubjects.Count() == 1 && selectedSubjects.First().Equals("All")) ))
             {
@@ -101,8 +101,6 @@ namespace CourseRegistrationManagementSystem.Controllers
             coursesToReturn = findCoursesByCreditHourRange(coursesToReturn, creditHourRangeStart, creditHourRangeEnd);
 
             ViewBag.Courses = coursesToReturn;
-
-            HttpContext.Session.Set<List<Course>>("scheduledCourses", coursesToReturn);
 
             return View();
         }
@@ -150,7 +148,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                         {
                             ScheduledCourse courseToAdd = new ScheduledCourse();
                             courseToAdd.ID = course.ID;
-                            courseToAdd.ClassName = course.CourseSubjectCode + " " + course.CourseName;
+                            courseToAdd.ClassName = course.CourseSubjectCode + "-" + course.SectionNumber + " " + course.CourseName;
                             courseToAdd.ClassTime = classTimes.ElementAt(i);
                             courseToAdd.ClassroomName = classroomNames.ElementAt(i);
 
@@ -198,9 +196,32 @@ namespace CourseRegistrationManagementSystem.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult AddCourseToSchedule(int courseId)
+        {
+            List<Course> scheduledCourses = HttpContext.Session.Get<List<Course>>("scheduledCourses");
+
+            if (scheduledCourses == null)
+            {
+                scheduledCourses = new List<Course>();
+            }
+
+            List<Course> allCourses = mockCRMSData.PopulateCourses();
+
+            Course course = allCourses.Find(delegate (Course c) { return c.ID == courseId; });
+
+            if (!scheduledCourses.Contains(course))
+            {
+                scheduledCourses.Add(course);
+            }
+
+            HttpContext.Session.Set<List<Course>>("scheduledCourses", scheduledCourses);
+
+            return Content("Added");
+        }
+
         public IActionResult Directions()
         {
-
             return View();
         }
 

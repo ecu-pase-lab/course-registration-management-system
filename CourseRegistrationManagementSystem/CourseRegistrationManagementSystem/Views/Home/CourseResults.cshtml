@@ -102,8 +102,20 @@
 
                 $("#classScheduleCheckbox_@course.ID").click(function() {
                     if($("#classScheduleCheckbox_@course.ID").is(':checked')){
-                        $("#scheduleText_@course.ID").html("Added to Schedule");
-                        $("#scheduleText_@course.ID").css("color", "green");
+                        $.ajax({
+                            url: '/Home/AddCourseToSchedule',
+                            data: { 'courseId' : @course.ID },
+                            type: "POST",
+                            cache: false,
+                            success: function (success) {
+                                $("#scheduleText_@course.ID").html("Added to Schedule");
+                                $("#scheduleText_@course.ID").css("color", "green");
+                            },
+                            error: function (error) {
+                                $("#scheduleText_@course.ID").html("Error adding course to schedule");
+                                $("#scheduleText_@course.ID").css("color", "red");
+                            }
+                        });
                     } else {
                         $("#scheduleText_@course.ID").html("Removed from Schedule");
                         $("#scheduleText_@course.ID").css("color", "red");
