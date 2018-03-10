@@ -18,6 +18,10 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\lib\wickedpicker\" />
+    <Folder Include="wwwroot\lib\jquery-ui\" />
+    <Folder Include="wwwroot\lib\jquery-ui\dist\" />
+    <Folder Include="wwwroot\lib\jquery-ui\dist\css\" />
+    <Folder Include="wwwroot\lib\jquery-ui\dist\js\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\CourseMeetingInfo.cs" />
