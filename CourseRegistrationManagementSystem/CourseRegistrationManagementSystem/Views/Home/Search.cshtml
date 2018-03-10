@@ -51,10 +51,10 @@
 
             <div class="form-group col-md-4">
 
-                <label id="sessionLabel" class="searchLabel">Session:</label>
+                <label id="scheduleTypeLabel" class="searchLabel">Schedule Type:</label>
 
-                @Html.ListBox("selectedSession", new MultiSelectList(ViewBag.Sessions))
-        
+                @Html.ListBox("selectedScheduleType", new MultiSelectList(ViewBag.ScheduleTypes))
+
             </div>
 
             <div class="form-group col-md-4">
@@ -72,34 +72,6 @@
         <input type="button" value="Advanced Search" class="advancedButton" id="advancedCourseSearchButton">
 
         <div id="advancedCourseSearchGroup">
-
-        <div class="row">
-
-            <div class="form-group col-md-4">
-
-                <label id="scheduleTypeLabel" class="searchLabel">Schedule Type:</label>
-
-                @Html.ListBox("selectedScheduleType", new MultiSelectList(ViewBag.ScheduleTypes))
-
-            </div>
-
-            <div class="form-group col-md-4">
-
-                <label id="courseAttributeLabel" class="searchLabel">Course Attribute:</label>
-
-                @Html.ListBox("selectedCourseAttribute", new MultiSelectList(ViewBag.CourseAttributes))
-        
-            </div>
-
-            <div class="form-group col-md-4">
-
-                <label id="termDurationLabel" class="searchLabel">Term Duration:</label>
-
-                @Html.ListBox("selectedTermDuration", new MultiSelectList(ViewBag.TermDurations))
-        
-            </div>
-
-        </div>
 
         <div class="row">
         

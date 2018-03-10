@@ -39,13 +39,7 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             ViewBag.CourseLevels = mockCRMSData.PopulateCourseLevels();
 
-            ViewBag.TermDurations = mockCRMSData.PopulateTermDurations();
-
             ViewBag.Instructors = mockCRMSData.PopulateInstructors();
-
-            ViewBag.Sessions = mockCRMSData.PopulateSessions();
-
-            ViewBag.CourseAttributes = mockCRMSData.PopulateCourseAttributes();
 
             return View();
         }
@@ -56,17 +50,17 @@ namespace CourseRegistrationManagementSystem.Controllers
         {
             List<Course> allCourses = mockCRMSData.PopulateCourses();
 
-            List<Course> coursesToReturn = new List<Course>();
+            List<Course> coursesToReturn = allCourses;
 
-            if (!(selectedSubjects.Count() == 0 || (selectedSubjects.Count() == 1 && selectedSubjects.First().Equals("All")) ))
+            if (!(selectedSubjects.Count() == 0 || (selectedSubjects.Count() == 1 && selectedSubjects.First().Equals("All"))))
             {
                 coursesToReturn = findCoursesBySubjects(allCourses, selectedSubjects);
-            } 
+            }
 
-            if (!(selectedCampuses.Count() == 0 || (selectedCampuses.Count() == 1 && selectedCampuses.First().Equals("All")) ))
+            if (!(selectedCampuses.Count() == 0 || (selectedCampuses.Count() == 1 && selectedCampuses.First().Equals("All"))))
             {
                 coursesToReturn = findCoursesByCampuses(coursesToReturn, selectedCampuses);
-            } 
+            }
 
             if (!(selectedInstructionalMethods.Count() == 0 || (selectedInstructionalMethods.Count() == 1 && selectedInstructionalMethods.First().Equals("All"))))
             {
@@ -78,20 +72,20 @@ namespace CourseRegistrationManagementSystem.Controllers
                 coursesToReturn = findCoursesByCourseLevels(coursesToReturn, selectedCourseLevels);
             }
 
-            if (!(selectedInstructors.Count() == 0) )
+            if (!(selectedInstructors.Count() == 0))
             {
                 coursesToReturn = findCoursesByInstructors(coursesToReturn, selectedInstructors);
             }
 
-            if (!(CourseTitle == null || CourseTitle.Equals("")) )
+            if (!(CourseTitle == null || CourseTitle.Equals("")))
             {
                 coursesToReturn = findCoursesByCourseTitle(coursesToReturn, CourseTitle);
-            } 
+            }
 
-            if (!(CourseNumber == null || CourseNumber.Equals("")) )
+            if (!(CourseNumber == null || CourseNumber.Equals("")))
             {
                 coursesToReturn = findCoursesByCourseNumber(coursesToReturn, CourseNumber);
-            } 
+            }
 
             if (Monday != null || Tuesday != null || Wednesday != null || Thursday != null || Friday != null || Saturday != null || Sunday != null)
             {

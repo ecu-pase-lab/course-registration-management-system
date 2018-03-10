@@ -85,16 +85,6 @@ namespace CourseRegistrationManagementSystem.Controllers
             return courseLevels;
         }
 
-        public List<string> PopulateTermDurations()
-        {
-            List<string> termDurations = new List<string>();
-
-            termDurations.Add("All");
-            termDurations.Add("Full Term");
-
-            return termDurations;
-        }
-
         public List<string> PopulateInstructors()
         {
             List<string> instructors = new List<string>();
@@ -128,31 +118,6 @@ namespace CourseRegistrationManagementSystem.Controllers
             instructors.Sort();
 
             return instructors;
-        }
-
-        public List<string> PopulateSessions()
-        {
-            List<string> sessions = new List<string>();
-
-            sessions.Add("All");
-            sessions.Add("Field-Based Course Eval");
-            sessions.Add("Lab-Based Course Eval");
-            sessions.Add("Not to be Surveyed Course Eval");
-
-            return sessions;
-        }
-
-        public List<string> PopulateCourseAttributes()
-        {
-            List<string> courseAttributes = new List<string>();
-
-            courseAttributes.Add("All");
-            courseAttributes.Add("AR-Special Music Fees");
-            courseAttributes.Add("Bassoon");
-            courseAttributes.Add("Cello");
-            courseAttributes.Add("Clarinet");
-
-            return courseAttributes;
         }
 
         public List<Course> PopulateCourses()
