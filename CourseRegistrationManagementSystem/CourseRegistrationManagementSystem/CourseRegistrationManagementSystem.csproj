@@ -22,8 +22,15 @@
     <Folder Include="wwwroot\lib\jquery-ui\dist\" />
     <Folder Include="wwwroot\lib\jquery-ui\dist\css\" />
     <Folder Include="wwwroot\lib\jquery-ui\dist\js\" />
+    <Folder Include="wwwroot\lib\jquery-ui\dist\css\images\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\CourseMeetingInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\lib\jquery-ui\dist\css\images\ui-icons_555555_256x240.png" />
+    <Content Remove="wwwroot\lib\jquery-ui\dist\css\images\ui-icons_777620_256x240.png" />
+    <Content Remove="wwwroot\lib\jquery-ui\dist\css\images\ui-icons_777777_256x240.png" />
+    <Content Remove="wwwroot\lib\jquery-ui\dist\css\images\ui-icons_cc0000_256x240.png" />
   </ItemGroup>
 </Project>
