@@ -210,7 +210,7 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             Course course = allCourses.Find(delegate (Course c) { return c.ID == courseId; });
 
-            if (!scheduledCourses.Contains(course))
+            if (!scheduledCourses.Any(c => c.ID == courseId))
             {
                 scheduledCourses.Add(course);
             }
@@ -218,6 +218,30 @@ namespace CourseRegistrationManagementSystem.Controllers
             HttpContext.Session.Set<List<Course>>("scheduledCourses", scheduledCourses);
 
             return Content("Added");
+        }
+
+        [HttpPost]
+        public IActionResult RemoveCourseFromSchedule(int courseId)
+        {
+            List<Course> scheduledCourses = HttpContext.Session.Get<List<Course>>("scheduledCourses");
+
+            if (scheduledCourses == null)
+            {
+                scheduledCourses = new List<Course>();
+            }
+
+            List<Course> allCourses = mockCRMSData.PopulateCourses();
+
+            Course course = allCourses.Find(delegate (Course c) { return c.ID == courseId; });
+
+            if (scheduledCourses.Any(c => c.ID == courseId))
+            {
+                scheduledCourses.RemoveAll(i => i.ID == courseId);
+            }
+
+            HttpContext.Session.Set<List<Course>>("scheduledCourses", scheduledCourses);
+
+            return Content("Removed");
         }
 
         public IActionResult Directions()

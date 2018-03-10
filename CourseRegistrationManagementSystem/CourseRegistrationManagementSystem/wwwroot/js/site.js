@@ -2,9 +2,15 @@
 
     $("#advancedCourseSearchGroup").hide();
 
-    $('#startTimeTimepicker').wickedpicker();
+    var options = {title: 'Choose Time'};
 
-    $('#endTimeTimepicker').wickedpicker();
+    $('#startTimeTimepicker').wickedpicker(options);
+
+    $('#endTimeTimepicker').wickedpicker(options);
+
+    $('#startTimeTimepicker').val('');
+
+    $('#endTimeTimepicker').val('');
 
     $("#advancedCourseSearchButton").click(function(){
         $("#advancedCourseSearchGroup").toggle();

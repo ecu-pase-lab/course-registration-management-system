@@ -117,8 +117,20 @@
                             }
                         });
                     } else {
-                        $("#scheduleText_@course.ID").html("Removed from Schedule");
-                        $("#scheduleText_@course.ID").css("color", "red");
+                        $.ajax({
+                            url: '/Home/RemoveCourseFromSchedule',
+                            data: { 'courseId' : @course.ID },
+                            type: "POST",
+                            cache: false,
+                            success: function (success) {
+                                $("#scheduleText_@course.ID").html("Removed from Schedule");
+                                $("#scheduleText_@course.ID").css("color", "red");
+                            },
+                            error: function (error) {
+                                $("#scheduleText_@course.ID").html("Error removing course from schedule");
+                                $("#scheduleText_@course.ID").css("color", "red");
+                            }
+                        });
                     }
                 });
             });
