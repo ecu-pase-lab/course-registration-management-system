@@ -15,7 +15,6 @@ namespace CourseRegistrationManagementSystem.Controllers
         {
             List<string> semesters = new List<string>();
             semesters.Add("Spring 2018 (View Only)");
-            semesters.Add("Spring-Medical 2018 (View Only)");
 
             return semesters;
         }
@@ -43,6 +42,19 @@ namespace CourseRegistrationManagementSystem.Controllers
             scheduleTypes.Add("Clinical");
             scheduleTypes.Add("Colloquia");
             scheduleTypes.Add("Honors (DO NOT USE)");
+            scheduleTypes.Add("Individual Study");
+            scheduleTypes.Add("Internship, Field Exp, Coop ED");
+            scheduleTypes.Add("Lab");
+            scheduleTypes.Add("Lecture");
+            scheduleTypes.Add("Lecture and Lab");
+            scheduleTypes.Add("Other (DO NOT USE)");
+            scheduleTypes.Add("Physical Activity");
+            scheduleTypes.Add("Practicum");
+            scheduleTypes.Add("Recital, Performance, Ensemble");
+            scheduleTypes.Add("Recitation");
+            scheduleTypes.Add("Seminar");
+            scheduleTypes.Add("Student Teaching");
+            scheduleTypes.Add("Studio");
 
             return scheduleTypes;
         }
@@ -55,7 +67,12 @@ namespace CourseRegistrationManagementSystem.Controllers
             instructionalMethods.Add("Face to Face");
             instructionalMethods.Add("Face to Face Remote Site");
             instructionalMethods.Add("Hybrid Primarily Face to Face");
+            instructionalMethods.Add("Hybrid Primarily Web");
+            instructionalMethods.Add("Interactive Real Time Video");
             instructionalMethods.Add("Internet or World Wide Web"); 
+            instructionalMethods.Add("Nontraditional (DO NOT USE)");
+            instructionalMethods.Add("Storage Device or NonWeb Media");
+            instructionalMethods.Add("Traditional (DO NOT USE)");
 
             return instructionalMethods;
         }

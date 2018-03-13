@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using CourseRegistrationManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace CourseRegistrationManagementSystem.Controllers
 {
@@ -39,7 +40,18 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             ViewBag.CourseLevels = mockCRMSData.PopulateCourseLevels();
 
-            ViewBag.Instructors = mockCRMSData.PopulateInstructors();
+            List<string> instructorsList = mockCRMSData.PopulateInstructors();
+
+            ViewBag.InstructorsJSON = JsonConvert.SerializeObject(instructorsList, Formatting.None).Replace("&quot;", "");
+
+            //Console.WriteLine("Output: " + output);
+
+            //var jsonResult = Json(instructorsList);
+
+            //string jsonString = JsonConvert.SerializeObject(jsonResult.Value);
+
+            ViewBag.Instructors = instructorsList;
+            //ViewBag.InstructorsJSON = jsonString;
 
             return View();
         }

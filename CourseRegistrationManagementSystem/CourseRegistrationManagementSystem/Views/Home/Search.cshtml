@@ -1,5 +1,5 @@
 ﻿@using CourseRegistrationManagementSystem.Models;
-@using System.Collections.Generic
+@using System.Collections.Generic;
 
 @{
     ViewData["Title"] = "Search for Courses";
@@ -64,6 +64,17 @@
                 @Html.ListBox("selectedInstructors", new MultiSelectList(ViewBag.Instructors))
 
                 <input id="tags" size="50">
+            
+
+                <script>
+
+                    var array = @ViewBag.InstructorsJSON;
+                    var newArray = array.replace(/&quot;/g, '"');
+                    console.log(newArray);
+                    for(var i = 0; i < array.length; i++) {
+                        alert(array[i]);
+                    }
+                </script>
 
             </div>
 
