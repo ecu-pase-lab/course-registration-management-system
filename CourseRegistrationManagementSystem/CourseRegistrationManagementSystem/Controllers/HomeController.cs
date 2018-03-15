@@ -370,11 +370,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             foreach (Course course in courses)
             {
-                foreach (string courseLevel in selectedCourseLevels)
+                foreach (string courseLevelInSelected in selectedCourseLevels)
                 {
                     foreach (string courseLevelInCourse in course.CourseLevels)
                     {
-                        if (courseLevel.Equals(courseLevelInCourse))
+                        if (courseLevelInCourse.Contains(courseLevelInSelected))
                         {
                             coursesToReturn.Add(course);
                         }
