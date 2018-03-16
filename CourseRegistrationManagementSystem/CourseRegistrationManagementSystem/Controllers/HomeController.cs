@@ -405,56 +405,59 @@ namespace CourseRegistrationManagementSystem.Controllers
                                                     string friday, string saturday, string sunday)
         {
             List<Course> coursesToReturn = new List<Course>();
+            List<string> allSelectedDays = new List<string>();
+
+            // Create list of each selected day
+            if (monday != null && !("".Equals(monday)))
+            {
+                allSelectedDays.Add(monday);
+            }
+            if (tuesday != null && !("".Equals(tuesday)))
+            {
+                allSelectedDays.Add(tuesday);
+            }
+            if (wednesday != null && !("".Equals(wednesday)))
+            {
+                allSelectedDays.Add(wednesday);
+            }
+            if (thursday != null && !("".Equals(thursday)))
+            {
+                allSelectedDays.Add(thursday);
+            }
+            if (friday != null && !("".Equals(friday)))
+            {
+                allSelectedDays.Add(friday);
+            }
+            if (saturday != null && !("".Equals(saturday)))
+            {
+                allSelectedDays.Add(saturday);
+            }
+            if (sunday != null && !("".Equals(sunday)))
+            {
+                allSelectedDays.Add(sunday);
+            }
 
             foreach (Course course in courses)
             {
                 List<string> classDays = course.ClassDays;
+                List<string> classDaysWithoutCommas = new List<string>();
 
-                List<string> allClassDays = new List<string>();
-
-                //Each string in ClassDays list usually contains two or three days (multiple days that have the same class meeting time)
-                foreach (string meetingDays in classDays)
+                // Each string in the ClassDays list is a comma separated set. Some courses may have more than one set (different meeting time for different days)
+                foreach (string classDaySet in classDays)
                 {
-                    string[] days = meetingDays.Split(",");
+                    List<string> list = classDaySet.Split(',').ToList();
 
-                    foreach (string day in days) 
+                    foreach (string day in list)
                     {
-                        allClassDays.Add(day);
+                        classDaysWithoutCommas.Add(day);
                     }
                 }
 
-                foreach (string day in allClassDays)
+                // Return course if all selected days from the search criteria are in the course's meeting days
+                if (classDaysWithoutCommas.ContainsAll(allSelectedDays))
                 {
-                    if (day.Equals(monday))
-                    {
-                        coursesToReturn.Add(course);
-                    }
-                    else if (day.Equals(tuesday) && !coursesToReturn.Contains(course))
-                    {
-                        coursesToReturn.Add(course);
-                    }
-                    else if (day.Equals(wednesday) && !coursesToReturn.Contains(course))
-                    {
-                        coursesToReturn.Add(course);
-                    }
-                    else if (day.Equals(thursday) && !coursesToReturn.Contains(course))
-                    {
-                        coursesToReturn.Add(course);
-                    }
-                    else if (day.Equals(friday) && !coursesToReturn.Contains(course))
-                    {
-                        coursesToReturn.Add(course);
-                    }
-                    else if (day.Equals(saturday) && !coursesToReturn.Contains(course))
-                    {
-                        coursesToReturn.Add(course);
-                    }
-                    else if (day.Equals(sunday) && !coursesToReturn.Contains(course))
-                    {
-                        coursesToReturn.Add(course);
-                    }
+                    coursesToReturn.Add(course);
                 }
-
             }
 
             return coursesToReturn;

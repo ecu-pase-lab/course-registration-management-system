@@ -1,11 +1,16 @@
 ﻿<Properties StartupConfiguration="{97F2E89D-C079-4BBE-B0D5-404EDD0E334D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem/Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem.Tests/ClassDaysTests.cs">
     <Files>
-      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="426" Column="52" />
-      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="886" Column="33" />
+      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="1048" Column="15" />
       <File FileName="CourseRegistrationManagementSystem/Views/Home/Search.cshtml" Line="73" Column="43" />
       <File FileName="CourseRegistrationManagementSystem/wwwroot/js/site.js" Line="33" Column="20" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/HomeControllerTests.cs" Line="1371" Column="141" />
+      <File FileName="CourseRegistrationManagementSystem.Tests/HomeControllerTests.cs" Line="9285" Column="10" />
+      <File FileName="CourseRegistrationManagementSystem/Models/SessionExtensions.cs" Line="1" Column="1" />
+      <File FileName="CourseRegistrationManagementSystem/Startup.cs" Line="1" Column="1" />
+      <File FileName="CourseRegistrationManagementSystem/Models/CourseListExtensions.cs" Line="23" Column="1" />
+      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="456" Column="112" />
+      <File FileName="CourseRegistrationManagementSystem.Tests/CourseTestUtils.cs" Line="30" Column="78" />
+      <File FileName="CourseRegistrationManagementSystem.Tests/ClassDaysTests.cs" Line="993" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />
