@@ -13,16 +13,14 @@ namespace CourseRegistrationManagementSystem.Controllers
 {
     public class HomeController : Controller
     {
-        private MockCRMSData mockCRMSData;
-
         public HomeController()
         {
-            mockCRMSData = new MockCRMSData();
+
         }
 
         public IActionResult Index()
         {
-            ViewBag.Semesters = mockCRMSData.PopulateSemesters();
+            ViewBag.Semesters = MockCRMSData.PopulateSemesters();
 
             return View();
         }
@@ -30,17 +28,17 @@ namespace CourseRegistrationManagementSystem.Controllers
         [HttpPost]
         public IActionResult Search(string selectedSemester)
         {
-            ViewBag.Subjects = mockCRMSData.PopulateSubjects();
+            ViewBag.Subjects = MockCRMSData.PopulateSubjects();
 
-            ViewBag.ScheduleTypes = mockCRMSData.PopulateScheduleTypes();
+            ViewBag.ScheduleTypes = MockCRMSData.PopulateScheduleTypes();
 
-            ViewBag.InstructionalMethods = mockCRMSData.PopulateInstructionalMethods();
+            ViewBag.InstructionalMethods = MockCRMSData.PopulateInstructionalMethods();
 
-            ViewBag.Campuses = mockCRMSData.PopulateCampuses();
+            ViewBag.Campuses = MockCRMSData.PopulateCampuses();
 
-            ViewBag.CourseLevels = mockCRMSData.PopulateCourseLevels();
+            ViewBag.CourseLevels = MockCRMSData.PopulateCourseLevels();
 
-            List<string> instructorsList = mockCRMSData.PopulateInstructors();
+            List<string> instructorsList = MockCRMSData.PopulateInstructors();
 
             ViewBag.InstructorsJSON = JsonConvert.SerializeObject(instructorsList, Formatting.None).Replace("&quot;", "");
 
@@ -60,7 +58,7 @@ namespace CourseRegistrationManagementSystem.Controllers
         public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses, List<string> selectedInstructors, List<string> selectedCourseLevels, List<string> selectedInstructionalMethods, string CourseTitle,
                                            string CourseNumber, string creditHourRangeStart, string creditHourRangeEnd, string Monday, string Tuesday, string Wednesday, string Thursday, string Friday, string Saturday, string Sunday)
         {
-            List<Course> allCourses = mockCRMSData.PopulateCourses();
+            List<Course> allCourses = MockCRMSData.PopulateCourses();
 
             List<Course> coursesToReturn = allCourses;
 
@@ -212,7 +210,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 scheduledCourses = new List<Course>();
             }
 
-            List<Course> allCourses = mockCRMSData.PopulateCourses();
+            List<Course> allCourses = MockCRMSData.PopulateCourses();
 
             Course course = allCourses.Find(delegate (Course c) { return c.ID == courseId; });
 
@@ -236,7 +234,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 scheduledCourses = new List<Course>();
             }
 
-            List<Course> allCourses = mockCRMSData.PopulateCourses();
+            List<Course> allCourses = MockCRMSData.PopulateCourses();
 
             Course course = allCourses.Find(delegate (Course c) { return c.ID == courseId; });
 

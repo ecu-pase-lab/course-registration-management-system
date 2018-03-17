@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using CourseRegistrationManagementSystem.Models;
 
-namespace CourseRegistrationManagementSystem.Controllers
+namespace CourseRegistrationManagementSystem.Models
 {
-    public class MockCRMSData
+    public static class MockCRMSData
     {
-        public MockCRMSData()
-        {
-            
-        }
-
-        public List<string> PopulateSemesters()
+        public static List<string> PopulateSemesters()
         {
             List<string> semesters = new List<string>();
             semesters.Add("Spring 2018 (View Only)");
@@ -19,7 +13,7 @@ namespace CourseRegistrationManagementSystem.Controllers
             return semesters;
         }
 
-        public List<string> PopulateSubjects()
+        public static List<string> PopulateSubjects()
         {
             List<string> subjects = new List<string>();
 
@@ -34,7 +28,7 @@ namespace CourseRegistrationManagementSystem.Controllers
             return subjects;
         }
 
-        public List<string> PopulateScheduleTypes()
+        public static List<string> PopulateScheduleTypes()
         {
             List<string> scheduleTypes = new List<string>();
 
@@ -59,7 +53,7 @@ namespace CourseRegistrationManagementSystem.Controllers
             return scheduleTypes;
         }
 
-        public List<string> PopulateInstructionalMethods()
+        public static List<string> PopulateInstructionalMethods()
         {
             List<string> instructionalMethods = new List<string>();
 
@@ -78,7 +72,7 @@ namespace CourseRegistrationManagementSystem.Controllers
         }
 
 
-        public List<string> PopulateCampuses()
+        public static List<string> PopulateCampuses()
         {
             List<string> campuses = new List<string>();
 
@@ -89,7 +83,7 @@ namespace CourseRegistrationManagementSystem.Controllers
             return campuses;
         }
 
-        public List<string> PopulateCourseLevels()
+        public static List<string> PopulateCourseLevels()
         {
             List<string> courseLevels = new List<string>();
 
@@ -102,7 +96,7 @@ namespace CourseRegistrationManagementSystem.Controllers
             return courseLevels;
         }
 
-        public List<string> PopulateInstructors()
+        public static List<string> PopulateInstructors()
         {
             List<string> instructors = new List<string>();
 
@@ -137,7 +131,7 @@ namespace CourseRegistrationManagementSystem.Controllers
             return instructors;
         }
 
-        public List<Course> PopulateCourses()
+        public static Course createCourse1() 
         {
             Seat seat1 = new Seat();
             seat1.Capacity = 30;
@@ -185,6 +179,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course1;
+        }
+
+        public static Course createCourse2()
+        {
             Seat seat2 = new Seat();
             seat2.Capacity = 30;
             seat2.Actual = 11;
@@ -231,6 +230,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course2;
+        }
+
+        public static Course createCourse3()
+        {
             Seat seat3 = new Seat();
             seat3.Capacity = 30;
             seat3.Actual = 22;
@@ -276,6 +280,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course3;
+        }
+
+        public static Course createCourse4()
+        {
             Seat seat4 = new Seat();
             seat4.Capacity = 30;
             seat4.Actual = 5;
@@ -321,6 +330,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course4;
+        }
+
+        public static Course createCourse5()
+        {
             Seat seat5 = new Seat();
             seat5.Capacity = 30;
             seat5.Actual = 14;
@@ -366,6 +380,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course5;
+        }
+
+        public static Course createCourse6()
+        {
             Seat seat6 = new Seat();
             seat6.Capacity = 160;
             seat6.Actual = 160;
@@ -411,6 +430,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course6;
+        }
+
+        public static Course createCourse7()
+        {
             Seat seat7 = new Seat();
             seat7.Capacity = 24;
             seat7.Actual = 22;
@@ -445,7 +469,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 ClassTimes = new List<string>{
                     "1:00 pm - 2:40 pm"
                 },
-                CourseSeat = seat6,
+                CourseSeat = seat7,
                 Prerequisites = "",
                 TextbookName = "No Course Materials Required",
                 TextbookNewPrice = 0.00,
@@ -456,6 +480,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course7;
+        }
+
+        public static Course createCourse8()
+        {
             Seat seat8 = new Seat();
             seat8.Capacity = 24;
             seat8.Actual = 20;
@@ -501,6 +530,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course8;
+        }
+
+        public static Course createCourse9()
+        {
             Seat seat9 = new Seat();
             seat9.Capacity = 30;
             seat9.Actual = 25;
@@ -546,6 +580,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course9;
+        }
+
+        public static Course createCourse10()
+        {
             Seat seat10 = new Seat();
             seat10.Capacity = 50;
             seat10.Actual = 32;
@@ -591,6 +630,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course10;
+        }
+
+        public static Course createCourse11()
+        {
             Seat seat11 = new Seat();
             seat11.Capacity = 25;
             seat11.Actual = 25;
@@ -636,6 +680,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course11;
+        }
+
+        public static Course createCourse12()
+        {
             Seat seat12 = new Seat();
             seat12.Capacity = 25;
             seat12.Actual = 22;
@@ -681,6 +730,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course12;
+        }
+
+        public static Course createCourse13()
+        {
             Seat seat13 = new Seat();
             seat13.Capacity = 36;
             seat13.Actual = 35;
@@ -726,6 +780,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course13;
+        }
+
+        public static Course createCourse14()
+        {
             Seat seat14 = new Seat();
             seat14.Capacity = 36;
             seat14.Actual = 31;
@@ -771,6 +830,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course14;
+        }
+
+        public static Course createCourse15()
+        {
             Seat seat15 = new Seat();
             seat15.Capacity = 36;
             seat15.Actual = 36;
@@ -816,6 +880,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course15;
+        }
+
+        public static Course createCourse16()
+        {
             Seat seat16 = new Seat();
             seat16.Capacity = 48;
             seat16.Actual = 48;
@@ -861,6 +930,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course16;
+        }
+
+        public static Course createCourse17()
+        {
             Seat seat17 = new Seat();
             seat17.Capacity = 53;
             seat17.Actual = 51;
@@ -906,6 +980,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course17;
+        }
+
+        public static Course createCourse18()
+        {
             Seat seat18 = new Seat();
             seat18.Capacity = 27;
             seat18.Actual = 27;
@@ -954,6 +1033,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course18;
+        }
+
+        public static Course createCourse19()
+        {
             Seat seat19 = new Seat();
             seat19.Capacity = 27;
             seat19.Actual = 27;
@@ -1002,6 +1086,11 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course19;
+        }
+
+        public static Course createCourse20()
+        {
             Seat seat20 = new Seat();
             seat20.Capacity = 15;
             seat20.Actual = 4;
@@ -1047,28 +1136,33 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             };
 
+            return course20;
+        }
+
+        public static List<Course> PopulateCourses()
+        {
             List<Course> courses = new List<Course>
             {
-                course1,
-                course2,
-                course3,
-                course4,
-                course5,
-                course6,
-                course7,
-                course8,
-                course9,
-                course10,
-                course11,
-                course12,
-                course13,
-                course14,
-                course15,
-                course16,
-                course17,
-                course18,
-                course19,
-                course20
+                createCourse1(),
+                createCourse2(),
+                createCourse3(),
+                createCourse4(),
+                createCourse5(),
+                createCourse6(),
+                createCourse7(),
+                createCourse8(),
+                createCourse9(),
+                createCourse10(),
+                createCourse11(),
+                createCourse12(),
+                createCourse13(),
+                createCourse14(),
+                createCourse15(),
+                createCourse16(),
+                createCourse17(),
+                createCourse18(),
+                createCourse19(),
+                createCourse20()
             };
 
             return courses;
