@@ -17,7 +17,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "2", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, emptyList, "", "", "1", "2", null, null, null, null, null, null, null, null, null);
 
             // Compare values for course
             Assert.Equal(1, controller.ViewBag.Courses.Count);
@@ -33,7 +33,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "3", "3", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, emptyList, "", "", "3", "3", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(14, controller.ViewBag.Courses.Count);
@@ -62,7 +62,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "4", "5", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, emptyList, "", "", "4", "5", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(5, controller.ViewBag.Courses.Count);
@@ -82,7 +82,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "5", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, emptyList, "", "", "5", "10", null, null, null, null, null, null, null, null, null);
 
             // Should return no courses
             Assert.Equal(0, controller.ViewBag.Courses.Count);

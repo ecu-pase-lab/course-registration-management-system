@@ -20,7 +20,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> campuses = new List<string>();
             campuses.Add("Main Campus");
 
-            controller.CourseResults(emptyList, campuses, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, campuses, null, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(17, controller.ViewBag.Courses.Count);
@@ -55,7 +55,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> campuses = new List<string>();
             campuses.Add("DE/Internet Campus");
 
-            controller.CourseResults(emptyList, campuses, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, campuses, null, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(3, controller.ViewBag.Courses.Count);
@@ -76,7 +76,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> campuses = new List<string>();
             campuses.Add("All");
 
-            controller.CourseResults(emptyList, campuses, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, campuses, null, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(20, controller.ViewBag.Courses.Count);

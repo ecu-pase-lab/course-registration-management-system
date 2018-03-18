@@ -17,8 +17,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            List<string> instructors = new List<string>();
-            instructors.Add("Mark Hills");
+            string instructors = "Mark Hills, ";
 
             controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
@@ -36,9 +35,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            List<string> instructors = new List<string>();
-            instructors.Add("Mark Hills");
-            instructors.Add("Qin Ding");
+            string instructors = "Mark Hills, Qin Ding, ";
 
             controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
@@ -47,6 +44,24 @@ namespace CourseRegistrationManagementSystem.Tests
 
             CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse1(), controller.ViewBag.Courses[0]);
             CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse10(), controller.ViewBag.Courses[1]);
+        }
+
+        // Choosing Mark Hills three times in the Instructor drop-down menu should return only courses that Mark Hills teaches, and not display duplicate courses
+        [Fact]
+        public void searchCoursesByInstructorRemoveDuplicatesTest()
+        {
+            controller = new Controllers.HomeController();
+
+            List<string> emptyList = new List<string>();
+
+            string instructors = "Mark Hills, Mark Hills, Mark Hills, ";
+
+            controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+
+            // Compare values for course
+            Assert.Equal(1, controller.ViewBag.Courses.Count);
+
+            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse1(), controller.ViewBag.Courses[0]);
         }
     }
 }

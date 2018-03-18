@@ -20,7 +20,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> scheduleTypes = new List<string>();
             scheduleTypes.Add("All");
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, scheduleTypes, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, scheduleTypes, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(20, controller.ViewBag.Courses.Count);
@@ -58,7 +58,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> scheduleTypes = new List<string>();
             scheduleTypes.Add("Studio");
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, scheduleTypes, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, scheduleTypes, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for course
             Assert.Equal(1, controller.ViewBag.Courses.Count);
@@ -77,7 +77,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> scheduleTypes = new List<string>();
             scheduleTypes.Add("Lecture");
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, scheduleTypes, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, scheduleTypes, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(16, controller.ViewBag.Courses.Count);
@@ -111,7 +111,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> scheduleTypes = new List<string>();
             scheduleTypes.Add("Individual Study");
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, scheduleTypes, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, scheduleTypes, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for course
             Assert.Equal(1, controller.ViewBag.Courses.Count);
@@ -130,7 +130,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> scheduleTypes = new List<string>();
             scheduleTypes.Add("Lab");
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, scheduleTypes, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, scheduleTypes, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for course
             Assert.Equal(2, controller.ViewBag.Courses.Count);
@@ -150,7 +150,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> scheduleTypes = new List<string>();
             scheduleTypes.Add("Clinical");
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, scheduleTypes, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, scheduleTypes, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Should return no courses
             Assert.Equal(0, controller.ViewBag.Courses.Count);

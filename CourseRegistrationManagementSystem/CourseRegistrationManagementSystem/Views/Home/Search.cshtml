@@ -61,19 +61,12 @@
     
                 <label id="instructorLabel" class="searchLabel">Instructor:</label>
 
-                @Html.ListBox("selectedInstructors", new MultiSelectList(ViewBag.Instructors))
-
-                <input id="tags" size="50">
-            
+                <input id="selectedInstructors" name="selectedInstructors" size="50">
 
                 <script>
-
-                    var array = @ViewBag.InstructorsJSON;
-                    var newArray = array.replace(/&quot;/g, '"');
-                    console.log(newArray);
-                    for(var i = 0; i < array.length; i++) {
-                        alert(array[i]);
-                    }
+                    var instructorsJSON = @Html.Raw(ViewBag.InstructorsJSON);
+            
+                    fillInstructorSelection(instructorsJSON);       
                 </script>
 
             </div>

@@ -41,22 +41,15 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             List<string> instructorsList = MockCRMSData.PopulateInstructors();
 
-            ViewBag.InstructorsJSON = JsonConvert.SerializeObject(instructorsList, Formatting.None).Replace("&quot;", "");
-
-            //Console.WriteLine("Output: " + output);
-
-            //var jsonResult = Json(instructorsList);
-
-            //string jsonString = JsonConvert.SerializeObject(jsonResult.Value);
-
             ViewBag.Instructors = instructorsList;
-            //ViewBag.InstructorsJSON = jsonString;
+
+            ViewBag.InstructorsJSON = JsonConvert.SerializeObject(instructorsList, Formatting.Indented);
 
             return View();
         }
 
         [HttpPost]
-        public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses, List<string> selectedInstructors, List<string> selectedCourseLevels, List<string> selectedInstructionalMethods, List<string> selectedScheduleTypes,
+        public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses, string selectedInstructors, List<string> selectedCourseLevels, List<string> selectedInstructionalMethods, List<string> selectedScheduleTypes,
                                            string CourseTitle, string CourseNumber, string creditHourRangeStart, string creditHourRangeEnd, string Monday, string Tuesday, string Wednesday, string Thursday, string Friday, string Saturday, string Sunday, 
                                            string startTimeTimepicker, string endTimeTimepicker)
         {
@@ -84,7 +77,7 @@ namespace CourseRegistrationManagementSystem.Controllers
                 coursesToReturn = findCoursesByCourseLevels(coursesToReturn, selectedCourseLevels);
             }
 
-            if (!(selectedInstructors.Count() == 0))
+            if (!(selectedInstructors == null || selectedInstructors.Equals("")))
             {
                 coursesToReturn = findCoursesByInstructors(coursesToReturn, selectedInstructors);
             }
@@ -324,13 +317,20 @@ namespace CourseRegistrationManagementSystem.Controllers
             return coursesToReturn;
         }
 
-        private List<Course> findCoursesByInstructors(List<Course> courses, List<string> selectedInstructors)
+        private List<Course> findCoursesByInstructors(List<Course> courses, string selectedInstructors)
         {
             List<Course> coursesToReturn = new List<Course>();
 
+            List<string> selectedInstructorsList = new List<string>();
+            selectedInstructorsList = selectedInstructors.Split(", ").ToList();
+
+            // Remove duplicates in instructor list
+            List<string> selectedInstructorsListNoDuplicates = new List<string>();
+            selectedInstructorsListNoDuplicates = new HashSet<string>(selectedInstructorsList).ToList();
+
             foreach (Course course in courses)
             {
-                foreach (string instructor in selectedInstructors)
+                foreach (string instructor in selectedInstructorsListNoDuplicates)
                 {
                     if (instructor.Equals(course.InstructorName))
                     {

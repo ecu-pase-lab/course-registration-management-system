@@ -20,7 +20,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> instructionalMethods = new List<string>();
             instructionalMethods.Add("Internet or World Wide Web");
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, instructionalMethods, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, instructionalMethods, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(3, controller.ViewBag.Courses.Count);
@@ -41,7 +41,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> instructionalMethods = new List<string>();
             instructionalMethods.Add("Face to Face");
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, instructionalMethods, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, instructionalMethods, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(17, controller.ViewBag.Courses.Count);
@@ -76,7 +76,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> instructionalMethods = new List<string>();
             instructionalMethods.Add("All");
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, instructionalMethods, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, instructionalMethods, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(20, controller.ViewBag.Courses.Count);
@@ -114,7 +114,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> instructionalMethods = new List<string>();
             instructionalMethods.Add("Hybrid Primarily Web");
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, instructionalMethods, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, instructionalMethods, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Should return no courses
             Assert.Equal(0, controller.ViewBag.Courses.Count);

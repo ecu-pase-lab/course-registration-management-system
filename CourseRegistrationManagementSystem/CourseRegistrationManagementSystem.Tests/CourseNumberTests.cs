@@ -17,7 +17,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "6230", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, emptyList, "", "6230", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for course
             Assert.Equal(1, controller.ViewBag.Courses.Count);
@@ -33,7 +33,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "21", "1", "10", null, null, null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, emptyList, "", "21", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(3, controller.ViewBag.Courses.Count);
@@ -41,6 +41,20 @@ namespace CourseRegistrationManagementSystem.Tests
             CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse13(), controller.ViewBag.Courses[0]);
             CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse14(), controller.ViewBag.Courses[1]);
             CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse15(), controller.ViewBag.Courses[2]);
+        }
+
+        // Typing in 8000 in the Course Number search field should return no courses
+        [Fact]
+        public void searchCoursesByInvalidCourseNumberTest()
+        {
+            controller = new Controllers.HomeController();
+
+            List<string> emptyList = new List<string>();
+
+            controller.CourseResults(emptyList, emptyList, null, emptyList, emptyList, emptyList, "", "8000", "1", "10", null, null, null, null, null, null, null, null, null);
+
+            // Should return no courses
+            Assert.Equal(0, controller.ViewBag.Courses.Count);
         }
     }
 }
