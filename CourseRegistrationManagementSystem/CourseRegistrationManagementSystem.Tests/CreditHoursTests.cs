@@ -17,7 +17,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "2", null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "2", null, null, null, null, null, null, null, null, null);
 
             // Compare values for course
             Assert.Equal(1, controller.ViewBag.Courses.Count);
@@ -25,7 +25,7 @@ namespace CourseRegistrationManagementSystem.Tests
             CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse20(), controller.ViewBag.Courses[0]);
         }
 
-        // Searching courses worth Credit hours of 3 to 3 should return only courses worth 3 Credit hours, which is all courses except for 1 
+        // Searching courses worth Credit hours of 3 to 3 should return only courses worth 3 Credit hours
         [Fact]
         public void searchCoursesByCreditHours3To3ReturnsAll3HourCoursesTest()
         {
@@ -33,10 +33,10 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "3", "3", null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "3", "3", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
-            Assert.Equal(19, controller.ViewBag.Courses.Count);
+            Assert.Equal(14, controller.ViewBag.Courses.Count);
 
             CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse1(), controller.ViewBag.Courses[0]);
             CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse2(), controller.ViewBag.Courses[1]);
@@ -50,16 +50,31 @@ namespace CourseRegistrationManagementSystem.Tests
             CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse10(), controller.ViewBag.Courses[9]);
             CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse11(), controller.ViewBag.Courses[10]);
             CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse12(), controller.ViewBag.Courses[11]);
-            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse13(), controller.ViewBag.Courses[12]);
-            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse14(), controller.ViewBag.Courses[13]);
-            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse15(), controller.ViewBag.Courses[14]);
-            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse16(), controller.ViewBag.Courses[15]);
-            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse17(), controller.ViewBag.Courses[16]);
-            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse18(), controller.ViewBag.Courses[17]);
-            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse19(), controller.ViewBag.Courses[18]);
+            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse16(), controller.ViewBag.Courses[12]);
+            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse17(), controller.ViewBag.Courses[13]);
         }
 
-        // Searching courses worth Credit hours of 4 to 10 should return no courses 
+        // Searching courses worth Credit hours of 4 to 5 should return only courses worth 4 Credit hours in this case
+        [Fact]
+        public void searchCoursesByCreditHours4To5ReturnsAll4HourCoursesTest()
+        {
+            controller = new Controllers.HomeController();
+
+            List<string> emptyList = new List<string>();
+
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "4", "5", null, null, null, null, null, null, null, null, null);
+
+            // Compare values for all courses
+            Assert.Equal(5, controller.ViewBag.Courses.Count);
+
+            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse13(), controller.ViewBag.Courses[0]);
+            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse14(), controller.ViewBag.Courses[1]);
+            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse15(), controller.ViewBag.Courses[2]);
+            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse18(), controller.ViewBag.Courses[3]);
+            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse19(), controller.ViewBag.Courses[4]);
+        }
+
+        // Searching courses worth Credit hours of 5 to 10 should return no courses 
         [Fact]
         public void searchCoursesByCreditHoursReturnsNoCoursesTest()
         {
@@ -67,7 +82,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "4", "10", null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "5", "10", null, null, null, null, null, null, null, null, null);
 
             // Should return no courses
             Assert.Equal(0, controller.ViewBag.Courses.Count);

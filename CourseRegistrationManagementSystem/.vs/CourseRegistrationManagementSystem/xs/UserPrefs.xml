@@ -1,19 +1,9 @@
 ﻿<Properties StartupConfiguration="{97F2E89D-C079-4BBE-B0D5-404EDD0E334D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem.Tests/CourseLevelTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem/Controllers/HomeController.cs">
     <Files>
-      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="23" Column="45" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/CourseTestUtils.cs" Line="30" Column="78" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/ClassDaysTests.cs" Line="10" Column="55" />
-      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="767" Column="38" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/SubjectTests.cs" Line="97" Column="10" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/InstructorTests.cs" Line="10" Column="55" />
-      <File FileName="../:Users:jamesadams:Documents:East Carolina University:Software Engineering Project:course-registration-management-system:CourseRegistrationManagementSystem:CourseRegistrationManagementSystem.Tests:CourseTitleTests.cs" Line="11" Column="1" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/CourseNumberTests.cs" Line="10" Column="55" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/CourseTitleTests.cs" Line="10" Column="55" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/CreditHoursTests.cs" Line="1" Column="1" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/CampusTests.cs" Line="30" Column="51" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/InstructionalMethodTests.cs" Line="121" Column="10" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/CourseLevelTests.cs" Line="145" Column="10" />
+      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="61" Column="97" />
+      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="36" Column="40" />
+      <File FileName="CourseRegistrationManagementSystem.Tests/ScheduleTypeTests.cs" Line="144" Column="62" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />

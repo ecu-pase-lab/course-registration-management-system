@@ -31,6 +31,7 @@ namespace CourseRegistrationManagementSystem.Models
         public string InstructorName { get; set; }
         public Seat CourseSeat { get; set; }
         public string Prerequisites { get; set; }
+        public string ScheduleType { get; set; }
         public string TextbookName { get; set; }
         public double TextbookNewPrice { get; set; }
         public double TextbookUsedPrice { get; set; }

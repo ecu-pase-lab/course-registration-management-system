@@ -20,7 +20,7 @@ namespace CourseRegistrationManagementSystem.Tests
             List<string> instructors = new List<string>();
             instructors.Add("Mark Hills");
 
-            controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for course
             Assert.Equal(1, controller.ViewBag.Courses.Count);
@@ -40,7 +40,7 @@ namespace CourseRegistrationManagementSystem.Tests
             instructors.Add("Mark Hills");
             instructors.Add("Qin Ding");
 
-            controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, instructors, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(2, controller.ViewBag.Courses.Count);

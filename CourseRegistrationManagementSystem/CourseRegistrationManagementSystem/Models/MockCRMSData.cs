@@ -165,10 +165,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Monday,Wednesday"
                 },
                 ClassTimes = new List<string>{
-                    "2:00 pm - 3:15 pm"
+                    "2:00 PM - 3:15 PM"
                 },
                 CourseSeat = seat1,
                 Prerequisites = "Graduate level SENG 6230 Minimum Grade of C or Graduate level CSCI 6230 Minimum Grade of C",
+                ScheduleType = "Lecture",
                 TextbookName = "Program Development in Java, ISBN: 9780201657685, Author: Liskov",
                 TextbookNewPrice = 100.00,
                 TextbookUsedPrice = 75.00,
@@ -216,10 +217,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Monday,Wednesday"
                 },
                 ClassTimes = new List<string>{
-                    "12:30 pm - 1:45 pm"
+                    "12:30 PM - 1:45 PM"
                 },
                 CourseSeat = seat2,
                 Prerequisites = "",
+                ScheduleType = "Individual Study",
                 TextbookName = "Requirements Engineering, ISBN: 9780470012703, Author: Van Lamsweerd",
                 TextbookNewPrice = 87.00,
                 TextbookUsedPrice = 65.25,
@@ -267,10 +269,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Tuesday,Thursday"
                 },
                 ClassTimes = new List<string>{
-                    "11:00 am - 12:15 pm"
+                    "11:00 AM - 12:15 PM"
                 },
                 CourseSeat = seat3,
                 Prerequisites = "",
+                ScheduleType = "Lecture",
                 TextbookName = "Software Foundations, ISBN: 9780470011387, Author: Jobs",
                 TextbookNewPrice = 100.00,
                 TextbookUsedPrice = 75.00,
@@ -317,10 +320,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Tuesday,Thursday"
                 },
                 ClassTimes = new List<string>{
-                    "2:00 pm - 3:15 pm"
+                    "2:00 PM - 3:15 PM"
                 },
                 CourseSeat = seat4,
                 Prerequisites = "Graduate level SENG 6230 Minimum Grade of C",
+                ScheduleType = "Lecture",
                 TextbookName = "Software Modeling Concepts, ISBN: 9780470097573, Author: Gates",
                 TextbookNewPrice = 80.00,
                 TextbookUsedPrice = 55.00,
@@ -367,10 +371,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Tuesday,Thursday"
                 },
                 ClassTimes = new List<string>{
-                    "2:00 pm - 3:15 pm"
+                    "2:00 PM - 3:15 PM"
                 },
                 CourseSeat = seat5,
                 Prerequisites = "Graduate level SENG 6230 Minimum Grade of C",
+                ScheduleType = "Lecture",
                 TextbookName = "Software Modeling Concepts, ISBN: 9780470097573, Author: Gates",
                 TextbookNewPrice = 80.00,
                 TextbookUsedPrice = 55.00,
@@ -417,10 +422,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Monday,Wednesday,Friday"
                 },
                 ClassTimes = new List<string>{
-                    "1:00 pm - 1:50 pm"
+                    "1:00 PM - 1:50 PM"
                 },
                 CourseSeat = seat6,
                 Prerequisites = "Undergraduate level MATH 1065 Minimum Grade of D- or Undergraduate level CSCI 1000 Minimum Grade of C",
+                ScheduleType = "Lecture",
                 TextbookName = "Java: An Intro to Problem Solving & Programming, ISBN: 9780134462035, Author: Savitch",
                 TextbookNewPrice = 158.00,
                 TextbookUsedPrice = 118.50,
@@ -467,10 +473,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Monday"
                 },
                 ClassTimes = new List<string>{
-                    "1:00 pm - 2:40 pm"
+                    "1:00 PM - 2:40 PM"
                 },
                 CourseSeat = seat7,
                 Prerequisites = "",
+                ScheduleType = "Lab",
                 TextbookName = "No Course Materials Required",
                 TextbookNewPrice = 0.00,
                 TextbookUsedPrice = 0.00,
@@ -517,10 +524,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Tuesday"
                 },
                 ClassTimes = new List<string>{
-                    "2:30 pm - 4:10 pm"
+                    "2:30 PM - 4:10 PM"
                 },
                 CourseSeat = seat8,
                 Prerequisites = "",
+                ScheduleType = "Lab",
                 TextbookName = "No Course Materials Required",
                 TextbookNewPrice = 0.00,
                 TextbookUsedPrice = 0.00,
@@ -567,10 +575,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Tuesday,Thursday"
                 },
                 ClassTimes = new List<string>{
-                    "3:30 pm - 4:45 pm"
+                    "3:30 PM - 4:45 PM"
                 },
                 CourseSeat = seat9,
                 Prerequisites = "Undergraduate level MATH 1065 Minimum Grade of D-",
+                ScheduleType = "Lecture",
                 TextbookName = "Discrete Mathematics & ITS Appl, ISBN: 9780073383095, Author: Rosen",
                 TextbookNewPrice = 293.70,
                 TextbookUsedPrice = 220.30,
@@ -617,10 +626,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Tuesday,Thursday"
                 },
                 ClassTimes = new List<string>{
-                    "9:30 am - 10:45 am"
+                    "9:30 AM - 10:45 AM"
                 },
                 CourseSeat = seat10,
                 Prerequisites = "(Undergraduate level CSCI 2530 Minimum Grade of C or Undergraduate level CSCI 3300 Minimum Grade of C) and Undergraduate level CSCI 2405 Minimum Grade of C",
+                ScheduleType = "Lecture",
                 TextbookName = "Data Abstraction & Problem Solving with Java, ISBN: 9780132122306, Author: Carrano",
                 TextbookNewPrice = 176.00,
                 TextbookUsedPrice = 132.00,
@@ -667,10 +677,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Tuesday,Thursday"
                 },
                 ClassTimes = new List<string>{
-                    "8:00 am - 9:15 am"
+                    "8:00 AM - 9:15 AM"
                 },
                 CourseSeat = seat11,
                 Prerequisites = "",
+                ScheduleType = "Lecture",
                 TextbookName = "Essentials of Public Speaking, ISBN: 9781285159454, Author: Hamilton",
                 TextbookNewPrice = 63.55,
                 TextbookUsedPrice = 47.70,
@@ -717,10 +728,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Tuesday"
                 },
                 ClassTimes = new List<string>{
-                    "6:00 pm - 9:00 pm"
+                    "6:00 PM - 9:00 PM"
                 },
                 CourseSeat = seat12,
                 Prerequisites = "",
+                ScheduleType = "Lecture",
                 TextbookName = "Essentials of Public Speaking, ISBN: 9781285159454, Author: Hamilton",
                 TextbookNewPrice = 63.55,
                 TextbookUsedPrice = 47.70,
@@ -757,7 +769,7 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassStartDate = new DateTime(2018, 1, 8),
                 ClassEndDate = new DateTime(2018, 5, 3),
                 ClassInstructionalMethod = "Face to Face",
-                CreditHours = 3,
+                CreditHours = 4,
                 InstructorName = "Johannes Hendrik Hattingh",
                 ClassroomNames = new List<string>{
                     "Rawl Building And Annex 00206"
@@ -767,10 +779,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Tuesday,Thursday"
                 },
                 ClassTimes = new List<string>{
-                    "11:00 am - 12:40 pm"
+                    "11:00 AM - 12:40 PM"
                 },
                 CourseSeat = seat13,
                 Prerequisites = "Undergraduate level MATH 1083 Minimum Grade of C- or Undergraduate level MATH 1085 Minimum Grade of C- or Undergraduate level MATH 2122 Minimum Grade of C- or SAT Mathematics 630 or ALEKS Math Placement 076 or Math Section Score 650 or ACT Math 28",
+                ScheduleType = "Lecture",
                 TextbookName = "Calculus, ISBN: 9781285740621, Author: Stewart",
                 TextbookNewPrice = 299.99,
                 TextbookUsedPrice = 225.00,
@@ -807,7 +820,7 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassStartDate = new DateTime(2018, 1, 8),
                 ClassEndDate = new DateTime(2018, 5, 3),
                 ClassInstructionalMethod = "Face to Face",
-                CreditHours = 3,
+                CreditHours = 4,
                 InstructorName = "Heather Dawn Ries",
                 ClassroomNames = new List<string>{
                     "Austin Building 00203"
@@ -817,10 +830,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Monday,Wednesday"
                 },
                 ClassTimes = new List<string>{
-                    "9:00 am - 10:40 am"
+                    "9:00 AM - 10:40 AM"
                 },
                 CourseSeat = seat14,
                 Prerequisites = "Undergraduate level MATH 1083 Minimum Grade of C- or Undergraduate level MATH 1085 Minimum Grade of C- or Undergraduate level MATH 2122 Minimum Grade of C- or SAT Mathematics 630 or ALEKS Math Placement 076 or Math Section Score 650 or ACT Math 28",
+                ScheduleType = "Lecture",
                 TextbookName = "Calculus (LL Text with Access), ISBN: 9781305616684, Author: Stewart",
                 TextbookNewPrice = 172.00,
                 TextbookUsedPrice = 0.00,
@@ -857,7 +871,7 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassStartDate = new DateTime(2018, 1, 8),
                 ClassEndDate = new DateTime(2018, 5, 3),
                 ClassInstructionalMethod = "Face to Face",
-                CreditHours = 3,
+                CreditHours = 4,
                 InstructorName = "Gail L Ratcliff",
                 ClassroomNames = new List<string>{
                     "Austin Building 00203"
@@ -867,10 +881,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Monday,Wednesday"
                 },
                 ClassTimes = new List<string>{
-                    "2:00 pm - 3:40 pm"
+                    "2:00 PM - 3:40 PM"
                 },
                 CourseSeat = seat15,
                 Prerequisites = "Undergraduate level MATH 2171 Minimum Grade of C-",
+                ScheduleType = "Lecture",
                 TextbookName = "Calculus (LL Text with Access), ISBN: 9781305616684, Author: Stewart",
                 TextbookNewPrice = 172.00,
                 TextbookUsedPrice = 0.00,
@@ -917,10 +932,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Monday,Wednesday,Friday"
                 },
                 ClassTimes = new List<string>{
-                    "9:00 am - 9:50 am"
+                    "9:00 AM - 9:50 AM"
                 },
                 CourseSeat = seat16,
                 Prerequisites = "Undergraduate level MATH 1065 Minimum Grade of D- or Undergraduate level MATH 1050 Minimum Grade of D- or Undergraduate level MATH 1066 Minimum Grade of D- or Undergraduate level MATH 1077 Minimum Grade of D- or Undergraduate level MATH 1083 Minimum Grade of D- or Undergraduate level MATH 2121 Minimum Grade of D- or Undergraduate level MATH 2122 Minimum Grade of D- or Undergraduate level MATH 2171 Minimum Grade of D- or Undergraduate level MATH 2172 Minimum Grade of D- or Undergraduate level MATH 2173 Minimum Grade of D- or ACT Math 23 or SAT Mathematics 550 or ALEKS Math Placement 053 or ECU-Accuplacer Math Placement 095 or Math Section Score 570",
+                ScheduleType = "Lecture",
                 TextbookName = "Business Statistics PKG (ECU) with MyStatsLab Business, ISBN: 9781269890281, Author: Donnelly",
                 TextbookNewPrice = 255.00,
                 TextbookUsedPrice = 0.00,
@@ -971,6 +987,7 @@ namespace CourseRegistrationManagementSystem.Models
                 },
                 CourseSeat = seat17,
                 Prerequisites = "Undergraduate level MATH 1065 Minimum Grade of D- or Undergraduate level MATH 1050 Minimum Grade of D- or Undergraduate level MATH 1066 Minimum Grade of D- or Undergraduate level MATH 1077 Minimum Grade of D- or Undergraduate level MATH 1083 Minimum Grade of D- or Undergraduate level MATH 2121 Minimum Grade of D- or Undergraduate level MATH 2122 Minimum Grade of D- or Undergraduate level MATH 2171 Minimum Grade of D- or Undergraduate level MATH 2172 Minimum Grade of D- or Undergraduate level MATH 2173 Minimum Grade of D- or ACT Math 23 or SAT Mathematics 550 or ALEKS Math Placement 053 or ECU-Accuplacer Math Placement 095 or Math Section Score 570",
+                ScheduleType = "Lecture",
                 TextbookName = "Business Statistics PKG (ECU) with MyStatsLab Business, ISBN: 9781269890281, Author: Donnelly",
                 TextbookNewPrice = 255.00,
                 TextbookUsedPrice = 0.00,
@@ -1007,7 +1024,7 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassStartDate = new DateTime(2018, 1, 8),
                 ClassEndDate = new DateTime(2018, 5, 3),
                 ClassInstructionalMethod = "Face to Face",
-                CreditHours = 3,
+                CreditHours = 4,
                 InstructorName = "Regina DeWitt, Wilson Hawkins",
                 ClassroomNames = new List<string>{
                     "Bate Building 01028",
@@ -1019,11 +1036,12 @@ namespace CourseRegistrationManagementSystem.Models
                     "Tuesday"
                 },
                 ClassTimes = new List<string>{
-                    "1:00 pm - 1:50 pm",
-                    "3:00 pm - 3:50 pm"
+                    "1:00 PM - 1:50 PM",
+                    "3:00 PM - 3:50 PM"
                 },
                 CourseSeat = seat18,
                 Prerequisites = "Undergraduate level MATH 2121 Minimum Grade of D- or Undergraduate level MATH 2151 Minimum Grade of D- or Undergraduate level MATH 2171 Minimum Grade of D- or Undergraduate level MATH 2122 Minimum Grade of D- or Undergraduate level MATH 2152 Minimum Grade of D- or Undergraduate level MATH 2153 Minimum Grade of D- or Undergraduate level MATH 2154 Minimum Grade of D- or Undergraduate level MATH 2172 Minimum Grade of D- or Undergraduate level MATH 2173 Minimum Grade of D- or Undergraduate level MATH 4221 Minimum Grade of D-",
+                ScheduleType = "Lecture",
                 TextbookName = "University Physics with Modern Physics, Volume 1 with E-Book, ISBN: 9780134209586, Author: Young",
                 TextbookNewPrice = 223.60,
                 TextbookUsedPrice = 0.00,
@@ -1060,7 +1078,7 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassStartDate = new DateTime(2018, 1, 8),
                 ClassEndDate = new DateTime(2018, 5, 3),
                 ClassInstructionalMethod = "Face to Face",
-                CreditHours = 3,
+                CreditHours = 4,
                 InstructorName = "Regina DeWitt, Wilson Hawkins",
                 ClassroomNames = new List<string>{
                     "Bate Building 01028",
@@ -1072,11 +1090,12 @@ namespace CourseRegistrationManagementSystem.Models
                     "Tuesday"
                 },
                 ClassTimes = new List<string>{
-                    "1:00 pm - 1:50 pm",
-                    "4:00 pm - 4:50 pm"
+                    "1:00 PM - 1:50 PM",
+                    "4:00 PM - 4:50 PM"
                 },
                 CourseSeat = seat19,
                 Prerequisites = "Undergraduate level MATH 2121 Minimum Grade of D- or Undergraduate level MATH 2151 Minimum Grade of D- or Undergraduate level MATH 2171 Minimum Grade of D- or Undergraduate level MATH 2122 Minimum Grade of D- or Undergraduate level MATH 2152 Minimum Grade of D- or Undergraduate level MATH 2153 Minimum Grade of D- or Undergraduate level MATH 2154 Minimum Grade of D- or Undergraduate level MATH 2172 Minimum Grade of D- or Undergraduate level MATH 2173 Minimum Grade of D- or Undergraduate level MATH 4221 Minimum Grade of D-",
+                ScheduleType = "Lecture",
                 TextbookName = "University Physics with Modern Physics, Volume 1 with E-Book, ISBN: 9780134209586, Author: Young",
                 TextbookNewPrice = 223.60,
                 TextbookUsedPrice = 0.00,
@@ -1123,10 +1142,11 @@ namespace CourseRegistrationManagementSystem.Models
                     "Tuesday"
                 },
                 ClassTimes = new List<string>{
-                    "9:00 am - 10:50 am"
+                    "9:00 AM - 10:50 AM"
                 },
                 CourseSeat = seat20,
                 Prerequisites = "Undergraduate level ART 1015 Minimum Grade of D- and Undergraduate level ART 1030 Minimum Grade of D-",
+                ScheduleType = "Studio",
                 TextbookName = "Digital Art, ISBN: 9780500204238, Author: Paul",
                 TextbookNewPrice = 21.95,
                 TextbookUsedPrice = 16.50,

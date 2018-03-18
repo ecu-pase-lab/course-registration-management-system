@@ -17,7 +17,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "6230", "1", "10", null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "6230", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for course
             Assert.Equal(1, controller.ViewBag.Courses.Count);
@@ -33,7 +33,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "21", "1", "10", null, null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "21", "1", "10", null, null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(3, controller.ViewBag.Courses.Count);

@@ -8,6 +8,7 @@ using CourseRegistrationManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 
 namespace CourseRegistrationManagementSystem.Controllers
 {
@@ -55,8 +56,9 @@ namespace CourseRegistrationManagementSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses, List<string> selectedInstructors, List<string> selectedCourseLevels, List<string> selectedInstructionalMethods, string CourseTitle,
-                                           string CourseNumber, string creditHourRangeStart, string creditHourRangeEnd, string Monday, string Tuesday, string Wednesday, string Thursday, string Friday, string Saturday, string Sunday)
+        public IActionResult CourseResults(List<string> selectedSubjects, List<string> selectedCampuses, List<string> selectedInstructors, List<string> selectedCourseLevels, List<string> selectedInstructionalMethods, List<string> selectedScheduleTypes,
+                                           string CourseTitle, string CourseNumber, string creditHourRangeStart, string creditHourRangeEnd, string Monday, string Tuesday, string Wednesday, string Thursday, string Friday, string Saturday, string Sunday, 
+                                           string startTimeTimepicker, string endTimeTimepicker)
         {
             List<Course> allCourses = MockCRMSData.PopulateCourses();
 
@@ -87,6 +89,11 @@ namespace CourseRegistrationManagementSystem.Controllers
                 coursesToReturn = findCoursesByInstructors(coursesToReturn, selectedInstructors);
             }
 
+            if (!(selectedScheduleTypes.Count() == 0 || (selectedScheduleTypes.Count() == 1 && selectedScheduleTypes.First().Equals("All"))))
+            {
+                coursesToReturn = findCoursesByScheduleTypes(coursesToReturn, selectedScheduleTypes);
+            }
+
             if (!(CourseTitle == null || CourseTitle.Equals("")))
             {
                 coursesToReturn = findCoursesByCourseTitle(coursesToReturn, CourseTitle);
@@ -101,6 +108,11 @@ namespace CourseRegistrationManagementSystem.Controllers
             {
                 coursesToReturn = findCoursesByClassDays(coursesToReturn, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday);
             }
+
+            //if (!(startTimeTimepicker == null || startTimeTimepicker.Equals("")) && !(endTimeTimepicker == null || endTimeTimepicker.Equals("")))
+            //{
+            //    coursesToReturn = findCoursesByClassTimes(coursesToReturn, startTimeTimepicker, endTimeTimepicker);
+            //}
 
             coursesToReturn = findCoursesByCreditHourRange(coursesToReturn, creditHourRangeStart, creditHourRangeEnd);
 
@@ -330,6 +342,24 @@ namespace CourseRegistrationManagementSystem.Controllers
             return coursesToReturn;
         }
 
+        private List<Course> findCoursesByScheduleTypes(List<Course> courses, List<string> selectedScheduleTypes)
+        {
+            List<Course> coursesToReturn = new List<Course>();
+
+            foreach (Course course in courses)
+            {
+                foreach (string scheduleType in selectedScheduleTypes)
+                {
+                    if (scheduleType.Equals(course.ScheduleType))
+                    {
+                        coursesToReturn.Add(course);
+                    }
+                }
+            }
+
+            return coursesToReturn;
+        }
+
         private List<Course> findCoursesByCourseTitle(List<Course> courses, string CourseTitle)
         {
             List<Course> coursesToReturn = new List<Course>();
@@ -457,6 +487,59 @@ namespace CourseRegistrationManagementSystem.Controllers
                     coursesToReturn.Add(course);
                 }
             }
+
+            return coursesToReturn;
+        }
+
+        private List<Course> findCoursesByClassTimes(List<Course> courses, string startTime, string endTime)
+        {
+            List<Course> coursesToReturn = new List<Course>();
+
+            string startTimeWithoutSpaces = Regex.Replace(startTime, @"\s+", "");
+            string endTimeWithoutSpaces = Regex.Replace(endTime, @"\s+", "");
+
+            DateTime result;
+            string input = "9:00 PM";
+
+            //use algorithm
+            if (DateTime.TryParseExact(input, "h:mm tt",
+                System.Globalization.CultureInfo.CurrentCulture,
+                System.Globalization.DateTimeStyles.None, out result))
+            {
+                //end result
+                int hour = result.Hour > 12 ? result.Hour % 12 : result.Hour;
+                string AMPM = result.ToString("tt");
+
+                Console.WriteLine("hour: " + hour);
+                Console.WriteLine("AMPM: " + AMPM);
+            }
+
+            //string startTimeWithoutAMPM = "";
+
+            //int indexAM = startTimeWithoutAMPM.IndexOf('A');
+            //int indexPM = startTimeWithoutAMPM.IndexOf('P');
+            //if (indexAM > 0)
+            //{
+            //    startTimeWithoutAMPM = startTimeWithoutSpaces.Substring(0, indexAM);
+            //}
+            //else if (indexPM > 0)
+            //{
+            //    startTimeWithoutAMPM = startTimeWithoutSpaces.Substring(0, indexPM);
+            //}
+
+            //Console.WriteLine("Start time without AM/PM: " + startTimeWithoutAMPM);
+
+            //Console.WriteLine("End time: " + endTimeTimepicker);
+            //Console.WriteLine("Class time: " + "2:00 pm - 3:15 pm");
+
+            //foreach (Course course in courses)
+            //{
+            //    if (course.CourseSubjectCode.Contains(CourseNumber))
+            //    {
+            //        coursesToReturn.Add(course);
+            //    }
+
+            //}
 
             return coursesToReturn;
         }

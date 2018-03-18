@@ -17,7 +17,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", "Monday", null, null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", "Monday", null, null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(9, controller.ViewBag.Courses.Count);
@@ -41,7 +41,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, "Tuesday", null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, "Tuesday", null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(12, controller.ViewBag.Courses.Count);
@@ -68,7 +68,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, "Wednesday", null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, "Wednesday", null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(8, controller.ViewBag.Courses.Count);
@@ -91,7 +91,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, "Thursday", null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, "Thursday", null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(7, controller.ViewBag.Courses.Count);
@@ -113,7 +113,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, "Friday", null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, "Friday", null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(4, controller.ViewBag.Courses.Count);
@@ -132,7 +132,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, "Saturday", null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, "Saturday", null, null, null);
 
             // Should return no courses
             Assert.Equal(0, controller.ViewBag.Courses.Count);
@@ -146,7 +146,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, "Sunday");
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, null, null, null, null, null, "Sunday", null, null);
 
             // Should return no courses
             Assert.Equal(0, controller.ViewBag.Courses.Count);
@@ -160,7 +160,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", "Monday", null, "Wednesday", null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", "Monday", null, "Wednesday", null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(8, controller.ViewBag.Courses.Count);
@@ -183,7 +183,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", "Monday", null, "Wednesday", null, "Friday", null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", "Monday", null, "Wednesday", null, "Friday", null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(4, controller.ViewBag.Courses.Count);
@@ -202,7 +202,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, "Tuesday", null, "Thursday", null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", null, "Tuesday", null, "Thursday", null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(7, controller.ViewBag.Courses.Count);
@@ -224,7 +224,7 @@ namespace CourseRegistrationManagementSystem.Tests
 
             List<string> emptyList = new List<string>();
 
-            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", "Monday", "Tuesday", null, null, null, null, null);
+            controller.CourseResults(emptyList, emptyList, emptyList, emptyList, emptyList, emptyList, "", "", "1", "10", "Monday", "Tuesday", null, null, null, null, null, null, null);
 
             // Compare values for all courses
             Assert.Equal(2, controller.ViewBag.Courses.Count);
