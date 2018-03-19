@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace CourseRegistrationManagementSystem.Controllers
 {
@@ -102,10 +103,10 @@ namespace CourseRegistrationManagementSystem.Controllers
                 coursesToReturn = findCoursesByClassDays(coursesToReturn, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday);
             }
 
-            //if (!(startTimeTimepicker == null || startTimeTimepicker.Equals("")) && !(endTimeTimepicker == null || endTimeTimepicker.Equals("")))
-            //{
-            //    coursesToReturn = findCoursesByClassTimes(coursesToReturn, startTimeTimepicker, endTimeTimepicker);
-            //}
+            if (!(startTimeTimepicker == null || startTimeTimepicker.Equals("")) && !(endTimeTimepicker == null || endTimeTimepicker.Equals("")))
+            {
+                coursesToReturn = findCoursesByClassTimes(coursesToReturn, startTimeTimepicker, endTimeTimepicker);
+            }
 
             coursesToReturn = findCoursesByCreditHourRange(coursesToReturn, creditHourRangeStart, creditHourRangeEnd);
 
@@ -498,48 +499,56 @@ namespace CourseRegistrationManagementSystem.Controllers
             string startTimeWithoutSpaces = Regex.Replace(startTime, @"\s+", "");
             string endTimeWithoutSpaces = Regex.Replace(endTime, @"\s+", "");
 
-            DateTime result;
-            string input = "9:00 PM";
+            string startTimeWithSpaceBeforeSuffix = "";
 
-            //use algorithm
-            if (DateTime.TryParseExact(input, "h:mm tt",
-                System.Globalization.CultureInfo.CurrentCulture,
-                System.Globalization.DateTimeStyles.None, out result))
+            if (startTimeWithoutSpaces.Contains("P"))
             {
-                //end result
-                int hour = result.Hour > 12 ? result.Hour % 12 : result.Hour;
-                string AMPM = result.ToString("tt");
-
-                Console.WriteLine("hour: " + hour);
-                Console.WriteLine("AMPM: " + AMPM);
+                startTimeWithSpaceBeforeSuffix = startTimeWithoutSpaces.Replace("P", " P");
+            }
+            else if (startTimeWithoutSpaces.Contains("A"))
+            {
+                startTimeWithSpaceBeforeSuffix = startTimeWithoutSpaces.Replace("A", " A");
             }
 
-            //string startTimeWithoutAMPM = "";
+            string endTimeWithSpaceBeforeSuffix = "";
 
-            //int indexAM = startTimeWithoutAMPM.IndexOf('A');
-            //int indexPM = startTimeWithoutAMPM.IndexOf('P');
-            //if (indexAM > 0)
-            //{
-            //    startTimeWithoutAMPM = startTimeWithoutSpaces.Substring(0, indexAM);
-            //}
-            //else if (indexPM > 0)
-            //{
-            //    startTimeWithoutAMPM = startTimeWithoutSpaces.Substring(0, indexPM);
-            //}
+            if (endTimeWithoutSpaces.Contains("P"))
+            {
+                endTimeWithSpaceBeforeSuffix = endTimeWithoutSpaces.Replace("P", " P");
+            }
+            else if (endTimeWithoutSpaces.Contains("A"))
+            {
+                endTimeWithSpaceBeforeSuffix = endTimeWithoutSpaces.Replace("A", " A");
+            }
 
-            //Console.WriteLine("Start time without AM/PM: " + startTimeWithoutAMPM);
+            TimeSpan startTimeSpan = DateTime.ParseExact(startTimeWithSpaceBeforeSuffix, "h:mm tt", CultureInfo.InvariantCulture).TimeOfDay;
+            TimeSpan endTimeSpan = DateTime.ParseExact(endTimeWithSpaceBeforeSuffix, "h:mm tt", CultureInfo.InvariantCulture).TimeOfDay;
 
-            //Console.WriteLine("End time: " + endTimeTimepicker);
-            //Console.WriteLine("Class time: " + "2:00 pm - 3:15 pm");
+            foreach (Course course in courses)
+            {
+                List<string> classTimes = course.ClassTimes;
 
-            //foreach (Course course in courses)
-            //{
-            //    if (course.CourseSubjectCode.Contains(CourseNumber))
-            //    {
-            //        coursesToReturn.Add(course);
-            //    }
+                foreach (string classTime in classTimes)
+                {
+                    string classStartTime = "";
+                    string classEndTime = "";
 
-            //}
+                    int index = classTime.IndexOf('-');
+                    if (index > 0)
+                    {
+                        classStartTime = classTime.Substring(0, index - 1);
+                        classEndTime = classTime.Substring(index + 2);
+
+                        TimeSpan classStartTimeSpan = DateTime.ParseExact(classStartTime, "h:mm tt", CultureInfo.InvariantCulture).TimeOfDay;
+                        TimeSpan classEndTimeSpan = DateTime.ParseExact(classEndTime, "h:mm tt", CultureInfo.InvariantCulture).TimeOfDay;
+
+                        if (startTimeSpan <= classStartTimeSpan && classEndTimeSpan <= endTimeSpan)
+                        {
+                            coursesToReturn.Add(course);
+                        }
+                    }
+                }
+            }
 
             return coursesToReturn;
         }

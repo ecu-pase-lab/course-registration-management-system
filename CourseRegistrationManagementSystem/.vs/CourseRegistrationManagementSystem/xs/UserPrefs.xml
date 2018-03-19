@@ -1,18 +1,5 @@
 ﻿<Properties StartupConfiguration="{97F2E89D-C079-4BBE-B0D5-404EDD0E334D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem/Controllers/HomeController.cs">
-    <Files>
-      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="319" Column="9" />
-      <File FileName="CourseRegistrationManagementSystem/Views/Home/Search.cshtml" Line="64" Column="47" />
-      <File FileName="CourseRegistrationManagementSystem/wwwroot/js/site.js" Line="98" Column="29" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/CourseNumberTests.cs" Line="57" Column="63" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/CourseTitleTests.cs" Line="55" Column="64" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/CreditHoursTests.cs" Line="85" Column="64" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/InstructionalMethodTests.cs" Line="117" Column="64" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/ScheduleTypeTests.cs" Line="153" Column="64" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/SubjectTests.cs" Line="72" Column="63" />
-      <File FileName="CourseRegistrationManagementSystem.Tests/InstructorTests.cs" Line="49" Column="162" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
