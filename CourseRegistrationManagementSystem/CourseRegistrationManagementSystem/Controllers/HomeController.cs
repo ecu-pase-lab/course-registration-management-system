@@ -544,7 +544,10 @@ namespace CourseRegistrationManagementSystem.Controllers
 
                         if (startTimeSpan <= classStartTimeSpan && classEndTimeSpan <= endTimeSpan)
                         {
-                            coursesToReturn.Add(course);
+                            if (!coursesToReturn.Any(c => c.ID == course.ID))
+                            {
+                                coursesToReturn.Add(course);
+                            }
                         }
                     }
                 }
