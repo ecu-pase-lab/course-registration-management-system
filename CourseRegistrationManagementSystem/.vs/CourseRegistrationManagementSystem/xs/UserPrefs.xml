@@ -1,9 +1,7 @@
 ﻿<Properties StartupConfiguration="{97F2E89D-C079-4BBE-B0D5-404EDD0E334D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem.Tests/ClassTimesTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem/Models/MockCRMSData.cs">
     <Files>
-      <File FileName="CourseRegistrationManagementSystem.Tests/ClassTimesTests.cs" Line="92" Column="50" />
-      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="539" Column="70" />
-      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="1" Column="1" />
+      <File FileName="CourseRegistrationManagementSystem/Models/MockCRMSData.cs" Line="1203" Column="59" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />
