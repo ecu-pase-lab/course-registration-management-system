@@ -1,3 +1,9 @@
+/**
+ * Copyright 2018
+ * James Adams IV
+ * East Carolina University
+ */
+
 using System;
 
 namespace CourseRegistrationManagementSystem.Models

@@ -16,14 +16,32 @@
     </style>
     <script>
       function initMap() {
-        var uluru = {lat: 35.6055151, lng: -77.366754};
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+
+        var startLocation = new google.maps.LatLng({lat: 35.6047775, lng: -77.362346}); 
+        var endLocation = new google.maps.LatLng({lat: 35.6068811, lng: -77.3675049}); 
+        
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 18,
-          center: uluru
+          zoom: 15,
+          center: {lat: 35.6055755, lng: -77.3995847}
         });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
+        directionsDisplay.setMap(map);
+
+        calculateAndDisplayRoute(directionsService, directionsDisplay, startLocation, endLocation);
+      }
+
+      function calculateAndDisplayRoute(directionsService, directionsDisplay, startLocation, endLocation) {
+        directionsService.route({
+          origin: startLocation,
+          destination: endLocation,
+          travelMode: 'WALKING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
         });
       }
     </script>

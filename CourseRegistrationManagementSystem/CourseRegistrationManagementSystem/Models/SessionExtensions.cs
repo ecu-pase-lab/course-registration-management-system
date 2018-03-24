@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿/**
+ * Copyright 2018
+ * James Adams IV
+ * East Carolina University
+ */
+
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
 namespace CourseRegistrationManagementSystem.Models

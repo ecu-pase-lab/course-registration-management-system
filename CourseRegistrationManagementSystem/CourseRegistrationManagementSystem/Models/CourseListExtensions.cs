@@ -1,4 +1,10 @@
-﻿using System;
+﻿/**
+ * Copyright 2018
+ * James Adams IV
+ * East Carolina University
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
