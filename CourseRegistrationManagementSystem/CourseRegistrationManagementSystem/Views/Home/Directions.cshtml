@@ -7,13 +7,11 @@
 
 <div class="container">
 
+    <p>Distance: <span id="directionsDistance"></span></p>
+    <p>Time: <span id="directionsTime"></span></p>
+
     <div id="map"></div>
-    <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
+
     <script>
       var infowindow;
       var map;
@@ -26,7 +24,7 @@
 
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
-          center: {lat: 35.6055755, lng: -77.3995847}
+          center: {lat: 35.6055755, lng: -77.3995847} // Put ECU campus at the center of the map
         });
         directionsDisplay.setMap(map);
 
@@ -49,6 +47,8 @@
         }, function(response, status) {
           if (status === 'OK') {
             directionsDisplay.setDirections(response);
+            document.getElementById("directionsDistance").innerHTML = response.routes[0].legs[0].distance.text;
+            document.getElementById("directionsTime").innerHTML = response.routes[0].legs[0].duration.text;
           } else {
             window.alert('Directions request failed due to ' + status);
           }

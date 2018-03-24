@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{97F2E89D-C079-4BBE-B0D5-404EDD0E334D}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem/Views/Home/Directions.cshtml">
     <Files>
-      <File FileName="CourseRegistrationManagementSystem/Views/Home/Directions.cshtml" Line="2" Column="35" />
+      <File FileName="CourseRegistrationManagementSystem/Views/Home/Directions.cshtml" Line="14" Column="5" />
       <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="216" Column="100" />
     </Files>
   </MonoDevelop.Ide.Workbench>
