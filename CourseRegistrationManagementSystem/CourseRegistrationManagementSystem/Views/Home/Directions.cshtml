@@ -1,5 +1,5 @@
 ﻿@using CourseRegistrationManagementSystem.Models;
-@using System.Collections.Generic
+@using System.Collections.Generic;
 
 @{
     ViewData["Title"] = "Campus Directions";
@@ -15,18 +15,28 @@
        }
     </style>
     <script>
+      var infowindow;
+      var map;
+        
       function initMap() {
         var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var directionsDisplay = new google.maps.DirectionsRenderer({
+            suppressMarkers: true
+        });
 
-        var startLocation = new google.maps.LatLng({lat: 35.6047775, lng: -77.362346}); 
-        var endLocation = new google.maps.LatLng({lat: 35.6068811, lng: -77.3675049}); 
-        
-        var map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
           center: {lat: 35.6055755, lng: -77.3995847}
         });
         directionsDisplay.setMap(map);
+
+        infowindow = new google.maps.InfoWindow();
+
+        var startLocation = new google.maps.LatLng({lat: 35.6047775, lng: -77.362346}); 
+        var endLocation = new google.maps.LatLng({lat: 35.6068811, lng: -77.3675049}); 
+
+        createMarker(startLocation, 'start');
+        createMarker(endLocation, 'end');
 
         calculateAndDisplayRoute(directionsService, directionsDisplay, startLocation, endLocation);
       }
@@ -44,7 +54,21 @@
           }
         });
       }
+
+      function createMarker(latlng, title) {
+        var marker = new google.maps.Marker({
+          position: latlng,
+          title: title,
+          map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', function () {
+          infowindow.setContent(title);
+          infowindow.open(map, marker);
+        });
+      }  
     </script>
+    
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_HkyFzSubvpRHvVH8e3LE96HtrXxM7ek&callback=initMap">
     </script>
