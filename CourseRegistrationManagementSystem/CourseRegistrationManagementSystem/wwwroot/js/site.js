@@ -1,4 +1,10 @@
-﻿$(document).ready(function($){
+﻿/**
+ * Copyright 2018
+ * James Adams IV
+ * East Carolina University
+ */
+
+$(document).ready(function($){
 
     $("#advancedCourseSearchGroup").hide();
 
