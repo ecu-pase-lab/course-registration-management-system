@@ -18,7 +18,7 @@
     @foreach (var course in ViewBag.Courses)
     {
         <h3 class="h3Course">@course.CourseName - @course.CourseRegistarCode - @course.CourseSubjectCode - @course.SectionNumber</h3>
-        <h4>Schedule<input type="checkbox" id="classScheduleCheckbox_@course.ID" style="margin-left: 5px;"></h4><span id="scheduleText_@course.ID"></span>
+        <h4>Schedule<input type="checkbox" id="classScheduleCheckbox_@course.ID" class="CRMSCheckbox"></h4><span id="scheduleText_@course.ID"></span>
         <br>
         <b>Term:&nbsp;</b><span>@course.CourseTerm</span>
         <br>
@@ -42,8 +42,6 @@
         <b>Instructional Method:&nbsp;</b><span>@course.ClassInstructionalMethod</span>
         <br>
         <b>Credit Hours:&nbsp;</b><span>@course.CreditHours</span>
-        <br>
-        <a href="">View Catalog Entry</a> 
 
         <div class="table-responsive">
             <table class="table">

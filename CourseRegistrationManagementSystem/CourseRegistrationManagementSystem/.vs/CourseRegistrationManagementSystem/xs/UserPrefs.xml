@@ -1,5 +1,13 @@
 ﻿<Properties StartupConfiguration="{4554177C-BCEC-4C7E-916D-4B67641DA50E}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Views/Home/Directions.cshtml">
+    <Files>
+      <File FileName="Views/Home/Schedule.cshtml" Line="156" Column="9" />
+      <File FileName="Views/Home/CourseResults.cshtml" Line="44" Column="67" />
+      <File FileName="wwwroot/css/site.css" Line="130" Column="22" />
+      <File FileName="wwwroot/js/site.js" Line="34" Column="29" />
+      <File FileName="Views/Home/Directions.cshtml" Line="16" Column="110" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

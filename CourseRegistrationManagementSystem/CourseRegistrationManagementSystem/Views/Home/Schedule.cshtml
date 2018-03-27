@@ -15,6 +15,8 @@
 
     <button id="printScheduleButton" onclick="window.print();">Print Schedule</button>
 
+    <button id="viewDirectionsButton">View Directions</button>
+
     <h2>Monday</h2>
 
     @foreach (var course in ViewBag.MondayCourses)
@@ -31,6 +33,8 @@
         <button type="button" class="btn btn-default deleteCourseFromScheduleButton" aria-label="Remove from Schedule" onclick="deleteCourseFromScheduleOnScheduleScreen(@course.ID)">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
+
+        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
     }
 
     <h2>Tuesday</h2>
@@ -49,6 +53,8 @@
         <button type="button" class="btn btn-default deleteCourseFromScheduleButton" aria-label="Remove from Schedule" onclick="deleteCourseFromScheduleOnScheduleScreen(@course.ID)">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
+
+        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
     }
 
     <h2>Wednesday</h2>
@@ -67,6 +73,8 @@
         <button type="button" class="btn btn-default deleteCourseFromScheduleButton" aria-label="Remove from Schedule" onclick="deleteCourseFromScheduleOnScheduleScreen(@course.ID)">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
+
+        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
     }
 
     <h2>Thursday</h2>
@@ -85,6 +93,8 @@
         <button type="button" class="btn btn-default deleteCourseFromScheduleButton" aria-label="Remove from Schedule" onclick="deleteCourseFromScheduleOnScheduleScreen(@course.ID)">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
+
+        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
     }
 
     <h2>Friday</h2>
@@ -103,6 +113,8 @@
         <button type="button" class="btn btn-default deleteCourseFromScheduleButton" aria-label="Remove from Schedule" onclick="deleteCourseFromScheduleOnScheduleScreen(@course.ID)">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
+
+        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
     }
 
     <h2>Saturday</h2>
@@ -121,6 +133,8 @@
         <button type="button" class="btn btn-default deleteCourseFromScheduleButton" aria-label="Remove from Schedule" onclick="deleteCourseFromScheduleOnScheduleScreen(@course.ID)">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
+
+        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
     }
 
     <h2>Sunday</h2>
@@ -139,6 +153,8 @@
         <button type="button" class="btn btn-default deleteCourseFromScheduleButton" aria-label="Remove from Schedule" onclick="deleteCourseFromScheduleOnScheduleScreen(@course.ID)">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
+
+        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
     }
 
 </div>

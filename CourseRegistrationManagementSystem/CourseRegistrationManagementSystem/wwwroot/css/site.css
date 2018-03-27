@@ -114,3 +114,17 @@ body {
     height: 400px;
     width: 100%;
 }
+
+.CRMSCheckbox {
+    margin-left: 5px;
+}
+
+#viewDirectionsButton {
+    background-color: #D6A81E;
+    color: white;
+    text-align: center;
+    border: none;
+    text-decoration: none;
+    border-radius: 12px;
+    margin-top: 20px;
+}

@@ -26,6 +26,14 @@ $(document).ready(function($){
       autoOpen: false,
       modal: true
     });
+
+    $("#returnToScheduleButton").click(function(){
+        window.location.href = "/Home/Schedule";
+    });
+
+    $("#viewDirectionsButton").click(function(){
+        window.location.href = "/Home/Directions";
+    });
 });
 
 function addOrRemoveCourseFromScheduleOnResultsScreen(id){
