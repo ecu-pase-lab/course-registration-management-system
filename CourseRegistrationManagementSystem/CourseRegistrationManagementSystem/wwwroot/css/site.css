@@ -65,6 +65,19 @@ body {
     }
 }
 
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 450px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none
+    }
+
+    #ecuLogo {
+        width: 30%;
+        height: 30%;
+    }
+}
+
 #menuBar {
     background-color: #592a8a;
 }

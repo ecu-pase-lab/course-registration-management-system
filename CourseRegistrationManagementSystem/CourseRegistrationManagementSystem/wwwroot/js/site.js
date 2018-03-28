@@ -27,12 +27,46 @@ $(document).ready(function($){
       modal: true
     });
 
+    $("#dialog-message").dialog({
+      autoOpen: false,
+      modal: true
+    });
+
     $("#returnToScheduleButton").click(function(){
         window.location.href = "/Home/Schedule";
     });
 
     $("#viewDirectionsButton").click(function(){
-        window.location.href = "/Home/Directions";
+        if ($('input[type=checkbox]:checked').length < 2) {
+            $("#dialog-cannot-view-directions-message").dialog({
+              autoOpen: true,  
+              modal: true,
+              buttons: {
+                Ok: function() {
+                  $(this).dialog("close");
+                }
+              }
+            });
+        } 
+        else if ($('input[type=checkbox]:checked').length == 2) {
+            window.location.href = "/Home/Directions";
+        }
+    });
+
+    $('.directionsCheckbox').on('change', function (e) {
+        if ($('input[type=checkbox]:checked').length > 2) {
+            $(this).prop('checked', false);
+
+            $("#dialog-cannot-add-course-message").dialog({
+              autoOpen: true,  
+              modal: true,
+              buttons: {
+                Ok: function() {
+                  $(this).dialog("close");
+                }
+              }
+            });
+        }
     });
 });
 

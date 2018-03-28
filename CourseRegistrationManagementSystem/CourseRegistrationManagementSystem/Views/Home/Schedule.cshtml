@@ -34,7 +34,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
     }
 
     <h2>Tuesday</h2>
@@ -54,7 +54,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
     }
 
     <h2>Wednesday</h2>
@@ -74,7 +74,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
     }
 
     <h2>Thursday</h2>
@@ -94,7 +94,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
     }
 
     <h2>Friday</h2>
@@ -114,7 +114,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
     }
 
     <h2>Saturday</h2>
@@ -134,7 +134,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
     }
 
     <h2>Sunday</h2>
@@ -154,11 +154,25 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h4>Add to Directions<input type="checkbox" class="CRMSCheckbox"></h4>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
     }
 
 </div>
 
 <div id="dialog-confirm" title="Confirm Removing Course">
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>This course will be removed from the course schedule. Are you sure you want to remove this course?</p>
+</div>
+
+<div id="dialog-cannot-add-course-message" title="Cannot Add Course to Directions">
+  <p>
+    <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 50px 0;"></span>
+    Cannot add more than two courses to directions.
+  </p>
+</div>
+
+<div id="dialog-cannot-view-directions-message" title="Cannot View Directions">
+  <p>
+    <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 50px 0;"></span>
+    Please select two courses to view classroom directions.
+  </p>
 </div>
