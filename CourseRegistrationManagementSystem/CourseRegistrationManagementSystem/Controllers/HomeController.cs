@@ -263,15 +263,15 @@ namespace CourseRegistrationManagementSystem.Controllers
         [HttpPost]
         public IActionResult Directions(string courseToMap1, string courseToMap2)
         {
-            List<Course> allCourses = MockCRMSData.PopulateCourses();
-
-            //List<Course> coursesToAddToMap = new List<Course>();
-
             string[] courseInfo1 = courseToMap1.Split(',');
 
             string classroomName1 = courseInfo1[0];
             double classroomLatitude1 = Convert.ToDouble(courseInfo1[1]);
             double classroomLongitude1 = Convert.ToDouble(courseInfo1[2]);
+
+            ViewBag.ClassroomName1 = classroomName1;
+            ViewBag.ClassroomLatitude1 = classroomLatitude1;
+            ViewBag.ClassroomLongitude1 = classroomLongitude1;
 
             string[] courseInfo2 = courseToMap2.Split(',');
 
@@ -279,30 +279,9 @@ namespace CourseRegistrationManagementSystem.Controllers
             double classroomLatitude2 = Convert.ToDouble(courseInfo2[1]);
             double classroomLongitude2 = Convert.ToDouble(courseInfo2[2]);
 
-            //List<ScheduledCourse> coursesToAddToMap = JsonConvert.DeserializeObject<List<ScheduledCourse>>(coursesToMapHidden);
-
-            //foreach (ScheduledCourse course in coursesToAddToMap)
-            //{
-            //    Console.WriteLine(course.ClassName);
-
-
-            //}
-
-            //foreach (string id in courseIdsToAddToMapHidden)
-            //{
-            //    int idInt = 0;
-
-            //    bool parseResult = Int32.TryParse(id, out idInt);
-
-            //    if (parseResult)
-            //    {
-            //        Course course = allCourses.Find(delegate (Course c) { return c.ID == idInt; });
-
-            //        coursesToAddToMap.Add(course);
-            //    }
-            //}
-
-            //ViewBag.CoursesToMapJSON = JsonConvert.SerializeObject(coursesToAddToMap, Formatting.Indented);
+            ViewBag.ClassroomName2 = classroomName2;
+            ViewBag.ClassroomLatitude2 = classroomLatitude2;
+            ViewBag.ClassroomLongitude2 = classroomLongitude2;
 
             return View();
         }

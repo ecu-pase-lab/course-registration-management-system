@@ -11,6 +11,16 @@
     ViewData["Title"] = "Campus Directions";
 }
 
+<script type="text/javascript">
+    var classroomName1= '@ViewBag.ClassroomName1';
+    var classroomLatitude1= @ViewBag.ClassroomLatitude1;
+    var classroomLongitude1= @ViewBag.ClassroomLongitude1;
+
+    var classroomName2= '@ViewBag.ClassroomName2';
+    var classroomLatitude2= @ViewBag.ClassroomLatitude2;
+    var classroomLongitude2= @ViewBag.ClassroomLongitude2;
+</script>
+
 <div class="container">
 
     <button type="button" class="btn btn-default" id="returnToScheduleButton" aria-label="Return to Schedule">

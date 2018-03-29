@@ -204,11 +204,11 @@ function initMap() {
 
     var infowindow = new google.maps.InfoWindow();
 
-    var startLocation = new google.maps.LatLng({lat: 35.6047775, lng: -77.362346}); 
-    var endLocation = new google.maps.LatLng({lat: 35.6068811, lng: -77.3675049}); 
+    var startLocation = new google.maps.LatLng({lat: classroomLatitude1, lng: classroomLongitude1}); 
+    var endLocation = new google.maps.LatLng({lat: classroomLatitude2, lng: classroomLongitude2}); 
 
-    createMarker(map, infowindow, startLocation, 'start');
-    createMarker(map, infowindow, endLocation, 'end');
+    createMarker(map, infowindow, startLocation, classroomName1);
+    createMarker(map, infowindow, endLocation, classroomName2);
 
     calculateAndDisplayRoute(directionsService, directionsDisplay, startLocation, endLocation);
 }
