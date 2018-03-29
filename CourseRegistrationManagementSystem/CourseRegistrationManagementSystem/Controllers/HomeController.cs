@@ -46,8 +46,6 @@ namespace CourseRegistrationManagementSystem.Controllers
 
             List<string> instructorsList = MockCRMSData.PopulateInstructors();
 
-            ViewBag.Instructors = instructorsList;
-
             ViewBag.InstructorsJSON = JsonConvert.SerializeObject(instructorsList, Formatting.Indented);
 
             return View();
@@ -152,6 +150,8 @@ namespace CourseRegistrationManagementSystem.Controllers
                     List<string> classDays = course.ClassDays;
                     List<string> classTimes = course.ClassTimes;
                     List<string> classroomNames = course.ClassroomNames;
+                    List<double> classroomLatitudes = course.ClassroomLatitudes;
+                    List<double> classroomLongitudes = course.ClassroomLongitudes;
 
                     for (int i = 0; i < classDays.Count; i++) 
                     {
@@ -165,6 +165,8 @@ namespace CourseRegistrationManagementSystem.Controllers
                             courseToAdd.ClassName = course.CourseSubjectCode + "-" + course.SectionNumber + " " + course.CourseName;
                             courseToAdd.ClassTime = classTimes.ElementAt(i);
                             courseToAdd.ClassroomName = classroomNames.ElementAt(i);
+                            courseToAdd.ClassroomLatitude = classroomLatitudes.ElementAt(i);
+                            courseToAdd.ClassroomLongitude = classroomLongitudes.ElementAt(i);
 
                             if (day.Equals("Monday"))
                             {
@@ -258,8 +260,50 @@ namespace CourseRegistrationManagementSystem.Controllers
             return Content("Removed");
         }
 
-        public IActionResult Directions()
+        [HttpPost]
+        public IActionResult Directions(string courseToMap1, string courseToMap2)
         {
+            List<Course> allCourses = MockCRMSData.PopulateCourses();
+
+            //List<Course> coursesToAddToMap = new List<Course>();
+
+            string[] courseInfo1 = courseToMap1.Split(',');
+
+            string classroomName1 = courseInfo1[0];
+            double classroomLatitude1 = Convert.ToDouble(courseInfo1[1]);
+            double classroomLongitude1 = Convert.ToDouble(courseInfo1[2]);
+
+            string[] courseInfo2 = courseToMap2.Split(',');
+
+            string classroomName2 = courseInfo2[0];
+            double classroomLatitude2 = Convert.ToDouble(courseInfo2[1]);
+            double classroomLongitude2 = Convert.ToDouble(courseInfo2[2]);
+
+            //List<ScheduledCourse> coursesToAddToMap = JsonConvert.DeserializeObject<List<ScheduledCourse>>(coursesToMapHidden);
+
+            //foreach (ScheduledCourse course in coursesToAddToMap)
+            //{
+            //    Console.WriteLine(course.ClassName);
+
+
+            //}
+
+            //foreach (string id in courseIdsToAddToMapHidden)
+            //{
+            //    int idInt = 0;
+
+            //    bool parseResult = Int32.TryParse(id, out idInt);
+
+            //    if (parseResult)
+            //    {
+            //        Course course = allCourses.Find(delegate (Course c) { return c.ID == idInt; });
+
+            //        coursesToAddToMap.Add(course);
+            //    }
+            //}
+
+            //ViewBag.CoursesToMapJSON = JsonConvert.SerializeObject(coursesToAddToMap, Formatting.Indented);
+
             return View();
         }
 

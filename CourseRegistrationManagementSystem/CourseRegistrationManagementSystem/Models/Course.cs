@@ -34,7 +34,8 @@ namespace CourseRegistrationManagementSystem.Models
         public List<string> ClassDays { get; set; }
         public string CampusName { get; set; }
         public List<string> ClassroomNames { get; set; }
-        public List<GeoLocation> ClassroomLocations { get; set; }
+        public List<double> ClassroomLatitudes { get; set; }
+        public List<double> ClassroomLongitudes { get; set; }
         public string InstructorName { get; set; }
         public Seat CourseSeat { get; set; }
         public string Prerequisites { get; set; }

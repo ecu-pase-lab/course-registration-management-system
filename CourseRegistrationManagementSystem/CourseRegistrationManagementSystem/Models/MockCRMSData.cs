@@ -166,8 +166,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Brewster Building 0B204"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.6047775,-77.362346)
+                ClassroomLatitudes = new List<double>{
+                    35.6047775
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.362346
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -221,7 +224,10 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "N/A"
                 },
-                ClassroomLocations = new List<GeoLocation>{
+                ClassroomLatitudes = new List<double>{
+                    
+                },
+                ClassroomLongitudes = new List<double>{
                     
                 },
                 CampusName = "DE/Internet Campus",
@@ -276,8 +282,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Brewster Building 0B203"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.6047775,-77.362346)
+                ClassroomLatitudes = new List<double>{
+                    35.6047775
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.362346
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -330,8 +339,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Joyner East 00214"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.6068811,-77.3675049)
+                ClassroomLatitudes = new List<double>{
+                    35.6068811
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3675049
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -384,8 +396,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "N/A"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                   
+                ClassroomLatitudes = new List<double>{
+                    
+                },
+                ClassroomLongitudes = new List<double>{
+                    
                 },
                 CampusName = "DE/Internet Campus",
                 ClassDays = new List<string>{
@@ -438,8 +453,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Howell Science Complex C103B"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.6054165,-77.3635637)
+                ClassroomLatitudes = new List<double>{
+                    35.6054165
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3635637
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -492,8 +510,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Bate Building 01025"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.606147,-77.3652414)
+                ClassroomLatitudes = new List<double>{
+                    35.606147
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3652414
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -546,8 +567,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Bate Building 01025"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.606147,-77.3652414)
+                ClassroomLatitudes = new List<double>{
+                    35.606147
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3652414
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -600,8 +624,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Brewster Building 0B304"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.6047775,-77.362346)
+                ClassroomLatitudes = new List<double>{
+                    35.6047775
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.362346
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -654,8 +681,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Howell Science Complex 0N107"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.6054165,-77.3635637)
+                ClassroomLatitudes = new List<double>{
+                    35.6054165
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3635637
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -708,8 +738,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Joyner East 00214"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.6068811,-77.3675049)
+                ClassroomLatitudes = new List<double>{
+                    35.6068811
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3675049
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -762,8 +795,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Joyner East 00214"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.6068811,-77.3675049)
+                ClassroomLatitudes = new List<double>{
+                    35.6068811
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3675049
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -816,8 +852,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Rawl Building And Annex 00206"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.6062184,-77.3643696)
+                ClassroomLatitudes = new List<double>{
+                    35.6062184
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3643696
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -870,8 +909,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Austin Building 00203"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.6058379,-77.3629044)
+                ClassroomLatitudes = new List<double>{
+                    35.6058379
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3629044
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -924,8 +966,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Austin Building 00203"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.6058379,-77.3629044)
+                ClassroomLatitudes = new List<double>{
+                    35.6058379
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3629044
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -978,8 +1023,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Austin Building 00220"
                 },
-                ClassroomLocations = new List<GeoLocation>{
-                    new GeoLocation(35.6058379,-77.3629044)
+                ClassroomLatitudes = new List<double>{
+                    35.6058379
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3629044
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -1032,7 +1080,10 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "N/A"
                 },
-                ClassroomLocations = new List<GeoLocation>{
+                ClassroomLatitudes = new List<double>{
+                    
+                },
+                ClassroomLongitudes = new List<double>{
                     
                 },
                 CampusName = "DE/Internet Campus",
@@ -1087,10 +1138,13 @@ namespace CourseRegistrationManagementSystem.Models
                     "Bate Building 01028",
                     "Howell Science Complex 0E205"
                 },
-                ClassroomLocations = new List<GeoLocation>
-                {
-                    new GeoLocation(35.606147,-77.3652414),
-                    new GeoLocation(35.6054165,-77.3635637)
+                ClassroomLatitudes = new List<double>{
+                    35.606147,
+                    35.6054165
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3652414,
+                    -77.3635637
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -1146,10 +1200,13 @@ namespace CourseRegistrationManagementSystem.Models
                     "Bate Building 01028",
                     "Howell Science Complex 0E205"
                 },
-                ClassroomLocations = new List<GeoLocation>
-                {
-                    new GeoLocation(35.606147,-77.3652414),
-                    new GeoLocation(35.6054165,-77.3635637)
+                ClassroomLatitudes = new List<double>{
+                    35.606147,
+                    35.6054165
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3652414,
+                    -77.3635637
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{
@@ -1204,9 +1261,11 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassroomNames = new List<string>{
                     "Jenkins Fine Arts Center 01108"
                 },
-                ClassroomLocations = new List<GeoLocation>
-                {
-                    new GeoLocation(35.6089231,-77.3682356)
+                ClassroomLatitudes = new List<double>{
+                    35.6089231
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.3682356
                 },
                 CampusName = "Main Campus",
                 ClassDays = new List<string>{

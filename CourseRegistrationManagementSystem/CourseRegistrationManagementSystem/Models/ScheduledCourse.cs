@@ -18,5 +18,7 @@ namespace CourseRegistrationManagementSystem.Models
         public string ClassName { get; set; }
         public string ClassTime { get; set; }
         public string ClassroomName { get; set; }
+        public double ClassroomLatitude { get; set; }
+        public double ClassroomLongitude { get; set; }
     }
 }

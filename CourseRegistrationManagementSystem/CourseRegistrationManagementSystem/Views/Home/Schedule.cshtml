@@ -11,11 +11,18 @@
     ViewData["Title"] = "Daily Course Schedule";
 }
 
+@using (Html.BeginForm("Directions", "Home", FormMethod.Post, new { @id = "scheduleForm" }))
+{
+
 <div class="container" id="scheduleDiv">
 
-    <button id="printScheduleButton" onclick="window.print();">Print Schedule</button>
+    <button type="button" id="printScheduleButton" onclick="window.print();">Print Schedule</button>
 
-    <button id="viewDirectionsButton">View Directions</button>
+    <button type="button" id="viewDirectionsButton">View Directions</button>
+
+    <input type="hidden" id="courseToMap1" name="courseToMap1"/>
+
+    <input type="hidden" id="courseToMap2" name="courseToMap2"/>
 
     <h2>Monday</h2>
 
@@ -34,7 +41,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ClassroomName,@course.ClassroomLatitude,@course.ClassroomLongitude"></h5>
     }
 
     <h2>Tuesday</h2>
@@ -54,7 +61,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ClassroomName,@course.ClassroomLatitude,@course.ClassroomLongitude"></h5>
     }
 
     <h2>Wednesday</h2>
@@ -74,7 +81,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ClassroomName,@course.ClassroomLatitude,@course.ClassroomLongitude"></h5>
     }
 
     <h2>Thursday</h2>
@@ -94,7 +101,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ClassroomName,@course.ClassroomLatitude,@course.ClassroomLongitude"></h5>
     }
 
     <h2>Friday</h2>
@@ -114,7 +121,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ClassroomName,@course.ClassroomLatitude,@course.ClassroomLongitude"></h5>
     }
 
     <h2>Saturday</h2>
@@ -134,7 +141,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ClassroomName,@course.ClassroomLatitude,@course.ClassroomLongitude"></h5>
     }
 
     <h2>Sunday</h2>
@@ -154,7 +161,7 @@
             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
         </button>
 
-        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ID"></h5>
+        <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ClassroomName,@course.ClassroomLatitude,@course.ClassroomLongitude"></h5>
     }
 
 </div>
@@ -176,3 +183,5 @@
     Please select two courses to view classroom directions.
   </p>
 </div>
+
+}

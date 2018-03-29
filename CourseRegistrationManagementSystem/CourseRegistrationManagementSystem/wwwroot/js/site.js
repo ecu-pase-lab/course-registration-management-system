@@ -27,7 +27,12 @@ $(document).ready(function($){
       modal: true
     });
 
-    $("#dialog-message").dialog({
+    $("#dialog-cannot-add-course-message").dialog({
+      autoOpen: false,
+      modal: true
+    });
+
+    $("#dialog-cannot-view-directions-message").dialog({
       autoOpen: false,
       modal: true
     });
@@ -49,7 +54,15 @@ $(document).ready(function($){
             });
         } 
         else if ($('input[type=checkbox]:checked').length == 2) {
-            window.location.href = "/Home/Directions";
+            $('input[type=checkbox]:checked').each(function(index) { 
+                if (index == 0) {
+                    $("#courseToMap1").val($(this).val());
+                } else if (index == 1) {
+                    $("#courseToMap2").val($(this).val());
+                }
+            });
+
+            $("#scheduleForm").submit();
         }
     });
 
@@ -175,3 +188,56 @@ function fillInstructorSelection(instructorArray){
         }
     });    
 }
+        
+function initMap() {
+
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer({
+        suppressMarkers: true
+    });
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: {lat: 35.6055755, lng: -77.3995847} // Put ECU campus at the center of the map
+    });
+    directionsDisplay.setMap(map);
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var startLocation = new google.maps.LatLng({lat: 35.6047775, lng: -77.362346}); 
+    var endLocation = new google.maps.LatLng({lat: 35.6068811, lng: -77.3675049}); 
+
+    createMarker(map, infowindow, startLocation, 'start');
+    createMarker(map, infowindow, endLocation, 'end');
+
+    calculateAndDisplayRoute(directionsService, directionsDisplay, startLocation, endLocation);
+}
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay, startLocation, endLocation) {
+    directionsService.route({
+      origin: startLocation,
+      destination: endLocation,
+      travelMode: 'WALKING'
+    }, function(response, status) {
+      if (status === 'OK') {
+        directionsDisplay.setDirections(response);
+        document.getElementById("directionsDistance").innerHTML = response.routes[0].legs[0].distance.text;
+        document.getElementById("directionsTime").innerHTML = response.routes[0].legs[0].duration.text;
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
+}
+
+function createMarker(map, infowindow, latlng, title) {
+    var marker = new google.maps.Marker({
+      position: latlng,
+      title: title,
+      map: map
+    });
+
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.setContent(title);
+        infowindow.open(map, marker);
+    });
+}  

@@ -32,6 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\CourseMeetingInfo.cs" />
+    <Compile Remove="Models\GeoLocation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\lib\jquery-ui\dist\css\images\ui-icons_555555_256x240.png" />
