@@ -164,6 +164,19 @@
         <h5>Add to Directions<input type="checkbox" class="CRMSCheckbox directionsCheckbox" value="@course.ClassroomName,@course.ClassroomLatitude,@course.ClassroomLongitude"></h5>
     }
 
+    <h2>Online</h2>
+    
+    @foreach (var course in ViewBag.OnlineCourses)
+    {
+        <p>
+        <span>@course.ClassName</span>
+        </p>
+
+        <button type="button" class="btn btn-default deleteCourseFromScheduleButton" aria-label="Remove from Schedule" onclick="deleteCourseFromScheduleOnScheduleScreen(@course.ID)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        </button>
+    }
+
 </div>
 
 <div id="dialog-confirm" title="Confirm Removing Course">

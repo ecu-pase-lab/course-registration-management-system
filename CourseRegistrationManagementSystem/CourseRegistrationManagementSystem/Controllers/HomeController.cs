@@ -142,6 +142,7 @@ namespace CourseRegistrationManagementSystem.Controllers
             List<ScheduledCourse> fridayCourses = new List<ScheduledCourse>();
             List<ScheduledCourse> saturdayCourses = new List<ScheduledCourse>();
             List<ScheduledCourse> sundayCourses = new List<ScheduledCourse>();
+            List<ScheduledCourse> onlineCourses = new List<ScheduledCourse>();
 
             if (scheduledCourses != null)
             {
@@ -163,38 +164,47 @@ namespace CourseRegistrationManagementSystem.Controllers
                             ScheduledCourse courseToAdd = new ScheduledCourse();
                             courseToAdd.ID = course.ID;
                             courseToAdd.ClassName = course.CourseSubjectCode + "-" + course.SectionNumber + " " + course.CourseName;
-                            courseToAdd.ClassTime = classTimes.ElementAt(i);
-                            courseToAdd.ClassroomName = classroomNames.ElementAt(i);
-                            courseToAdd.ClassroomLatitude = classroomLatitudes.ElementAt(i);
-                            courseToAdd.ClassroomLongitude = classroomLongitudes.ElementAt(i);
 
-                            if (day.Equals("Monday"))
+                            if (course.CampusName.Equals("DE/Internet Campus"))
                             {
-                                mondayCourses.Add(courseToAdd);
-                            }
-                            else if (day.Equals("Tuesday"))
-                            {
-                                tuesdayCourses.Add(courseToAdd);
-                            }
-                            else if (day.Equals("Wednesday"))
-                            {
-                                wednesdayCourses.Add(courseToAdd);
-                            }
-                            else if (day.Equals("Thursday"))
-                            {
-                                thursdayCourses.Add(courseToAdd);
-                            }
-                            else if (day.Equals("Friday"))
-                            {
-                                fridayCourses.Add(courseToAdd);
-                            }
-                            else if (day.Equals("Saturday"))
-                            {
-                                saturdayCourses.Add(courseToAdd);
-                            }
-                            else if (day.Equals("Sunday"))
-                            {
-                                sundayCourses.Add(courseToAdd);
+                                if (!onlineCourses.Any(c => c.ID == course.ID))
+                                {
+                                    onlineCourses.Add(courseToAdd);
+                                }
+                            } else {
+                                courseToAdd.ClassTime = classTimes.ElementAt(i);
+                                courseToAdd.ClassroomName = classroomNames.ElementAt(i);
+                                courseToAdd.ClassroomLatitude = classroomLatitudes.ElementAt(i);
+                                courseToAdd.ClassroomLongitude = classroomLongitudes.ElementAt(i);
+
+                                if (day.Equals("Monday"))
+                                {
+                                    mondayCourses.Add(courseToAdd);
+                                }
+                                else if (day.Equals("Tuesday"))
+                                {
+                                    tuesdayCourses.Add(courseToAdd);
+                                }
+                                else if (day.Equals("Wednesday"))
+                                {
+                                    wednesdayCourses.Add(courseToAdd);
+                                }
+                                else if (day.Equals("Thursday"))
+                                {
+                                    thursdayCourses.Add(courseToAdd);
+                                }
+                                else if (day.Equals("Friday"))
+                                {
+                                    fridayCourses.Add(courseToAdd);
+                                }
+                                else if (day.Equals("Saturday"))
+                                {
+                                    saturdayCourses.Add(courseToAdd);
+                                }
+                                else if (day.Equals("Sunday"))
+                                {
+                                    sundayCourses.Add(courseToAdd);
+                                }
                             }
                         }
                     }
@@ -208,6 +218,7 @@ namespace CourseRegistrationManagementSystem.Controllers
             ViewBag.FridayCourses = fridayCourses;
             ViewBag.SaturdayCourses = saturdayCourses;
             ViewBag.SundayCourses = sundayCourses;
+            ViewBag.OnlineCourses = onlineCourses;
 
             return View();
         }
