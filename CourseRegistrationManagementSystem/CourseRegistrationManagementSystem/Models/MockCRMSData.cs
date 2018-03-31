@@ -14,7 +14,7 @@ namespace CourseRegistrationManagementSystem.Models
         public static List<string> PopulateSemesters()
         {
             List<string> semesters = new List<string>();
-            semesters.Add("Spring 2018 (View Only)");
+            semesters.Add("Spring 2018");
 
             return semesters;
         }

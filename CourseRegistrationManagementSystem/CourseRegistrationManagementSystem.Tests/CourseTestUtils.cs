@@ -39,6 +39,8 @@ namespace CourseRegistrationManagementSystem.Tests
             Assert.Equal(expectedCourse.TextbookNewPrice, actualCourse.TextbookNewPrice);
             Assert.Equal(expectedCourse.TextbookUsedPrice, actualCourse.TextbookUsedPrice);
             Assert.Equal(expectedCourse.CourseLevels, actualCourse.CourseLevels);
+            Assert.Equal(expectedCourse.ClassroomLatitudes, actualCourse.ClassroomLatitudes);
+            Assert.Equal(expectedCourse.ClassroomLongitudes, actualCourse.ClassroomLongitudes);
 
             // Compare Seat values
             Assert.Equal(expectedCourse.CourseSeat.Capacity, actualCourse.CourseSeat.Capacity);
