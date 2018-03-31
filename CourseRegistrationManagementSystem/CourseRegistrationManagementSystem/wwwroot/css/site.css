@@ -114,15 +114,6 @@ body {
     text-align: center;
 }
 
-#printScheduleButton {
-    background-color: #D6A81E;
-    color: white;
-    text-align: center;
-    border: none;
-    text-decoration: none;
-    border-radius: 12px;    margin-top: 20px;
-}
-
 #map {
     height: 400px;
     width: 100%;
@@ -132,7 +123,7 @@ body {
     margin-left: 5px;
 }
 
-#viewDirectionsButton {
+.yellowButton {
     background-color: #D6A81E;
     color: white;
     text-align: center;
@@ -142,6 +133,11 @@ body {
     margin-top: 20px;
 }
 
-#returnToScheduleButton {
-    margin-top: 15px;
+#alertIconConfirm {
+    float: left;
+    margin: 12px 12px 20px 0;
 }
+
+#alertIconMessage {
+    float: left;
+    margin: 0 7px 50px 0;}

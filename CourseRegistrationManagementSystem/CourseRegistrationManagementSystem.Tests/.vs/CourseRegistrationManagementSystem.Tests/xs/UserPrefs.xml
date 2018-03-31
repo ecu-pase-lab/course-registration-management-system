@@ -1,10 +1,10 @@
-﻿<Properties StartupConfiguration="{97F2E89D-C079-4BBE-B0D5-404EDD0E334D}|Default">
+﻿<Properties StartupConfiguration="{4D27618E-7FDF-4863-AD74-0A6E1AE9A4B6}|Default">
   <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem.Tests PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
 </Properties>

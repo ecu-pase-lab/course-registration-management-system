@@ -9,6 +9,7 @@ using CourseRegistrationManagementSystem.Models;
 using Xunit;
 using Moq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace CourseRegistrationManagementSystem.Tests
 {
@@ -23,6 +24,11 @@ namespace CourseRegistrationManagementSystem.Tests
             controller = new Controllers.HomeController();
 
             //controller.AddCourseToSchedule(3);
+
+            //using (new FakeHttpContext())
+            //{
+            //    HttpContext.Current.Session["CustomerId"] = "customer1";
+            //}
 
             //List<Course> scheduledCourses = controller.HttpContext.Session.Get<List<Course>>("scheduledCourses");
 
@@ -46,4 +52,6 @@ namespace CourseRegistrationManagementSystem.Tests
     
         }
     }
+
+
 }

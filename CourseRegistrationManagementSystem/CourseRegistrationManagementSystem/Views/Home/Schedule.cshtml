@@ -16,9 +16,9 @@
 
 <div class="container" id="scheduleDiv">
 
-    <button type="button" id="printScheduleButton" onclick="window.print();">Print Schedule</button>
+    <button type="button" id="printScheduleButton" class="yellowButton" onclick="window.print();">Print Schedule</button>
 
-    <button type="button" id="viewDirectionsButton">View Directions</button>
+    <button type="button" id="viewDirectionsButton" class="yellowButton">View Directions</button>
 
     <input type="hidden" id="courseToMap1" name="courseToMap1"/>
 
@@ -180,19 +180,19 @@
 </div>
 
 <div id="dialog-confirm" title="Confirm Removing Course">
-    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>This course will be removed from the course schedule. Are you sure you want to remove this course?</p>
+    <p><span class="ui-icon ui-icon-alert" id="alertIconConfirm"></span>This course will be removed from the course schedule. Are you sure you want to remove this course?</p>
 </div>
 
 <div id="dialog-cannot-add-course-message" title="Cannot Add Course to Directions">
   <p>
-    <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 50px 0;"></span>
+    <span class="ui-icon ui-icon-alert" id="alertIconMessage"></span>
     Cannot add more than two courses to directions.
   </p>
 </div>
 
 <div id="dialog-cannot-view-directions-message" title="Cannot View Directions">
   <p>
-    <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 50px 0;"></span>
+    <span class="ui-icon ui-icon-alert" id="alertIconMessage"></span>
     Please select two courses to view classroom directions.
   </p>
 </div>
