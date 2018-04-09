@@ -1,9 +1,13 @@
 ﻿<Properties StartupConfiguration="{97F2E89D-C079-4BBE-B0D5-404EDD0E334D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem.Tests/DirectionsTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem/Views/Home/Schedule.cshtml">
     <Files>
       <File FileName="CourseRegistrationManagementSystem.Tests/CourseTestUtils.cs" Line="43" Column="94" />
       <File FileName="CourseRegistrationManagementSystem.Tests/AddAndRemoveFromScheduleTests.cs" Line="1" Column="1" />
       <File FileName="CourseRegistrationManagementSystem.Tests/DirectionsTests.cs" Line="29" Column="76" />
+      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="CourseRegistrationManagementSystem/wwwroot/js/site.js" Line="1" Column="1" />
+      <File FileName="CourseRegistrationManagementSystem/Views/Home/Directions.cshtml" Line="1" Column="1" />
+      <File FileName="CourseRegistrationManagementSystem/Views/Home/Schedule.cshtml" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />
