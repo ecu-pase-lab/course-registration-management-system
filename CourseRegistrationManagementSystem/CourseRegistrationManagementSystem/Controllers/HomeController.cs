@@ -211,6 +211,83 @@ namespace CourseRegistrationManagementSystem.Controllers
                 }
             }
 
+            mondayCourses.Sort(
+                delegate (ScheduledCourse sc1, ScheduledCourse sc2)
+                {
+                    TimeSpan sc1ClassStartTimeSpan = parseStartTimeFromClassTime(sc1.ClassTime);
+
+                    TimeSpan sc2ClassStartTimeSpan = parseStartTimeFromClassTime(sc2.ClassTime);
+
+                    return sc1ClassStartTimeSpan.CompareTo(sc2ClassStartTimeSpan);
+                }
+            );
+
+            tuesdayCourses.Sort(
+                delegate (ScheduledCourse sc1, ScheduledCourse sc2)
+                {
+                    TimeSpan sc1ClassStartTimeSpan = parseStartTimeFromClassTime(sc1.ClassTime);
+
+                    TimeSpan sc2ClassStartTimeSpan = parseStartTimeFromClassTime(sc2.ClassTime);
+
+                    return sc1ClassStartTimeSpan.CompareTo(sc2ClassStartTimeSpan);
+                }
+            );
+
+            wednesdayCourses.Sort(
+                delegate (ScheduledCourse sc1, ScheduledCourse sc2)
+                {
+                    TimeSpan sc1ClassStartTimeSpan = parseStartTimeFromClassTime(sc1.ClassTime);
+
+                    TimeSpan sc2ClassStartTimeSpan = parseStartTimeFromClassTime(sc2.ClassTime);
+
+                    return sc1ClassStartTimeSpan.CompareTo(sc2ClassStartTimeSpan);
+                }
+            );
+
+            thursdayCourses.Sort(
+                delegate (ScheduledCourse sc1, ScheduledCourse sc2)
+                {
+                    TimeSpan sc1ClassStartTimeSpan = parseStartTimeFromClassTime(sc1.ClassTime);
+
+                    TimeSpan sc2ClassStartTimeSpan = parseStartTimeFromClassTime(sc2.ClassTime);
+
+                    return sc1ClassStartTimeSpan.CompareTo(sc2ClassStartTimeSpan);
+                }
+            );
+
+            fridayCourses.Sort(
+                delegate (ScheduledCourse sc1, ScheduledCourse sc2)
+                {
+                    TimeSpan sc1ClassStartTimeSpan = parseStartTimeFromClassTime(sc1.ClassTime);
+
+                    TimeSpan sc2ClassStartTimeSpan = parseStartTimeFromClassTime(sc2.ClassTime);
+
+                    return sc1ClassStartTimeSpan.CompareTo(sc2ClassStartTimeSpan);
+                }
+            );
+
+            saturdayCourses.Sort(
+                delegate (ScheduledCourse sc1, ScheduledCourse sc2)
+                {
+                    TimeSpan sc1ClassStartTimeSpan = parseStartTimeFromClassTime(sc1.ClassTime);
+
+                    TimeSpan sc2ClassStartTimeSpan = parseStartTimeFromClassTime(sc2.ClassTime);
+
+                    return sc1ClassStartTimeSpan.CompareTo(sc2ClassStartTimeSpan);
+                }
+            );
+
+            sundayCourses.Sort(
+                delegate (ScheduledCourse sc1, ScheduledCourse sc2)
+                {
+                    TimeSpan sc1ClassStartTimeSpan = parseStartTimeFromClassTime(sc1.ClassTime);
+
+                    TimeSpan sc2ClassStartTimeSpan = parseStartTimeFromClassTime(sc2.ClassTime);
+
+                    return sc1ClassStartTimeSpan.CompareTo(sc2ClassStartTimeSpan);
+                }
+            );
+
             ViewBag.MondayCourses = mondayCourses;
             ViewBag.TuesdayCourses = tuesdayCourses;
             ViewBag.WednesdayCourses = wednesdayCourses;
@@ -221,6 +298,21 @@ namespace CourseRegistrationManagementSystem.Controllers
             ViewBag.OnlineCourses = onlineCourses;
 
             return View();
+        }
+
+        public TimeSpan parseStartTimeFromClassTime(string classTime)
+        {
+            int index = classTime.IndexOf('-');
+            TimeSpan classStartTimeSpan = new TimeSpan();
+
+            if (index > 0)
+            {
+                string classStartTime = classTime.Substring(0, index - 1);
+
+                classStartTimeSpan = DateTime.ParseExact(classStartTime, "h:mm tt", CultureInfo.InvariantCulture).TimeOfDay;
+            }
+
+            return classStartTimeSpan;
         }
 
         [HttpPost]

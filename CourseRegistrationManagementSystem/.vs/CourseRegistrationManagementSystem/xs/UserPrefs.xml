@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{97F2E89D-C079-4BBE-B0D5-404EDD0E334D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem.Tests/SubjectTests.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CourseRegistrationManagementSystem/Controllers/HomeController.cs">
     <Files>
-      <File FileName="CourseRegistrationManagementSystem.Tests/SubjectTests.cs" Line="81" Column="64" />
+      <File FileName="CourseRegistrationManagementSystem/Controllers/HomeController.cs" Line="289" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CourseRegistrationManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />
