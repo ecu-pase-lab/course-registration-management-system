@@ -30,7 +30,7 @@ namespace CourseRegistrationManagementSystem.Tests
             // Compare values for course
             Assert.Equal(1, controller.ViewBag.Courses.Count);
 
-            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse1(), controller.ViewBag.Courses[0]);
+            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse2(), controller.ViewBag.Courses[0]);
         }
 
         // Choosing Mark Hills and Qin Ding in the Instructor drop-down menu should return only courses that Mark Hills or Qin Ding teach 
@@ -48,7 +48,7 @@ namespace CourseRegistrationManagementSystem.Tests
             // Compare values for all courses
             Assert.Equal(2, controller.ViewBag.Courses.Count);
 
-            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse1(), controller.ViewBag.Courses[0]);
+            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse2(), controller.ViewBag.Courses[0]);
             CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse10(), controller.ViewBag.Courses[1]);
         }
 
@@ -67,7 +67,7 @@ namespace CourseRegistrationManagementSystem.Tests
             // Compare values for course
             Assert.Equal(1, controller.ViewBag.Courses.Count);
 
-            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse1(), controller.ViewBag.Courses[0]);
+            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse2(), controller.ViewBag.Courses[0]);
         }
     }
 }

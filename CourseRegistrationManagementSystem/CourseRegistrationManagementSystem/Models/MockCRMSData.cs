@@ -141,7 +141,7 @@ namespace CourseRegistrationManagementSystem.Models
         {
             Seat seat1 = new Seat();
             seat1.Capacity = 30;
-            seat1.Actual = 8;
+            seat1.Actual = 22;
             seat1.Remaining = seat1.Capacity - seat1.Actual;
             seat1.WaitlistCapacity = 10;
             seat1.WaitlistActual = 0;
@@ -150,122 +150,6 @@ namespace CourseRegistrationManagementSystem.Models
             Course course1 = new Course
             {
                 ID = 1,
-                CourseName = "Software Construction",
-                CourseRegistarCode = "32329",
-                CourseSubjectCode = "SENG 6245",
-                SectionNumber = "001",
-                Subject = "Software Engineering",
-                CourseTerm = "Spring 2018",
-                RegistrationStartDate = new DateTime(2017, 11, 3),
-                RegistrationEndDate = new DateTime(2018, 1, 12),
-                ClassStartDate = new DateTime(2018, 1, 8),
-                ClassEndDate = new DateTime(2018, 5, 3),
-                ClassInstructionalMethod = "Face to Face",
-                CreditHours = 3,
-                InstructorName = "Mark Hills",
-                ClassroomNames = new List<string>{
-                    "Brewster Building 0B204"
-                },
-                ClassroomLatitudes = new List<double>{
-                    35.6047775
-                },
-                ClassroomLongitudes = new List<double>{
-                    -77.362346
-                },
-                CampusName = "Main Campus",
-                ClassDays = new List<string>{
-                    "Monday,Wednesday"
-                },
-                ClassTimes = new List<string>{
-                    "2:00 PM - 3:15 PM"
-                },
-                CourseSeat = seat1,
-                Prerequisites = "Graduate level SENG 6230 Minimum Grade of C or Graduate level CSCI 6230 Minimum Grade of C",
-                ScheduleType = "Lecture",
-                TextbookName = "Program Development in Java, ISBN: 9780201657685, Author: Liskov",
-                TextbookNewPrice = 100.00,
-                TextbookUsedPrice = 75.00,
-                CourseLevels = new List<string>{
-                    "Graduate",
-                    "Professional (Doctorate/CAS)"
-                }
-
-            };
-
-            return course1;
-        }
-
-        public static Course createCourse2()
-        {
-            Seat seat2 = new Seat();
-            seat2.Capacity = 30;
-            seat2.Actual = 11;
-            seat2.Remaining = seat2.Capacity - seat2.Actual;
-            seat2.WaitlistCapacity = 10;
-            seat2.WaitlistActual = 0;
-            seat2.WaitlistRemaining = seat2.WaitlistCapacity - seat2.WaitlistActual;
-
-            Course course2 = new Course
-            {
-                ID = 2,
-                CourseName = "Software Requirements Engineering",
-                CourseRegistarCode = "32332",
-                CourseSubjectCode = "SENG 6255",
-                SectionNumber = "601",
-                Subject = "Software Engineering",
-                CourseTerm = "Spring 2018",
-                RegistrationStartDate = new DateTime(2017, 11, 3),
-                RegistrationEndDate = new DateTime(2018, 1, 12),
-                ClassStartDate = new DateTime(2018, 1, 8),
-                ClassEndDate = new DateTime(2018, 5, 3),
-                ClassInstructionalMethod = "Internet or World Wide Web",
-                CreditHours = 3,
-                InstructorName = "Sergiy Vilkomir",
-                ClassroomNames = new List<string>{
-                    "N/A"
-                },
-                ClassroomLatitudes = new List<double>{
-                    
-                },
-                ClassroomLongitudes = new List<double>{
-                    
-                },
-                CampusName = "DE/Internet Campus",
-                ClassDays = new List<string>{
-                    "Monday,Wednesday"
-                },
-                ClassTimes = new List<string>{
-                    "12:30 PM - 1:45 PM"
-                },
-                CourseSeat = seat2,
-                Prerequisites = "",
-                ScheduleType = "Individual Study",
-                TextbookName = "Requirements Engineering, ISBN: 9780470012703, Author: Van Lamsweerd",
-                TextbookNewPrice = 87.00,
-                TextbookUsedPrice = 65.25,
-                CourseLevels = new List<string>{
-                    "Graduate",
-                    "Professional (Doctorate/CAS)"
-                }
-
-            };
-
-            return course2;
-        }
-
-        public static Course createCourse3()
-        {
-            Seat seat3 = new Seat();
-            seat3.Capacity = 30;
-            seat3.Actual = 22;
-            seat3.Remaining = seat3.Capacity - seat3.Actual;
-            seat3.WaitlistCapacity = 10;
-            seat3.WaitlistActual = 0;
-            seat3.WaitlistRemaining = seat3.WaitlistCapacity - seat3.WaitlistActual;
-
-            Course course3 = new Course
-            {
-                ID = 3,
                 CourseName = "Software Engineering Foundations",
                 CourseRegistarCode = "85697",
                 CourseSubjectCode = "SENG 6230",
@@ -295,7 +179,7 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassTimes = new List<string>{
                     "11:00 AM - 12:15 PM"
                 },
-                CourseSeat = seat3,
+                CourseSeat = seat1,
                 Prerequisites = "",
                 ScheduleType = "Lecture",
                 TextbookName = "Software Foundations, ISBN: 9780470011387, Author: Jobs",
@@ -307,22 +191,80 @@ namespace CourseRegistrationManagementSystem.Models
 
             };
 
-            return course3;
+            return course1;
         }
 
-        public static Course createCourse4()
+        public static Course createCourse2()
         {
-            Seat seat4 = new Seat();
-            seat4.Capacity = 30;
-            seat4.Actual = 5;
-            seat4.Remaining = seat4.Capacity - seat4.Actual;
-            seat4.WaitlistCapacity = 10;
-            seat4.WaitlistActual = 0;
-            seat4.WaitlistRemaining = seat4.WaitlistCapacity - seat4.WaitlistActual;
+            Seat seat2 = new Seat();
+            seat2.Capacity = 30;
+            seat2.Actual = 8;
+            seat2.Remaining = seat2.Capacity - seat2.Actual;
+            seat2.WaitlistCapacity = 10;
+            seat2.WaitlistActual = 0;
+            seat2.WaitlistRemaining = seat2.WaitlistCapacity - seat2.WaitlistActual;
 
-            Course course4 = new Course
+            Course course2 = new Course
             {
-                ID = 4,
+                ID = 2,
+                CourseName = "Software Construction",
+                CourseRegistarCode = "32329",
+                CourseSubjectCode = "SENG 6245",
+                SectionNumber = "001",
+                Subject = "Software Engineering",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Face to Face",
+                CreditHours = 3,
+                InstructorName = "Mark Hills",
+                ClassroomNames = new List<string>{
+                    "Brewster Building 0B204"
+                },
+                ClassroomLatitudes = new List<double>{
+                    35.6047775
+                },
+                ClassroomLongitudes = new List<double>{
+                    -77.362346
+                },
+                CampusName = "Main Campus",
+                ClassDays = new List<string>{
+                    "Monday,Wednesday"
+                },
+                ClassTimes = new List<string>{
+                    "2:00 PM - 3:15 PM"
+                },
+                CourseSeat = seat2,
+                Prerequisites = "Graduate level SENG 6230 Minimum Grade of C or Graduate level CSCI 6230 Minimum Grade of C",
+                ScheduleType = "Lecture",
+                TextbookName = "Program Development in Java, ISBN: 9780201657685, Author: Liskov",
+                TextbookNewPrice = 100.00,
+                TextbookUsedPrice = 75.00,
+                CourseLevels = new List<string>{
+                    "Graduate",
+                    "Professional (Doctorate/CAS)"
+                }
+
+            };
+
+            return course2;
+        }
+
+        public static Course createCourse3()
+        {
+            Seat seat3 = new Seat();
+            seat3.Capacity = 30;
+            seat3.Actual = 5;
+            seat3.Remaining = seat3.Capacity - seat3.Actual;
+            seat3.WaitlistCapacity = 10;
+            seat3.WaitlistActual = 0;
+            seat3.WaitlistRemaining = seat3.WaitlistCapacity - seat3.WaitlistActual;
+
+            Course course3 = new Course
+            {
+                ID = 3,
                 CourseName = "Software Systems Modeling and Analysis",
                 CourseRegistarCode = "85714",
                 CourseSubjectCode = "SENG 6250",
@@ -352,6 +294,65 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassTimes = new List<string>{
                     "2:00 PM - 3:15 PM"
                 },
+                CourseSeat = seat3,
+                Prerequisites = "Graduate level SENG 6230 Minimum Grade of C",
+                ScheduleType = "Lecture",
+                TextbookName = "Software Modeling Concepts, ISBN: 9780470097573, Author: Gates",
+                TextbookNewPrice = 80.00,
+                TextbookUsedPrice = 55.00,
+                CourseLevels = new List<string>{
+                    "Graduate"
+                }
+
+            };
+
+            return course3;
+        }
+
+        public static Course createCourse4()
+        {
+            Seat seat4 = new Seat();
+            seat4.Capacity = 30;
+            seat4.Actual = 14;
+            seat4.Remaining = seat4.Capacity - seat4.Actual;
+            seat4.WaitlistCapacity = 10;
+            seat4.WaitlistActual = 0;
+            seat4.WaitlistRemaining = seat4.WaitlistCapacity - seat4.WaitlistActual;
+
+            Course course4 = new Course
+            {
+                ID = 4,
+                CourseName = "Software Systems Modeling and Analysis",
+                CourseRegistarCode = "85715",
+                CourseSubjectCode = "SENG 6250",
+                SectionNumber = "601",
+                Subject = "Software Engineering",
+                CourseTerm = "Spring 2018",
+                RegistrationStartDate = new DateTime(2017, 11, 3),
+                RegistrationEndDate = new DateTime(2018, 1, 12),
+                ClassStartDate = new DateTime(2018, 1, 8),
+                ClassEndDate = new DateTime(2018, 5, 3),
+                ClassInstructionalMethod = "Internet or World Wide Web",
+                CreditHours = 3,
+                InstructorName = "Junhua Ding",
+                ClassroomNames = new List<string>{
+                    "N/A"
+                },
+                ClassroomLatitudes = new List<double>
+                {
+
+                },
+                ClassroomLongitudes = new List<double>
+                {
+
+                },
+                CampusName = "DE/Internet Campus",
+                ClassDays = new List<string>{
+                    "Tuesday,Thursday"
+                },
+                ClassTimes = new List<string>{
+                    "2:00 PM - 3:15 PM"
+                },
                 CourseSeat = seat4,
                 Prerequisites = "Graduate level SENG 6230 Minimum Grade of C",
                 ScheduleType = "Lecture",
@@ -371,7 +372,7 @@ namespace CourseRegistrationManagementSystem.Models
         {
             Seat seat5 = new Seat();
             seat5.Capacity = 30;
-            seat5.Actual = 14;
+            seat5.Actual = 11;
             seat5.Remaining = seat5.Capacity - seat5.Actual;
             seat5.WaitlistCapacity = 10;
             seat5.WaitlistActual = 0;
@@ -380,9 +381,9 @@ namespace CourseRegistrationManagementSystem.Models
             Course course5 = new Course
             {
                 ID = 5,
-                CourseName = "Software Systems Modeling and Analysis",
-                CourseRegistarCode = "85715",
-                CourseSubjectCode = "SENG 6250",
+                CourseName = "Software Requirements Engineering",
+                CourseRegistarCode = "32332",
+                CourseSubjectCode = "SENG 6255",
                 SectionNumber = "601",
                 Subject = "Software Engineering",
                 CourseTerm = "Spring 2018",
@@ -392,31 +393,34 @@ namespace CourseRegistrationManagementSystem.Models
                 ClassEndDate = new DateTime(2018, 5, 3),
                 ClassInstructionalMethod = "Internet or World Wide Web",
                 CreditHours = 3,
-                InstructorName = "Junhua Ding",
+                InstructorName = "Sergiy Vilkomir",
                 ClassroomNames = new List<string>{
                     "N/A"
                 },
-                ClassroomLatitudes = new List<double>{
-                    
+                ClassroomLatitudes = new List<double>
+                {
+
                 },
-                ClassroomLongitudes = new List<double>{
-                    
+                ClassroomLongitudes = new List<double>
+                {
+
                 },
                 CampusName = "DE/Internet Campus",
                 ClassDays = new List<string>{
-                    "Tuesday,Thursday"
+                    "Monday,Wednesday"
                 },
                 ClassTimes = new List<string>{
-                    "2:00 PM - 3:15 PM"
+                    "12:30 PM - 1:45 PM"
                 },
                 CourseSeat = seat5,
-                Prerequisites = "Graduate level SENG 6230 Minimum Grade of C",
-                ScheduleType = "Lecture",
-                TextbookName = "Software Modeling Concepts, ISBN: 9780470097573, Author: Gates",
-                TextbookNewPrice = 80.00,
-                TextbookUsedPrice = 55.00,
+                Prerequisites = "",
+                ScheduleType = "Individual Study",
+                TextbookName = "Requirements Engineering, ISBN: 9780470012703, Author: Van Lamsweerd",
+                TextbookNewPrice = 87.00,
+                TextbookUsedPrice = 65.25,
                 CourseLevels = new List<string>{
-                    "Graduate"
+                    "Graduate",
+                    "Professional (Doctorate/CAS)"
                 }
 
             };

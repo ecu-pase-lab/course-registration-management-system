@@ -28,7 +28,7 @@ namespace CourseRegistrationManagementSystem.Tests
             // Compare values for course
             Assert.Equal(1, controller.ViewBag.Courses.Count);
 
-            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse3(), controller.ViewBag.Courses[0]);
+            CourseTestUtils.checkCoursePropertiesAreEqual(MockCRMSData.createCourse1(), controller.ViewBag.Courses[0]);
         }
 
         // Typing in 21 in the Course Number search field should return three Calculus courses (from course numbers 2171 and 2172)

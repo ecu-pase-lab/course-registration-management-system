@@ -136,9 +136,22 @@
             <b>Prerequisites:&nbsp;</b><span>@course.Prerequisites</span>
             <br>
             <b>Textbook:&nbsp;</b><span>@course.TextbookName,</span>
-            <span>New:  $@course.TextbookNewPrice</span>
-            <span>Used: $@course.TextbookUsedPrice</span>
-
+            <span>New:  
+                @if (@course.TextbookNewPrice == 0)
+                {
+                    <span>N/A</span>
+                } else {
+                    <span>$</span>@course.TextbookNewPrice.ToString("0.00");
+                }
+            </span>
+            <span>Used:  
+                @if (@course.TextbookUsedPrice == 0)
+                {
+                    <span>N/A</span>
+                } else {
+                    <span>$</span>@course.TextbookUsedPrice.ToString("0.00");
+                }
+            </span>
         </div>
     }
 
